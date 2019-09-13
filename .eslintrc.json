@@ -1,24 +1,22 @@
 {
-	"env": {
-		"commonjs": true,
-		"es6": true,
-		"node": true
-	},
-	"extends": "standard",
-	"globals": {
-		"Atomics": "readable",
-		"SharedArrayBuffer": "readable"
-	},
-	"parserOptions": {
-		"ecmaVersion": 2018
-	},
-	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
-		"no-extra-semi": "off",
-		"no-tabs": "off",
-		"semi": "off"
-	}
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "standard",
+  "globals": {
+    "Atomics": "readable",
+    "SharedArrayBuffer": "readable"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "indent": ["error", "tab"],
+    "no-extra-semi": "off",
+    "no-tabs": "off",
+    "semi": "off"
+  }
 }

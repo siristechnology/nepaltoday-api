@@ -4,7 +4,8 @@
   "description": "A graphql based api endpoint for NepalToday mobile app",
   "main": "index.js",
   "scripts": {
-    "start": "nf start"
+    "start": "nf start",
+    "test": "jest"
   },
   "engines": {
     "node": ">=v10.9.0",
@@ -29,6 +30,9 @@
   "homepage": "https://github.com/syuraj/nepaltoday-api#readme",
   "dependencies": {
     "apollo-server-express": "2.0.4",
+    "babel-cli": "6.26.0",
+    "babel-preset-latest": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
     "core-js": "2.6.3",
     "errorhandler": "1.5.0",
     "express": "^4.16.4",
@@ -39,13 +43,17 @@
     "morgan": "1.9.1",
     "morgan-body": "2.4.7",
     "nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
-    "schemaglue": "4.0.2",
-    "babel-cli": "6.26.0",
-    "babel-preset-latest": "6.24.1",
-    "babel-preset-stage-2": "6.24.1",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "schemaglue": "4.0.2"
   },
   "devDependencies": {
+    "@babel/core": "7.6.0",
+    "@babel/polyfill": "7.6.0",
+    "@babel/preset-env": "7.6.0",
+    "babel-loader": "^8.0.6",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "jest": "^24.9.0",
     "eslint": "5.14.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.16.0",

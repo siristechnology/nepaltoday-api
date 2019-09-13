@@ -1,0 +1,3 @@
+// const { resolver } = require("./resolvers");
+
+expect(2 + 2).toBe(4);
