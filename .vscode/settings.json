@@ -2,6 +2,7 @@
 	"editor.wordWrapColumn": 140,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
+	"editor.formatOnSave": true,
 	"editor.detectIndentation": false,
 	"files.exclude": {
 		"obj": true,
