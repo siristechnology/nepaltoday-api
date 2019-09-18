@@ -27,7 +27,7 @@ exports.resolver = {
 
       const tweets = await Tweet.find()
         .populate("twitterHandle")
-        .sort({ _id: -1 })
+        .sort({ publishedDate: -1 })
         .limit(100);
       return tweets;
     }
