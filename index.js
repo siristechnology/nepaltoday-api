@@ -58,7 +58,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const { schema, resolver } = glue("./src", { js: "**/resolver*.js" });
+const { schema, resolver } = glue("./src", { js: "**/resolver*.js", ignore: '**/*.test.js' });
 
 const server = new ApolloServer({
   typeDefs: schema,
