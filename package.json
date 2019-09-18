@@ -41,14 +41,14 @@
     "morgan-body": "2.4.7",
     "nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
     "nodemon": "^1.18.9",
-    "schemaglue": "4.0.2"
-  },
-  "devDependencies": {
+    "schemaglue": "4.0.2",
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
     "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
+  },
+  "devDependencies": {
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "eslint": "5.14.0",

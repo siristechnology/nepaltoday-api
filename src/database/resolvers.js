@@ -15,7 +15,6 @@ exports.resolver = {
         .populate("source")
         .sort({ _id: -1 })
         .limit(100);
-      console.log("Article here", articles);
       return articles;
     },
     getTweets: async (parent, args, { Tweet }) => {
