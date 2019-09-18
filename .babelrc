@@ -1,4 +1,3 @@
 {
-  "presets": ["latest", "stage-2"],
-  "test": ["jest"]
+  "presets": ["@babel/preset-env"]
 }

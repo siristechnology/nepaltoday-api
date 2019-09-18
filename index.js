@@ -1,12 +1,12 @@
-import express from "express";
-import bodyParser from "body-parser";
-import morgan from "morgan";
-import morganBody from "morgan-body";
-import errorhandler from "errorhandler";
-import { ApolloServer } from "apollo-server-express";
-import mongoose from "mongoose";
-import glue from "schemaglue";
-import { mongooseSchema } from "nepaltoday-db-service";
+const express = require("express");
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
+const morganBody = require("morgan-body");
+const errorhandler = require("errorhandler");
+const { ApolloServer } = require("apollo-server-express");
+const mongoose = require("mongoose");
+const glue = require("schemaglue");
+const { mongooseSchema } = require("nepaltoday-db-service");
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
