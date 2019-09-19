@@ -20,7 +20,6 @@ exports.resolver = {
       return sortedArticles;
     },
     getTweets: async (parent, args, { Tweet }) => {
-      console.log("arguments here========", args, "Tweets=======", Tweet);
       args.criteria = args.criteria || {};
       args.criteria.lastQueryDate =
         args.criteria.lastQueryDate || new Date("2001-01-01");
@@ -30,7 +29,8 @@ exports.resolver = {
       const tweets = await Tweet.find()
         .populate("twitterHandle")
         .sort({ publishedDate: -1 })
-        .limit(100);
+        .limit(5);
+      console.log("tweets here----------", tweets);
       return tweets;
     }
   }

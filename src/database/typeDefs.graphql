@@ -31,7 +31,8 @@ type TwitterHandle {
   name: String
   handle: String
   category: String
-  weight: String
+  userWeight: String
+  categoryWeight: String
 }
 
 type Tweet {
