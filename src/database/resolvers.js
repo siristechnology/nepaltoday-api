@@ -1,3 +1,4 @@
+const { getSortedArticle } = require("../helper/articleHelper");
 exports.resolver = {
   Query: {
     getArticles: async (parent, args, { Article }) => {
@@ -15,7 +16,8 @@ exports.resolver = {
         .populate("source")
         .sort({ _id: -1 })
         .limit(100);
-      return articles;
+      const sortedArticles = getSortedArticle(articles);
+      return sortedArticles;
     },
     getTweets: async (parent, args, { Tweet }) => {
       console.log("arguments here========", args, "Tweets=======", Tweet);

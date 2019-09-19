@@ -12,7 +12,7 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 // Configure Mongoose
 mongoose.promise = global.Promise;
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 mongoose.set("debug", true);
 
 const app = express();
@@ -58,7 +58,10 @@ app.use((err, req, res, next) => {
   });
 });
 
-const { schema, resolver } = glue("./src", { js: "**/resolver*.js", ignore: '**/*.test.js' });
+const { schema, resolver } = glue("./src", {
+  js: "**/resolver*.js",
+  ignore: "**/*.test.js"
+});
 
 const server = new ApolloServer({
   typeDefs: schema,
