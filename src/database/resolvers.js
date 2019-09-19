@@ -1,4 +1,5 @@
 const { getSortedArticle } = require("../helper/articleHelper");
+const { getSortedTweets } = require("../helper/twitterHelper");
 exports.resolver = {
   Query: {
     getArticles: async (parent, args, { Article }) => {
@@ -29,9 +30,10 @@ exports.resolver = {
       const tweets = await Tweet.find()
         .populate("twitterHandle")
         .sort({ publishedDate: -1 })
-        .limit(5);
-      console.log("tweets here----------", tweets);
-      return tweets;
+        .limit(100);
+
+      const sortedTweets = getSortedTweets(tweets);
+      return sortedTweets;
     }
   }
 };

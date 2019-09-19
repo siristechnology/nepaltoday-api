@@ -4,8 +4,8 @@
   "description": "A graphql based api endpoint for NepalToday mobile app",
   "main": "index.js",
   "scripts": {
-	"start": "nf start",
-	"test": "jest"
+    "start": "nf start",
+    "test": "jest"
   },
   "engines": {
     "node": ">=v10.9.0",
