@@ -1,18 +1,21 @@
-const express = require("express");
-const bodyParser = require("body-parser");
 const morgan = require("morgan");
+const express = require("express");
+const glue = require("schemaglue");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const morganBody = require("morgan-body");
 const errorhandler = require("errorhandler");
 const { ApolloServer } = require("apollo-server-express");
-const mongoose = require("mongoose");
-const glue = require("schemaglue");
 const { mongooseSchema } = require("nepaltoday-db-service");
+
+const { DATABASE_URL } = require("./src/config/env");
+console.log("data base url here", DATABASE_URL);
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
 // Configure Mongoose
 mongoose.promise = global.Promise;
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect(DATABASE_URL, { useNewUrlParser: true });
 mongoose.set("debug", true);
 
 const app = express();
@@ -81,5 +84,5 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 app.listen(process.env.PORT, () =>
-  console.log("Server running on http://localhost:", process.env.PORT)
+  console.log(`Server running on http://localhost:${process.env.PORT}`)
 );
