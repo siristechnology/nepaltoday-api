@@ -1,7 +1,5 @@
-const { getSortedArticle } = require('../helper/articleHelper')
-const { getSortedTweets } = require('../helper/twitterHelper')
-const { categories } = require('../config/category')
 const _ = require('lodash')
+const { categories } = require('../config/category')
 
 exports.resolver = {
 	Query: {
@@ -41,7 +39,6 @@ exports.resolver = {
 				.sort({ publishedDate: -1 })
 				.limit(100)
 
-			//   const sortedTweets = getSortedTweets(tweets);
 			return tweets
 		},
 	},
