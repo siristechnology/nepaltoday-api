@@ -1,5 +1,6 @@
 const _ = require('lodash')
 const { categories } = require('../config/category')
+const { getSortedArticle } = require('../helper/articleHelper')
 
 exports.resolver = {
 	Query: {
@@ -25,8 +26,9 @@ exports.resolver = {
 			const articles = await Promise.all(promises)
 
 			const articleFlatterend = _.flatten(articles)
+			const sortedArticles = await getSortedArticle(articleFlatterend)
 
-			return articleFlatterend
+			return sortedArticles
 		},
 
 		getTweets: async (parent, args, { Tweet }) => {
