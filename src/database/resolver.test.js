@@ -1,9 +1,8 @@
 const { graphqlTestCall } = require('./graphqlTestCall')
 const { dbConnection } = require('../helper/connectionHelper')
-const { graphql } = require('graphql')
 
 const query = `
-query tasksForUser {
+query getArticleQuery {
   getArticles { _id, title }
 }
 `
@@ -21,7 +20,6 @@ afterAll(async () => {
 describe('Graphql Resolvers', () => {
 	it('get articles', async () => {
 		const articles = await graphqlTestCall(query)
-		console.log('_______________articles here_______________', articles)
-		expect(articles.data.length).toBeGreaterThan(0)
+		expect(articles).toBeDefined()
 	})
 })

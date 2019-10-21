@@ -60,8 +60,6 @@ const expected = [
 
 describe('Sort Tweets by weight', () => {
 	it('sort tweet by weight', () => {
-		const sorted = getSortedTweets(data)
-		console.log('sorted', sorted)
-		// expect(JSON.stringify(sorted)).toBe(JSON.stringify(expected));
+		getSortedTweets(data)
 	})
 })
