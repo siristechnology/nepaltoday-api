@@ -30,7 +30,7 @@
   "homepage": "https://github.com/syuraj/nepaltoday-api#readme",
   "dependencies": {
     "apollo-server-express": "2.9.5",
-    "core-js": "3.2.1",
+    "core-js": "3.3.3",
     "errorhandler": "1.5.1",
     "esm": "^3.2.25",
     "express": "^4.16.4",
