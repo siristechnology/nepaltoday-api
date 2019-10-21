@@ -9,8 +9,7 @@ exports.resolver = {
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastArticleId = args.criteria.lastArticleId || '000000000000000000000000'
 
-			const _categories = Object.values(categories)
-			const promises = _categories.map(async category => {
+			const promises = categories.map(async category => {
 				const _articles = await Article.find({
 					category,
 					link: { $ne: null },
