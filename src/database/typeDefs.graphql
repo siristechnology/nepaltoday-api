@@ -1,59 +1,59 @@
 type Article {
-  _id: String!
-  title: String!
-  shortDescription: String
-  content: String
-  link: String
-  imageLink: String
-  source: Source
-  category: String
-  publishedDate: String
-  createdDate: String
-  modifiedDate: String
+	_id: String!
+	title: String!
+	shortDescription: String
+	content: String
+	link: String
+	imageLink: String
+	source: Source
+	category: String
+	publishedDate: String
+	createdDate: String
+	modifiedDate: String
 }
 
 input ArticleCriteria {
-  lastArticleId: String
-  lastQueryDate: String
+	lastArticleId: String
+	lastQueryDate: String
 }
 
 type Source {
-  _id: String!
-  name: String
-  url: String
-  category: String
-  link: String
-  logoLink: String
+	_id: String!
+	name: String
+	url: String
+	category: String
+	link: String
+	logoLink: String
 }
 
 type TwitterHandle {
-  _id: String!
-  name: String
-  handle: String
-  category: String
-  userWeight: String
-  categoryWeight: String
+	_id: String!
+	name: String
+	handle: String
+	category: String
+	userWeight: String
+	categoryWeight: String
 }
 
 type Tweet {
-  _id: String!
-  text: String
-  tweetId: String
-  handle: String
-  twitterHandle: TwitterHandle
-  publishedDate: String
-  createdAt: String
-  name: String
-  profileImage: String
-  description: String
+	_id: String!
+	text: String
+	tweetId: String
+	handle: String
+	twitterHandle: TwitterHandle
+	publishedDate: String
+	createdAt: String
+	name: String
+	profileImage: String
+	description: String
 }
 
 input TweetCriteria {
-  lastTweetId: String
-  lastQueryDate: String
+	lastTweetId: String
+	lastQueryDate: String
 }
 
 type Query {
-  getArticles(criteria: ArticleCriteria): [Article]!
-  getTweets(criteria: TweetCriteria): [Tweet]!
+	getArticles(criteria: ArticleCriteria): [Article]!
+	getTweets(criteria: TweetCriteria): [Tweet]!
 }

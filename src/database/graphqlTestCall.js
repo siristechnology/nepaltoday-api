@@ -7,7 +7,7 @@ const typeDefs = importSchema('./typeDefs.graphql')
 
 const schema = makeExecutableSchema({ typeDefs, resolver })
 
-const graphqlTestCall = async (query, variables, userId) => {
+const graphqlTestCall = async (query, variables) => {
 	return graphql(
 		schema,
 		query,
