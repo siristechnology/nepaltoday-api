@@ -14,7 +14,9 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
-	await con.connection.close()
+	if (con.connection) {
+		await con.connection.close()
+	}
 })
 
 describe('Graphql Resolvers', () => {
