@@ -19,11 +19,11 @@ exports.resolver = {
 				.sort({ _id: -1 })
 				.limit(100)
 
-			console.log('Printing articles before sorting', articles.map(a => a.title))
+			// console.log('Printing articles before sorting', articles.map(a => a.title))
 
 			const sortedArticles = getSortedArticle(articles)
 
-			console.log('Printing articles after sorting', sortedArticles.map(a => a.title))
+			// console.log('Printing articles after sorting', sortedArticles.map(a => a.title))
 
 			return sortedArticles
 		},
@@ -42,18 +42,15 @@ exports.resolver = {
 		},
 	},
 	Mutation: {
-		storeFcmToken: async (fcmToken, countryCode) => {
-			const data = await User.create({
+		storeFcmToken: async (parent, args) => {
+			const {
+				input: { fcmToken, countryCode },
+			} = args
+			const user = await User.create({
 				fcmToken,
 				countryCode,
 			})
-			// Todo: save in User collection
-			console.log('_______________data here_______________', fcmToken, countryCode)
-			console.log('_______________response here_______________', data)
-			return {
-				fcmToken,
-				countryCode,
-			}
+			return user
 		},
 	},
 }
