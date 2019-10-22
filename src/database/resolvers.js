@@ -40,4 +40,13 @@ exports.resolver = {
 			return tweets
 		},
 	},
+	Mutation: {
+		storeFcmToken: async (fcmToken, countryCode) => {
+			console.log('_______________data here_______________', fcmToken, countryCode)
+			return {
+				fcmToken,
+				countryCode,
+			}
+		},
+	},
 }
