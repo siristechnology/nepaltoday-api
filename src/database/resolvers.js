@@ -1,5 +1,7 @@
 const { getSortedArticle } = require('../helper/articleHelper')
-const { getSortedTweets } = require('../helper/twitterHelper')
+const { mongooseSchema } = require('nepaltoday-db-service')
+
+const { User } = mongooseSchema
 
 exports.resolver = {
 	Query: {
@@ -36,13 +38,18 @@ exports.resolver = {
 				.sort({ publishedDate: -1 })
 				.limit(100)
 
-			//   const sortedTweets = getSortedTweets(tweets);
 			return tweets
 		},
 	},
 	Mutation: {
 		storeFcmToken: async (fcmToken, countryCode) => {
+			const data = await User.create({
+				fcmToken,
+				countryCode,
+			})
+			// Todo: save in User collection
 			console.log('_______________data here_______________', fcmToken, countryCode)
+			console.log('_______________response here_______________', data)
 			return {
 				fcmToken,
 				countryCode,
