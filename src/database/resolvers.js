@@ -46,6 +46,8 @@ exports.resolver = {
 			const {
 				input: { fcmToken, countryCode },
 			} = args
+			console.log('_______________fcmtoken_______________', fcmToken)
+			console.log('_______________countrycode_______________', countryCode)
 			const user = await User.create({
 				fcmToken,
 				countryCode,
