@@ -51,7 +51,7 @@ const getSortedArticle = (articles = []) => {
 
 	const finalArticles = sortedArticles.map(a => {
 		a.weight = undefined
-		return { ...a._doc }
+		return { ...a }
 	})
 
 	return finalArticles

@@ -16,9 +16,11 @@ exports.resolver = {
 					modifiedDate: { $gt: new Date(args.criteria.lastQueryDate) },
 					_id: { $gt: args.criteria.lastArticleId },
 				})
+					.lean()
 					.populate('source')
 					.sort({ _id: -1 })
 					.limit(20)
+
 				return [..._articles]
 			})
 
