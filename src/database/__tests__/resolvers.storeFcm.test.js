@@ -5,8 +5,6 @@ const {
 } = require('../resolvers')
 import mockingoose from 'mockingoose'
 
-import { GetMockArticle } from '../mocks'
-
 describe('Resolvers Mutation storeFcmToken', () => {
 	it('should create new fcm token on user collection', async () => {
 		const { mongooseSchema } = require('nepaltoday-db-service')
