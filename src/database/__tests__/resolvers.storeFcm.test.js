@@ -11,19 +11,25 @@ describe('Resolvers Mutation storeFcmToken', () => {
 	it('should create new fcm token on user collection', async () => {
 		const { mongooseSchema } = require('nepaltoday-db-service')
 		mockingoose(mongooseSchema.User).toReturn(
+			{
+				fcmToken: 'token123',
+				countryCode: 'NEP',
+			},
+			'create',
+		)
+
+		const response = await storeFcmToken(
 			null,
-			(args = {
+			{
 				input: {
 					fcmToken: 'token123',
 					countryCode: 'NEP',
 				},
-			}),
-			'create',
+			},
+			mongooseSchema,
 		)
-
-		const response = await storeFcmToken(null, {}, mongooseSchema)
 		console.log('_______________response here_______________', response)
 
-		expect(response.length).toBeGreaterThan(0)
+		expect(response).toBeDefined()
 	})
 })

@@ -1,64 +1,68 @@
 {
-  "name": "nepaltoday.api",
-  "version": "1.0.0",
-  "description": "A graphql based api endpoint for NepalToday mobile app",
-  "main": "index.js",
-  "scripts": {
-    "start": "nf start",
-    "test": "jest"
-  },
-  "engines": {
-    "node": ">=v10.9.0",
-    "npm": ">=6.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/siristechnology/nepaltoday-api.git"
-  },
-  "keywords": [
-    "API",
-    "Nepal",
-    "Today",
-    "News",
-    "Article"
-  ],
-  "author": "nepaltoday",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/syuraj/nepaltoday-api/issues"
-  },
-  "homepage": "https://github.com/syuraj/nepaltoday-api#readme",
-  "dependencies": {
-    "apollo-server-express": "2.9.5",
-    "core-js": "3.2.1",
-    "errorhandler": "1.5.1",
-    "esm": "^3.2.25",
-    "express": "^4.16.4",
-    "foreman": "3.0.1",
-    "fs": "0.0.2",
-    "graphql": "14.5.8",
-    "graphql-tools": "4.0.5",
-    "morgan": "1.9.1",
-    "morgan-body": "2.4.8",
-    "nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service#user-schema",
-    "nodemon": "^1.18.9",
-    "schemaglue": "4.0.4",
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.0"
-  },
-  "devDependencies": {
-    "babel-jest": "^24.9.0",
-    "babel-loader": "^8.0.6",
-    "eslint": "6.5.1",
-    "eslint-config-standard": "14.1.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-node": "10.0.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "jest": "^24.9.0",
-    "regenerator-runtime": "^0.13.3"
-  }
+	"name": "nepaltoday.api",
+	"version": "1.0.0",
+	"description": "A graphql based api endpoint for NepalToday mobile app",
+	"main": "index.js",
+	"scripts": {
+		"start": "nf start",
+		"test": "jest"
+	},
+	"engines": {
+		"node": ">=v10.9.0",
+		"npm": ">=6.2.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/siristechnology/nepaltoday-api.git"
+	},
+	"keywords": [
+		"API",
+		"Nepal",
+		"Today",
+		"News",
+		"Article"
+	],
+	"author": "nepaltoday",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/syuraj/nepaltoday-api/issues"
+	},
+	"homepage": "https://github.com/syuraj/nepaltoday-api#readme",
+	"dependencies": {
+		"@babel/cli": "^7.6.0",
+		"@babel/core": "^7.6.0",
+		"@babel/node": "^7.6.1",
+		"@babel/polyfill": "^7.6.0",
+		"@babel/preset-env": "^7.6.0",
+		"apollo-server-express": "2.9.5",
+		"core-js": "3.2.1",
+		"errorhandler": "1.5.1",
+		"esm": "^3.2.25",
+		"express": "^4.16.4",
+		"foreman": "3.0.1",
+		"fs": "0.0.2",
+		"graphql": "14.5.8",
+		"graphql-tools": "4.0.5",
+		"morgan": "1.9.1",
+		"morgan-body": "2.4.8",
+		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service#user-schema",
+		"nodemon": "^1.18.9",
+		"schemaglue": "4.0.4"
+	},
+	"devDependencies": {
+		"babel-jest": "^24.9.0",
+		"babel-loader": "^8.0.6",
+		"babel-plugin-import-graphql": "^2.7.0",
+		"casual": "^1.6.2",
+		"eslint": "6.5.1",
+		"eslint-config-standard": "14.1.0",
+		"eslint-plugin-import": "2.18.2",
+		"eslint-plugin-node": "10.0.0",
+		"eslint-plugin-promise": "4.2.1",
+		"eslint-plugin-standard": "4.0.1",
+		"graphql-import": "^0.7.1",
+		"jest": "^24.9.0",
+		"mockingoose": "^2.13.2",
+		"regenerator-runtime": "^0.13.3"
+	}
 }
