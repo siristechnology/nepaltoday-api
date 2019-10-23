@@ -11,7 +11,7 @@ import mockingoose from 'mockingoose'
 // const { importSchema } = require('graphql-import')
 // const typeDefs = importSchema('src/database/typeDefs.graphql') /* Warning: Must be an absolute path */
 
-import { GetMockArticle } from './mocks'
+import { GetMockArticle } from '../mocks'
 
 describe('Resolvers Query getArticles', () => {
 	// beforeAll(function(done) {

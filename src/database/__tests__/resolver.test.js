@@ -1,5 +1,5 @@
-const { graphqlTestCall } = require('./graphqlTestCall')
-const { dbConnection } = require('../helper/connectionHelper')
+const { graphqlTestCall } = require('../graphqlTestCall')
+const { dbConnection } = require('../../helper/connectionHelper')
 
 const query = `
 query getArticleQuery {
