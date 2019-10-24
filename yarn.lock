@@ -4543,9 +4543,9 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-"nepaltoday-db-service@github:siristechnology/nepaltoday-db-service#user-schema":
+"nepaltoday-db-service@github:siristechnology/nepaltoday-db-service#user-schema-timezone":
   version "1.1.4"
-  resolved "https://codeload.github.com/siristechnology/nepaltoday-db-service/tar.gz/98392d8aed7e0c2601d39f1cfde448cea0272064"
+  resolved "https://codeload.github.com/siristechnology/nepaltoday-db-service/tar.gz/86e696f88977616cbb555f50581c12a625a0f7ab"
   dependencies:
     "@babel/polyfill" "7.6.0"
     dotenv "^8.1.0"
