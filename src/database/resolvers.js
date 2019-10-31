@@ -27,12 +27,10 @@ exports.resolver = {
 				return [..._articles]
 			})
 
-			// console.log('Printing articles before sorting', articles.map(a => a.title))
-
 			const articles = await Promise.all(promises)
 
 			const articleFlatterend = _.flatten(articles)
-			const sortedArticles = await getSortedArticle(articleFlatterend)
+			const sortedArticles = getSortedArticle(articleFlatterend)
 
 			return sortedArticles
 		},
