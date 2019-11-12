@@ -1306,10 +1306,10 @@ apollo-server-caching@^0.5.0:
   dependencies:
     lru-cache "^5.0.0"
 
-apollo-server-core@^2.9.5:
-  version "2.9.7"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.9.7.tgz#0f32344af90dec445ac780be95350bfa736fc416"
-  integrity sha512-EqKyROy+21sM93YHjGpy6wlnzK/vH0fnZh7RCf3uB69aQ3OjgdP4AQ5oWRQ62NDN+aoic7OLhChSDJeDonq/NQ==
+apollo-server-core@^2.9.8:
+  version "2.9.8"
+  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.9.8.tgz#3f502b00d4c607e8c936c7551d8423b67c2a4d22"
+  integrity sha512-mVyl7b1zmN4RMbQGvwXVFhs9Qhh69RRnPyR6XkaLIYK0TzrduotGFgIW9avhyWzT9JTVw4Bh95lLmI4O951khw==
   dependencies:
     "@apollographql/apollo-tools" "^0.4.0"
     "@apollographql/graphql-playground-html" "1.6.24"
@@ -1346,10 +1346,10 @@ apollo-server-errors@^2.3.4:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.3.4.tgz#b70ef01322f616cbcd876f3e0168a1a86b82db34"
   integrity sha512-Y0PKQvkrb2Kd18d1NPlHdSqmlr8TgqJ7JQcNIfhNDgdb45CnqZlxL1abuIRhr8tiw8OhVOcFxz2KyglBi8TKdA==
 
-apollo-server-express@2.9.5:
-  version "2.9.5"
-  resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-2.9.5.tgz#383e0a5cb80cf1172b0bc1e565797edd629d750a"
-  integrity sha512-6gonP7g5u2Kr+9cvKE+NuGPe+As7wRbz2yWoyLOym/TdXBmTRU4AKW2Qs+wpNanurzm2xbTa7sEfzrHGmembrQ==
+apollo-server-express@2.9.8:
+  version "2.9.8"
+  resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-2.9.8.tgz#941bed7e259b145fdb2e22cc64d6222fcfce9ae8"
+  integrity sha512-DXiSchswwTWfLVcyAzQsaj9l+7lQJgHgteJcaSx0n9sKdCZyKfm8nEtiRMMjpMFZF2uhLcLQIzZPQwI3qYGaMg==
   dependencies:
     "@apollographql/graphql-playground-html" "1.6.24"
     "@types/accepts" "^1.3.5"
@@ -1357,8 +1357,8 @@ apollo-server-express@2.9.5:
     "@types/cors" "^2.8.4"
     "@types/express" "4.17.1"
     accepts "^1.3.5"
-    apollo-server-core "^2.9.5"
-    apollo-server-types "^0.2.4"
+    apollo-server-core "^2.9.8"
+    apollo-server-types "^0.2.5"
     body-parser "^1.18.3"
     cors "^2.8.4"
     express "^4.17.1"
@@ -1375,7 +1375,7 @@ apollo-server-plugin-base@^0.6.5:
   dependencies:
     apollo-server-types "^0.2.5"
 
-apollo-server-types@^0.2.4, apollo-server-types@^0.2.5:
+apollo-server-types@^0.2.5:
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-0.2.5.tgz#2d63924706ffc1a59480cbbc93e9fe86655a57a5"
   integrity sha512-6iJQsPh59FWu4K7ABrVmpnQVgeK8Ockx8BcawBh+saFYWTlVczwcLyGSZPeV1tPSKwFwKZutyEslrYSafcarXQ==
