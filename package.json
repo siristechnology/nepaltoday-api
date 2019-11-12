@@ -34,7 +34,7 @@
 		"@babel/node": "^7.6.1",
 		"@babel/polyfill": "^7.6.0",
 		"@babel/preset-env": "^7.6.0",
-		"apollo-server-express": "2.9.5",
+		"apollo-server-express": "2.9.8",
 		"core-js": "3.2.1",
 		"errorhandler": "1.5.1",
 		"esm": "^3.2.25",
