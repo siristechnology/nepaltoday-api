@@ -46,7 +46,7 @@
 		"morgan": "1.9.1",
 		"morgan-body": "2.4.8",
 		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service#user-schema-timezone",
-		"nodemon": "^1.18.9",
+		"nodemon": "^2.0.0",
 		"schemaglue": "4.0.4"
 	},
 	"devDependencies": {
