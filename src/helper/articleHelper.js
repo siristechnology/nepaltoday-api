@@ -39,13 +39,15 @@ const getCategoryWeight = category => {
 	}
 }
 const getSortedArticle = (articles = []) => {
-	const mappedArticle = articles.map(article => {
-		const sourceWeight = getSourceWeight(article.source.link)
-		const categoryWeight = getCategoryWeight(article.category)
-		const weight = sourceWeight + categoryWeight + Number(article.publishedDate)
-		article.weight = weight
-		return article
-	})
+	const mappedArticle = articles
+		.filter(article => article.source !== null)
+		.map(article => {
+			const sourceWeight = getSourceWeight(article.source.link)
+			const categoryWeight = getCategoryWeight(article.category)
+			const weight = sourceWeight + categoryWeight + Number(article.publishedDate)
+			article.weight = weight
+			return article
+		})
 
 	const sortedArticles = sortArrayByWeight(mappedArticle)
 

@@ -45,7 +45,7 @@
 		"graphql-tools": "4.0.5",
 		"morgan": "1.9.1",
 		"morgan-body": "2.4.8",
-		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service#user-schema-timezone",
+		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
 		"nodemon": "^1.18.9",
 		"schemaglue": "4.0.4"
 	},
