@@ -20,12 +20,7 @@ exports.resolver = {
 					_id: { $gt: args.criteria.lastArticleId },
 				})
 					.lean()
-					.populate({
-						path: 'sources',
-						match: {
-							_id: { $ne: null },
-						},
-					})
+					.populate('source')
 					.sort({ _id: -1 })
 					.limit(20)
 
