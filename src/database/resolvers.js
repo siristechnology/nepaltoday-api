@@ -27,7 +27,7 @@ exports.resolver = {
 						},
 					})
 					.sort({ _id: -1 })
-					.limit(1)
+					.limit(20)
 
 				return [..._articles]
 			})
