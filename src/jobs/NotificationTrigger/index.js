@@ -4,7 +4,7 @@ module.exports = async function(context, myTimer) {
 
 	const { post } = require('./http')
 	const { verifyNoticiableTime, getStartEndTime } = require('./notificationTime')
-	const { userDbService, newsDbService, NotificationDbService } = require('nepaltoday-db-service')
+	const { userDbService, newsDbService, NotificationDbService } = require('../../db-service')
 
 	if (myTimer.IsPastDue) {
 		context.log('________________JavaScript is running late!_______________')
@@ -20,7 +20,7 @@ module.exports = async function(context, myTimer) {
 
 				return {
 					...user,
-					currentTime
+					currentTime,
 				}
 			})
 			if (userWithCurrentTime) {
@@ -28,15 +28,14 @@ module.exports = async function(context, myTimer) {
 				const todaysTimeFrame = getStartEndTime()
 
 				const todaysNotifications = await NotificationDbService.getNotifications({
-					createdAt: { $gte: todaysTimeFrame.startTime, $lt: todaysTimeFrame.endTime }
+					createdAt: { $gte: todaysTimeFrame.startTime, $lt: todaysTimeFrame.endTime },
 				})
 				if (latestArticle) {
 					const notifications = []
 					for (const user of userWithCurrentTime) {
 						const isSent = todaysNotifications.find(
 							notification =>
-								String(notification.user) === String(user._id) &&
-								String(notification.article) === String(latestArticle[0]._id)
+								String(notification.user) === String(user._id) && String(notification.article) === String(latestArticle[0]._id),
 						)
 						if (isSent) {
 							continue
@@ -46,15 +45,15 @@ module.exports = async function(context, myTimer) {
 							const data = {
 								notification: {
 									title: latestArticle[0].title,
-									body: latestArticle[0].shortDescription
+									body: latestArticle[0].shortDescription,
 								},
-								to: user.fcmToken
+								to: user.fcmToken,
 							}
 							const response = await post(undefined, data)
 							if (response.status === 200) {
 								const payload = {
 									article: latestArticle[0]._id,
-									user: user._id
+									user: user._id,
 								}
 								notifications.push(payload)
 							}

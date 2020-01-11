@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const errorhandler = require('errorhandler')
 const { ApolloServer, gql } = require('apollo-server-express')
-const { mongooseSchema } = require('nepaltoday-db-service')
+const mongooseSchema = require('./src/db-service/database/mongooseSchema')
 
 const resolvers = require('./src/database/resolvers')
 

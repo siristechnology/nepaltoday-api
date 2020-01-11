@@ -1,5 +1,5 @@
 module.exports = async function(context, myTimer) {
-	const { TweetDbService } = require('nepaltoday-db-service')
+	const TweetDbService = require('../../db-service/TweetDbService')
 	const Twitter = require('twitter')
 
 	const { TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = require('../../config/env')

@@ -1,6 +1,7 @@
 module.exports = async function(context, myTimer) {
 	var timeStamp = new Date().toISOString()
-	const { newsDbService } = require('nepaltoday-db-service')
+	const newsDbService = require('../../db-service/newsDbService')
+
 	const { scrapeNewsLink } = require('./linkCrawler')
 	const { getNewsContent } = require('./content-crawler')
 

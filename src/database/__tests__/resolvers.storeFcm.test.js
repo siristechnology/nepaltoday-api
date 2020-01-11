@@ -5,7 +5,7 @@ import mockingoose from 'mockingoose'
 
 describe('Resolvers Mutation storeFcmToken', () => {
 	it('should create new fcm token on user collection', async () => {
-		const { mongooseSchema } = require('nepaltoday-db-service')
+		const mongooseSchema = require('../../db-service/database/mongooseSchema')
 		mockingoose(mongooseSchema.User).toReturn(
 			{
 				fcmToken: 'token123',

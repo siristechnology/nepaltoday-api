@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { mongooseSchema } = require('nepaltoday-db-service')
+const mongooseSchema = require('../db-service/database/mongooseSchema')
 
 const { User } = mongooseSchema
 const { categories } = require('../config/category')
