@@ -36,6 +36,7 @@
 		"@babel/node": "^7.6.1",
 		"@babel/polyfill": "^7.6.0",
 		"@babel/preset-env": "^7.6.0",
+		"agenda": "2.3.0",
 		"apollo-server-express": "2.9.16",
 		"cheerio": "1.0.0-rc.3",
 		"dotenv": "8.2.0",

@@ -7,10 +7,12 @@ const bodyParser = require('body-parser')
 const errorhandler = require('errorhandler')
 const { ApolloServer, gql } = require('apollo-server-express')
 const mongooseSchema = require('./src/db-service/database/mongooseSchema')
-
+const startJobs = require('./src/jobs/job-runner/start-jobs')
 const resolvers = require('./src/database/resolvers')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
+
+startJobs()
 
 mongoose.promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
