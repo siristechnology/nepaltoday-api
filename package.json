@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "nf start",
-		"test": "jest"
+		"format": "prettier --write \"src/**/*.js\"",
+		"test": "jest --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' ",
+		"test:coverage": "jest --coverage --testMatch '**/?(*.)+(spec|test).[tj]s?(x)' "
 	},
 	"engines": {
 		"node": ">=v10.9.0",
@@ -47,6 +49,7 @@
 		"morgan-body": "2.4.8",
 		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
 		"nodemon": "^2.0.2",
+		"require-graphql-file": "1.0.1",
 		"schemaglue": "4.0.4"
 	},
 	"devDependencies": {

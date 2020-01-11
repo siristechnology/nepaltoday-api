@@ -5,7 +5,7 @@ const { User } = mongooseSchema
 const { categories } = require('../config/category')
 const { getSortedArticle } = require('../helper/articleHelper')
 
-exports.resolver = {
+module.exports = {
 	Query: {
 		getArticles: async (parent, args, { Article }) => {
 			args.criteria = args.criteria || {}

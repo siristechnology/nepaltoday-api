@@ -1,13 +1,15 @@
 require('./src/config/env')
 const morgan = require('morgan')
 const express = require('express')
-const glue = require('schemaglue')
+const requireGraphQLFile = require('require-graphql-file')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const morganBody = require('morgan-body')
 const errorhandler = require('errorhandler')
-const { ApolloServer } = require('apollo-server-express')
+const { ApolloServer, gql } = require('apollo-server-express')
 const { mongooseSchema } = require('nepaltoday-db-service')
+
+const resolvers = require('./src/database/resolvers')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -59,14 +61,12 @@ app.use((err, req, res, next) => {
 	})
 })
 
-const { schema, resolver } = glue('./src', {
-	js: '**/resolver*.js',
-	ignore: '**/*.test.js',
-})
+const typeDefSchema = requireGraphQLFile('./src/database/typeDefs.graphql')
+const typeDefs = gql(typeDefSchema)
 
 const server = new ApolloServer({
-	typeDefs: schema,
-	resolvers: resolver,
+	typeDefs: typeDefs,
+	resolvers: resolvers,
 	context: ({ req, res }) => ({
 		...{ userContext: req.payload },
 		...mongooseSchema,
