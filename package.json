@@ -41,11 +41,9 @@
 		"esm": "^3.2.25",
 		"express": "^4.16.4",
 		"foreman": "3.0.1",
-		"fs": "0.0.2",
 		"graphql": "14.5.8",
 		"graphql-tools": "4.0.6",
 		"morgan": "1.9.1",
-		"morgan-body": "2.4.8",
 		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
 		"nodemon": "^2.0.2",
 		"require-graphql-file": "1.0.1"
