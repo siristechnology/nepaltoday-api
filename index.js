@@ -9,6 +9,7 @@ const { ApolloServer, gql } = require('apollo-server-express')
 const mongooseSchema = require('./src/db-service/database/mongooseSchema')
 const startJobs = require('./src/jobs/job-runner/start-jobs')
 const resolvers = require('./src/database/resolvers')
+const colors = require('colors/safe')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -66,4 +67,4 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app })
 
-app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(colors.rainbow(`Server running on http://localhost:${process.env.PORT}`)))
