@@ -28,8 +28,6 @@ module.exports = async function(context) {
 					const crawlTime = new Date()
 
 					for (const category of categories) {
-						context.log('Printing category', category)
-
 						const categoryName = category.name
 						const url = `${baseUrl}${category.path}`
 
