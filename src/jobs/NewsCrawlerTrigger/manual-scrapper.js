@@ -1,5 +1,6 @@
 const cheerio = require('cheerio')
 const request = require('request')
+
 module.exports = function manualScrapper(link, logoLink, selector, context) {
 	return new Promise((resolve, reject) => {
 		request(link, function(err, res, body) {
@@ -7,9 +8,9 @@ module.exports = function manualScrapper(link, logoLink, selector, context) {
 				reject({
 					error: {
 						status: true,
-						stack: err
+						stack: err,
 					},
-					data: null
+					data: null,
 				})
 			} else {
 				let $ = cheerio.load(body)
@@ -31,8 +32,8 @@ module.exports = function manualScrapper(link, logoLink, selector, context) {
 						imageLink,
 						content,
 						link,
-						publishedDate
-					}
+						publishedDate,
+					},
 				})
 			}
 		})

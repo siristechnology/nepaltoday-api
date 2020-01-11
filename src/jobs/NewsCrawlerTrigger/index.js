@@ -1,4 +1,4 @@
-module.exports = async function(context, myTimer) {
+module.exports = async function(context) {
 	var timeStamp = new Date().toISOString()
 	const newsDbService = require('../../db-service/newsDbService')
 
@@ -6,10 +6,6 @@ module.exports = async function(context, myTimer) {
 	const { getNewsContent } = require('./content-crawler')
 
 	const ipAddress = require('ip').address()
-
-	if (myTimer.IsPastDue) {
-		context.log('JavaScript is running late!')
-	}
 
 	const getCategoryName = category => {
 		if (category === 'news' || category === 'politics') {

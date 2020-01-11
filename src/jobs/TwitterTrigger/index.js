@@ -1,4 +1,4 @@
-module.exports = async function(context, myTimer) {
+module.exports = async function(context) {
 	const TweetDbService = require('../../db-service/TweetDbService')
 	const Twitter = require('twitter')
 

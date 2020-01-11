@@ -1,14 +1,10 @@
-module.exports = async function(context, myTimer) {
+module.exports = async function(context) {
 	const moment = require('moment-timezone')
 	const timeStamp = new Date().toISOString()
 
 	const { post } = require('./http')
 	const { verifyNoticiableTime, getStartEndTime } = require('./notificationTime')
 	const { userDbService, newsDbService, NotificationDbService } = require('../../db-service')
-
-	if (myTimer.IsPastDue) {
-		context.log('________________JavaScript is running late!_______________')
-	}
 
 	try {
 		const users = await userDbService.getUsers()
