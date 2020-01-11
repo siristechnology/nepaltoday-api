@@ -162,7 +162,7 @@ const scrapeOnlineKhabarLinks = url => {
 					const link = $(this)
 						.find('a')
 						.attr('href')
-					links.push('a' + link)
+					links.push(link)
 				})
 
 				resolve({

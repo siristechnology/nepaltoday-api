@@ -3,7 +3,7 @@ const newsPortalLink = {
 	RATOPATI: 'https://ratopati.com',
 	SETOPATI: 'https://setopati.com',
 	DAINIK_KHABAR: 'https://dainiknepal.com',
-	ONLINE_KHABAR: 'https://www.onlinekhabar.com',
+	ONLINE_KHABAR: 'https://onlinekhabar.com',
 }
 
 module.exports = {

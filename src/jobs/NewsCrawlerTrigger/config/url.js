@@ -3,9 +3,9 @@ const url = {
 	SETOPATI: 'https://setopati.com',
 	RATOPATI: 'https://ratopati.com',
 	DAINIK_NEPAL: 'https://dainiknepal.com',
-	ONLINE_KHABAR: 'https://www.onlinekhabar.com'
+	ONLINE_KHABAR: 'https://onlinekhabar.com',
 }
 
 module.exports = {
-	url
+	url,
 }
