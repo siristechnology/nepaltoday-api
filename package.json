@@ -37,7 +37,6 @@
 		"@babel/polyfill": "^7.6.0",
 		"@babel/preset-env": "^7.6.0",
 		"apollo-server-express": "2.9.16",
-		"core-js": "3.6.3",
 		"errorhandler": "1.5.1",
 		"esm": "^3.2.25",
 		"express": "^4.16.4",
@@ -49,8 +48,7 @@
 		"morgan-body": "2.4.8",
 		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
 		"nodemon": "^2.0.2",
-		"require-graphql-file": "1.0.1",
-		"schemaglue": "4.0.4"
+		"require-graphql-file": "1.0.1"
 	},
 	"devDependencies": {
 		"babel-jest": "^24.9.0",
