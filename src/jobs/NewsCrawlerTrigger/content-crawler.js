@@ -41,5 +41,5 @@ const getNewsContent = async (link, logoLink, baseUrl, context) => {
 }
 
 module.exports = {
-	getNewsContent
+	getNewsContent,
 }

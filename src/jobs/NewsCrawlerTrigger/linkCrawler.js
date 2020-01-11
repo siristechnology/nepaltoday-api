@@ -158,11 +158,11 @@ const scrapeOnlineKhabarLinks = url => {
 			} else {
 				let $ = cheerio.load(body)
 				const links = []
-				$('div.soft__wrap').each(function(index) {
+				$('div.soft__wrap div.post__heading h2.title__small.post__title').each(function(index) {
 					const link = $(this)
 						.find('a')
 						.attr('href')
-					links.push(link)
+					links.push('a' + link)
 				})
 
 				resolve({

@@ -23,8 +23,15 @@ describe('link-crawler integration test', () => {
 		expect(links).not.toBe(null)
 		expect(error).toBeFalsy()
 	})
+	it('link-crawler should crawl setopati link', async () => {
+		const baseUrl = 'https://ratopati.com'
+		const url = 'https://ratopati.com'
+		const { error, links } = await scrapeNewsLink(baseUrl, url)
+		expect(links).not.toBe(null)
+		expect(error).toBeFalsy()
+	})
 	it('link-crawler should crawl onlinekhabar link', async () => {
-		const baseUrl = 'https://onlinekhabar.com'
+		const baseUrl = 'https://www.onlinekhabar.com'
 		const url = 'https://www.onlinekhabar.com/business'
 
 		const { error, links } = await scrapeNewsLink(baseUrl, url)
