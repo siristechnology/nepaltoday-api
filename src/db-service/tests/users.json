@@ -1,0 +1,16 @@
+{
+	"users": [
+		{
+			"_id": "5db1d28a7012d70fc6367057",
+			"fcmToken": "cPr8tTG5ViA:APA91bHtIYdH_TsP1VVR2IMolYdAlOlR3G6ZNWP-IHI09sKXEu-lW7FGopl9czn_26JQgO-Hcg_gWl7IZl_tztWojnONtf2YgoT2moltJ13O5RsZDfnQpQSHsD4oqja4qMbm1sYgM5Mj",
+			"countryCode": "US",
+			"timeZone": "Asia/Kathmandu"
+		},
+		{
+			"_id": "5db1d31a7012d70fc6367058",
+			"fcmToken": "cPr8tTG5ViA:APA91bHtIYdH_TsP1VVR2IMolYdAlOlR3G6ZNWP-IHI09sKXEu-lW7FGopl9czn_26JQgO-Hcg_gWl7IZl_tztWojnONtf2YgoT2moltJ13O5RsZDfnQpQSHsD4oqja4qMbm1sYgM5Mj",
+			"countryCode": "US",
+			"timeZone": "Asia/Kathmandu"
+		}
+	]
+}

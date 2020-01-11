@@ -37,6 +37,7 @@
 		"@babel/polyfill": "^7.6.0",
 		"@babel/preset-env": "^7.6.0",
 		"apollo-server-express": "2.9.16",
+		"cheerio": "1.0.0-rc.3",
 		"errorhandler": "1.5.1",
 		"esm": "^3.2.25",
 		"express": "^4.16.4",
@@ -46,7 +47,8 @@
 		"morgan": "1.9.1",
 		"nepaltoday-db-service": "github:siristechnology/nepaltoday-db-service",
 		"nodemon": "^2.0.2",
-		"require-graphql-file": "1.0.1"
+		"require-graphql-file": "1.0.1",
+		"twitter": "1.7.1"
 	},
 	"devDependencies": {
 		"babel-jest": "^24.9.0",
@@ -62,6 +64,8 @@
 		"graphql-import": "^0.7.1",
 		"jest": "^24.9.0",
 		"mockingoose": "^2.13.2",
+		"mongodb-memory-server": "6.2.1",
+		"prettier": "1.19.1",
 		"regenerator-runtime": "^0.13.3"
 	}
 }

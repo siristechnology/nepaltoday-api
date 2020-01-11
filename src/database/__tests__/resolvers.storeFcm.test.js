@@ -1,7 +1,5 @@
 const {
-	resolver: {
-		Mutation: { storeFcmToken },
-	},
+	Mutation: { storeFcmToken },
 } = require('../resolvers')
 import mockingoose from 'mockingoose'
 
