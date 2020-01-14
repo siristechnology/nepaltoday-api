@@ -7,25 +7,25 @@ db.sources.insert({
 	category: [
 		{
 			name: 'politics',
-			path: '/politics'
+			path: '/politics',
 		},
 		{
 			name: 'social',
-			path: '/social'
+			path: '/social',
 		},
 		{
 			name: 'opinion',
-			path: '/opinion'
+			path: '/opinion',
 		},
 		{
 			name: 'sports',
-			path: '/sports'
+			path: '/sports',
 		},
 		{
 			name: 'entertainment',
-			path: '/art'
-		}
-	]
+			path: '/art',
+		},
+	],
 })
 db.sources.insert({
 	name: 'दैनिक नेपाल',
@@ -34,26 +34,26 @@ db.sources.insert({
 	category: [
 		{
 			name: 'news',
-			path: '/section/latest-news'
+			path: '/section/latest-news',
 		},
 		{
 			name: 'opinion',
-			path: '/section/views'
+			path: '/section/views',
 		},
 		{
 			name: 'sports',
-			path: '/section/sports'
+			path: '/section/sports',
 		},
 		{
 			name: 'entertainment',
-			path: '/section/kala'
+			path: '/section/kala',
 		},
 
 		{
 			name: 'business',
-			path: '/kinmel'
-		}
-	]
+			path: '/kinmel',
+		},
+	],
 })
 db.sources.insert({
 	name: 'कान्तिपुर',
@@ -62,25 +62,25 @@ db.sources.insert({
 	category: [
 		{
 			name: 'news',
-			path: '/news'
+			path: '/news',
 		},
 		{
 			name: 'business',
-			path: '/business'
+			path: '/business',
 		},
 		{
 			name: 'opinion',
-			path: '/opinion'
+			path: '/opinion',
 		},
 		{
 			name: 'sports',
-			path: '/sports'
+			path: '/sports',
 		},
 		{
 			name: 'entertainment',
-			path: '/entertainment'
-		}
-	]
+			path: '/entertainment',
+		},
+	],
 })
 db.sources.insert({
 	name: 'रातोपाटी',
@@ -89,23 +89,47 @@ db.sources.insert({
 	category: [
 		{
 			name: 'news',
-			path: '/category/news'
+			path: '/category/news',
 		},
 		{
 			name: 'business',
-			path: '/economy'
+			path: '/economy',
 		},
 		{
 			name: 'opinion',
-			path: '/category/opinion'
+			path: '/category/opinion',
 		},
 		{
 			name: 'sports',
-			path: '/category/sports'
+			path: '/category/sports',
 		},
 		{
 			name: 'entertainment',
-			path: '/entertainment'
-		}
-	]
+			path: '/entertainment',
+		},
+	],
+})
+
+db.sources.insert({
+	name: 'अनलाईन खबर',
+	link: 'https://onlinekhabar.com',
+	logoLink: 'https://www.onlinekhabar.com/wp-content/themes/onlinekhabar-2018/img/logoMain.png',
+	category: [
+		{
+			name: 'business',
+			path: '/business',
+		},
+		{
+			name: 'opinion',
+			path: '/category/opinion',
+		},
+		{
+			name: 'sports',
+			path: '/sports',
+		},
+		{
+			name: 'entertainment',
+			path: '/entertainment',
+		},
+	],
 })

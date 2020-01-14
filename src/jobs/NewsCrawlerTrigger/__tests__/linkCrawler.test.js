@@ -17,7 +17,7 @@ describe('link-crawler integration test', () => {
 	})
 	it('link-crawler should crawl dainikhabar link', async () => {
 		const baseUrl = 'https://dainiknepal.com'
-		const url = 'https://www.dainiknepal.com/section/latest-news'
+		const url = 'https://dainiknepal.com/section/latest-news'
 		const { error, links } = await scrapeNewsLink(baseUrl, url)
 		expect(links).not.toBe(null)
 		expect(error).toBeFalsy()
