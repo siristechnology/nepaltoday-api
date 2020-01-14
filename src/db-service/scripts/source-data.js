@@ -57,7 +57,7 @@ db.sources.insert({
 })
 db.sources.insert({
 	name: 'कान्तिपुर',
-	link: 'https://ekantipur.com/',
+	link: 'https://ekantipur.com',
 	logoLink: 'https://pbs.twimg.com/profile_images/943652378875535360/K81bnaWT_400x400.jpg',
 	category: [
 		{
