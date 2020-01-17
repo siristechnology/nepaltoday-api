@@ -113,7 +113,7 @@ db.sources.insert({
 db.sources.insert({
 	name: 'अनलाईन खबर',
 	link: 'https://onlinekhabar.com',
-	logoLink: 'https://www.onlinekhabar.com/wp-content/themes/onlinekhabar-2018/img/logoMain.png',
+	logoLink: 'https://www.onlinekhabar.com/wp-content/themes/onlinekhabar-2018/img/logoMainWht.png',
 	category: [
 		{
 			name: 'business',

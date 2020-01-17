@@ -1,5 +1,5 @@
 require('dotenv').config()
-const userDbService = require('./src/UserDbService')
+const userDbService = require('./src/UserDbService.js')
 const newsDbService = require('./src/newsDbService.js')
 const TweetDbService = require('./src/TweetDbService.js')
 const mongooseSchema = require('./src/database/mongooseSchema')

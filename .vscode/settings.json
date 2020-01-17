@@ -4,5 +4,21 @@
 	"editor.tabSize": 4,
 	"editor.formatOnSave": true,
 	"javascript.format.enable": false,
-	"deepscan.enable": true
+	"deepscan.enable": true,
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#9f6ceb",
+		"activityBar.activeBorder": "#f0b68f",
+		"activityBar.foreground": "#15202b",
+		"activityBar.inactiveForeground": "#15202b99",
+		"activityBarBadge.background": "#f0b68f",
+		"activityBarBadge.foreground": "#15202b",
+		"titleBar.activeBackground": "#823fe5",
+		"titleBar.inactiveBackground": "#823fe599",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.inactiveForeground": "#e7e7e799",
+		"statusBar.background": "#823fe5",
+		"statusBarItem.hoverBackground": "#9f6ceb",
+		"statusBar.foreground": "#e7e7e7"
+	},
+	"peacock.color": "#823fe5"
 }
