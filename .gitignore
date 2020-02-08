@@ -27,3 +27,6 @@ yarn-error.log
 
 # IDE
 .vscode/
+
+# Coverage directory used by tools like istanbul
+coverage
