@@ -3,21 +3,36 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [10.x]
 
-    strategy:
-      matrix:
-        node-version: [10.x]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: yarn install, build, and test
-      run: |
-        yarn
-        yarn test
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: yarn install
+              run: yarn
+              env:
+                  CI: true
+            - name: yarn test:coverage
+              if: github.ref == 'refs/heads/master'
+              run: yarn test:coverage
+              env:
+                  CI: true
+            - name: Upload Coverage to codecov
+              if: github.ref == 'refs/heads/master'
+              uses: codecov/codecov-action@v1.0.3
+              with:
+                  token: ${{secrets.CODECOV_TOKEN}}
+                  file: ./coverage/clover.xml
+            - name: yarn test
+              if: github.ref != 'refs/heads/master'
+              run: yarn test
+              env:
+                  CI: true
