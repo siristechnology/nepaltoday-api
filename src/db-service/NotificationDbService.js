@@ -7,10 +7,8 @@ module.exports = {
 	},
 	saveNotifications: async notifications => {
 		try {
-			for (const notification of notifications) {
-				const res = await Notification.create(notification)
-				return res
-			}
+			const res = await Notification.insertMany(notifications)
+			return res
 		} catch (error) {
 			if (error.code === 11000 || error.code === 11001) {
 				console.log('________ignored duplicates________')
@@ -28,5 +26,5 @@ module.exports = {
 	deleteNotification: async conditions => {
 		const deletedNotifications = await Notification.deleteMany(conditions)
 		return deletedNotifications
-	}
+	},
 }
