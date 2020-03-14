@@ -1,4 +1,4 @@
-require('newrelic');
+require('newrelic')
 require('./src/config/env')
 const morgan = require('morgan')
 const express = require('express')
@@ -17,7 +17,6 @@ startJobs()
 
 mongoose.promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-mongoose.set('debug', true)
 
 const app = express()
 app.use(express.json())

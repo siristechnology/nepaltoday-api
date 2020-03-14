@@ -2,6 +2,7 @@ require('dotenv').config()
 const crawler = require('../NewsCrawlerTrigger/index')
 const notifier = require('../NotificationTrigger')
 const twitterJob = require('../TwitterTrigger')
+const logger = require('../../config/logger')
 
 const Agenda = require('agenda')
 
@@ -9,17 +10,17 @@ module.exports = async function() {
 	const agenda = new Agenda({ db: { address: process.env.DATABASE_URL } })
 
 	agenda.define('crawl articles', async job => {
-		console.log('crawl articles job started')
+		logger.info('crawl articles job started')
 		crawler(console)
 	})
 
 	agenda.define('notify users', async job => {
-		console.log('notify users job started')
+		logger.info('notify users job started')
 		notifier(console)
 	})
 
 	agenda.define('pull tweets', async job => {
-		console.log('pull tweets job started')
+		logger.info('pull tweets job started')
 		twitterJob(console)
 	})
 

@@ -1,10 +1,9 @@
 const { graphql } = require('graphql')
-const { importSchema } = require('graphql-import')
+const requireGraphQLFile = require('require-graphql-file')
+const typeDefs = requireGraphQLFile('./typeDefs.graphql')
+
 const { makeExecutableSchema, addMockFunctionsToSchema } = require('graphql-tools')
 const mocks = require('./mocks')
-
-// const { resolver } = require('./resolvers')
-const typeDefs = importSchema('src/database/typeDefs.graphql') /* Warning: Must be an absolute path */
 
 const schema = makeExecutableSchema({ typeDefs })
 

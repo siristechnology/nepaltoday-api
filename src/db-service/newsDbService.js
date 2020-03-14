@@ -1,4 +1,5 @@
 const { Article, Source } = require('./database/mongooseSchema')
+const logger = require('../config/logger')
 
 module.exports = {
 	saveArticles: async articles => {
@@ -7,9 +8,9 @@ module.exports = {
 			return savedArticles
 		} catch (error) {
 			if (error.code === 11000 || error.code === 11001) {
-				console.log('ignored duplicates')
+				logger.debug('ignored duplicates')
 			} else {
-				console.log(error)
+				logger.error(error)
 			}
 			return error
 		}
@@ -20,9 +21,9 @@ module.exports = {
 			return await Article.create(article)
 		} catch (error) {
 			if (error.code === 11000 || error.code === 11001) {
-				console.log('ignored duplicates')
+				logger.debug('ignored duplicates')
 			} else {
-				console.log(error)
+				logger.error(error)
 			}
 		}
 		return null
@@ -54,5 +55,5 @@ module.exports = {
 	isExist: async newslink => {
 		const count = await Article.count({ link: newslink })
 		return count > 0
-	}
+	},
 }
