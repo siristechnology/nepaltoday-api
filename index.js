@@ -16,7 +16,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 startJobs()
 
 mongoose.promise = global.Promise
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const app = express()
 app.use(express.json())

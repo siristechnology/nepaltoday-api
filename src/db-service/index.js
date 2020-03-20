@@ -7,7 +7,7 @@ const NotificationDbService = require('./NotificationDbService')
 
 const mongoose = require('mongoose')
 mongoose.promise = global.Promise
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 module.exports = {
 	newsDbService,

@@ -1,10 +1,15 @@
+require('dotenv').config()
 const cheerio = require('cheerio')
 const request = require('request')
+const { newsPortalLink } = require('../../../src/constants/portal')
+const { KANTIPUR, SETOPATI, RATOPATI, DAINIK_KHABAR, ONLINE_KHABAR, BBC_NEPALI } = newsPortalLink
 
 process.setMaxListeners(Infinity)
 
-const { newsPortalLink } = require('../../../src/constants/portal')
-const { KANTIPUR, SETOPATI, RATOPATI, DAINIK_KHABAR, ONLINE_KHABAR, BBC_NEPALI } = newsPortalLink
+const Bearer = require('@bearer/node-agent')
+Bearer.init({
+	secretKey: process.env.BEARER_SH_API_KEY,
+})
 
 const scrapeNewsLink = async (baseUrl, url) => {
 	switch (baseUrl) {
