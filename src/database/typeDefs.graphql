@@ -57,6 +57,7 @@ input TweetCriteria {
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
+	getArticle(_id: String!): Article
 }
 
 type Gcm {

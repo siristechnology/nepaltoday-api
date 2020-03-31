@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const mongooseSchema = require('../db-service/database/mongooseSchema')
 
-const { User } = mongooseSchema
+const { User, Article } = mongooseSchema
 const { categories } = require('../config/category')
 const { getSortedArticle } = require('../helper/articleHelper')
 
@@ -33,6 +33,9 @@ module.exports = {
 			const sortedArticles = getSortedArticle(articleFlatterend)
 
 			return sortedArticles
+		},
+		getArticle: async (parent, { _id }) => {
+			return await Article.findById(_id).populate('source')
 		},
 
 		getTweets: async (parent, args, { Tweet }) => {
