@@ -11,6 +11,10 @@ module.exports = {
 			args.criteria = args.criteria || {}
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastArticleId = args.criteria.lastArticleId || '000000000000000000000000'
+			args.criteria.page = parseInt(args.criteria.page) || 1
+
+			const pageSize = 20
+			const amountToSkip = (args.criteria.page - 1) * pageSize
 
 			const promises = categories.map(async (category) => {
 				const _articles = await Article.find({
@@ -22,7 +26,8 @@ module.exports = {
 					.lean()
 					.populate('source')
 					.sort({ _id: -1 })
-					.limit(20)
+					.skip(amountToSkip)
+					.limit(pageSize)
 
 				return [..._articles]
 			})

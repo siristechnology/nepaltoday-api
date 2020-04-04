@@ -16,6 +16,7 @@ type Article {
 input ArticleCriteria {
 	lastArticleId: String
 	lastQueryDate: String
+	page: Int
 }
 
 type Source {
