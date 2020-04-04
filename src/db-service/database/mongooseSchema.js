@@ -17,8 +17,8 @@ const Article = mongoose.model(
 		publishedDate: { type: Date },
 		createdDate: { type: Date, default: Date.now },
 		modifiedDate: { type: Date, default: Date.now },
-		topic: { type: String }
-	})
+		topic: { type: String },
+	}),
 )
 
 const Source = mongoose.model(
@@ -31,12 +31,12 @@ const Source = mongoose.model(
 		category: [
 			{
 				name: String,
-				path: String
-			}
+				path: String,
+			},
 		],
 		createdDate: { type: Date, default: Date.now },
-		modifiedDate: { type: Date, default: Date.now }
-	})
+		modifiedDate: { type: Date, default: Date.now },
+	}),
 )
 
 const TwitterHandle = mongoose.model(
@@ -47,8 +47,8 @@ const TwitterHandle = mongoose.model(
 		handle: String,
 		category: String,
 		userWeight: Number,
-		categoryWeight: Number
-	})
+		categoryWeight: Number,
+	}),
 )
 
 const Tweet = mongoose.model(
@@ -56,7 +56,7 @@ const Tweet = mongoose.model(
 	new Schema({
 		twitterHandle: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: 'TwitterHandle'
+			ref: 'TwitterHandle',
 		},
 		tweetId: { type: String, unique: true },
 		handle: { type: String },
@@ -65,8 +65,8 @@ const Tweet = mongoose.model(
 		publishedDate: { type: Date },
 		name: String,
 		profileImage: String,
-		description: String
-	})
+		description: String,
+	}),
 )
 
 const User = mongoose.model(
@@ -74,8 +74,8 @@ const User = mongoose.model(
 	new Schema({
 		fcmToken: { type: String, unique: true },
 		countryCode: String,
-		timeZone: String
-	})
+		timeZone: String,
+	}),
 )
 
 const Notification = mongoose.model(
@@ -84,8 +84,8 @@ const Notification = mongoose.model(
 		article: { type: mongoose.Schema.Types.ObjectId, ref: 'Article', required: true },
 		user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 		createdAt: { type: Date, default: Date.now() },
-		updatedAt: { type: Date, default: Date.now() }
-	}).index({ article: 1, user: 1 }, { unique: true })
+		updatedAt: { type: Date, default: Date.now() },
+	}).index({ article: 1, user: 1 }, { unique: true }),
 )
 
 const Topic = mongoose.model(
@@ -93,8 +93,24 @@ const Topic = mongoose.model(
 	new Schema({
 		id: String,
 		topicText: String,
-		topicPath: String
-	})
+		topicPath: String,
+	}),
+)
+
+const CoronaStats = mongoose.model(
+	'CoronaStats',
+	new Schema({
+		createdDate: { type: Date, default: Date.now },
+		stats: [
+			{
+				country: String,
+				total_cases: Number,
+				total_deaths: Number,
+				new_cases: Number,
+				new_deaths: Number,
+			},
+		],
+	}),
 )
 
 module.exports = {
@@ -104,5 +120,6 @@ module.exports = {
 	Source,
 	Notification,
 	TwitterHandle,
-	Topic
+	Topic,
+	CoronaStats,
 }
