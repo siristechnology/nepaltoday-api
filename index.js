@@ -18,7 +18,7 @@ Bearer.init({
 	secretKey: process.env.BEARER_SH_API_KEY,
 })
 
-startJobs()
+if (process.env.START_JOBS !== 'false') startJobs()
 
 mongoose.promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
