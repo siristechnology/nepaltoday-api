@@ -2,7 +2,7 @@ require('dotenv').config()
 const axios = require('axios')
 const { CoronaDbService } = require('../../db-service')
 
-const defaultCountries = ['Nepal', 'US']
+const defaultCountries = ['Nepal', 'US', 'Germany', 'China', 'Italy', 'France', 'India']
 
 module.exports = async function(selectedCountries) {
 	selectedCountries = selectedCountries || defaultCountries

@@ -1,10 +1,11 @@
 require('dotenv').config()
+const Agenda = require('agenda')
+const logger = require('../../config/logger')
+
 const crawler = require('../NewsCrawlerTrigger/index')
 const notifier = require('../NotificationTrigger')
 const twitterJob = require('../TwitterTrigger')
-const logger = require('../../config/logger')
-
-const Agenda = require('agenda')
+const coronaJob = require('../corona')
 
 module.exports = async function() {
 	const agenda = new Agenda({ db: { address: process.env.DATABASE_URL } })
@@ -24,11 +25,15 @@ module.exports = async function() {
 		twitterJob(console)
 	})
 
+	agenda.define('fetch corona stats', async (job) => {
+		logger.info('corona job started')
+		coronaJob()
+	})
+
 	await agenda.start()
 
 	await agenda.every('5 minutes', 'crawl articles')
 	await agenda.every('5 minutes', 'notify users')
 	await agenda.every('5 minutes', 'pull tweets')
-
-	// await agenda.every('5 minutes', 'crawl topics')
+	await agenda.every('2 hours', 'fetch corona stats')
 }
