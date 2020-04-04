@@ -6,7 +6,7 @@ module.exports = {
 	},
 
 	getLatestStats: async () => {
-		const latestStats = await CoronaStats.findOne({}, { sort: { createdDate: -1 } }).lean()
+		const latestStats = await CoronaStats.findOne({}, {}, { sort: { createdDate: -1 } }).lean()
 		return latestStats
 	},
 }

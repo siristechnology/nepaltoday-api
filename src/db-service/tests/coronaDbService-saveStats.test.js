@@ -1,4 +1,9 @@
 const { CoronaDbService } = require('../index')
+const TestDbServer = require('./test-db-server')
+
+beforeAll(async () => await TestDbServer.connect())
+afterEach(async () => await TestDbServer.clearDatabase())
+afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('coronaDbService', () => {
 	it('should save corona stats', async () => {

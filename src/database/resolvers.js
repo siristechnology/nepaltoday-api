@@ -17,7 +17,7 @@ module.exports = {
 					category,
 					link: { $ne: null },
 					modifiedDate: { $gt: new Date(args.criteria.lastQueryDate) },
-					_id: { $gt: args.criteria.lastArticleId }
+					_id: { $gt: args.criteria.lastArticleId },
 				})
 					.lean()
 					.populate('source')
@@ -34,9 +34,11 @@ module.exports = {
 
 			return sortedArticles
 		},
+
 		getArticle: async (parent, { _id }) => {
 			return await Article.findById(_id).populate('source')
 		},
+
 		getTweets: async (parent, args, { Tweet }) => {
 			args.criteria = args.criteria || {}
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
@@ -48,19 +50,25 @@ module.exports = {
 				.limit(100)
 
 			return tweets
-		}
+		},
+
+		getLatestCoronaStats: async (parent, args, { CoronaStats }) => {
+			const { CoronaDbService } = require('../db-service')
+			return await CoronaDbService.getLatestStats()
+		},
 	},
+
 	Mutation: {
 		storeFcmToken: async (parent, args) => {
 			const {
-				input: { fcmToken, countryCode, timeZone }
+				input: { fcmToken, countryCode, timeZone },
 			} = args
 			const user = await User.create({
 				fcmToken,
 				countryCode,
-				timeZone
+				timeZone,
 			})
 			return user
-		}
-	}
+		},
+	},
 }
