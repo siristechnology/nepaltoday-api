@@ -2,7 +2,7 @@ require('dotenv').config()
 const axios = require('axios')
 const { CoronaDbService } = require('../../db-service')
 
-const defaultCountries = ['Nepal', 'US', 'Germany', 'China', 'Italy', 'France', 'India']
+const defaultCountries = ['Nepal', 'India', 'US', 'Spain', 'Italy', 'Germany', 'France', 'China', 'Iran', 'United Kingdom', 'Australia', 'Ireland']
 
 module.exports = async function(selectedCountries) {
 	selectedCountries = selectedCountries || defaultCountries
@@ -14,15 +14,17 @@ module.exports = async function(selectedCountries) {
 	selectedCountries.forEach((country) => {
 		const countryData = response.data[country]
 
-		const countryMetric = {
-			country: country,
-			total_cases: countryData[countryData.length - 1]['confirmed'],
-			total_deaths: countryData[countryData.length - 1]['deaths'],
-			new_cases: countryData[countryData.length - 1]['confirmed'] - countryData[countryData.length - 2]['confirmed'],
-			new_deaths: countryData[countryData.length - 1]['deaths'] - countryData[countryData.length - 2]['deaths'],
-		}
+		if (countryData) {
+			const countryMetric = {
+				country: country,
+				total_cases: countryData[countryData.length - 1]['confirmed'],
+				total_deaths: countryData[countryData.length - 1]['deaths'],
+				new_cases: countryData[countryData.length - 1]['confirmed'] - countryData[countryData.length - 2]['confirmed'],
+				new_deaths: countryData[countryData.length - 1]['deaths'] - countryData[countryData.length - 2]['deaths'],
+			}
 
-		countryMetrics.push(countryMetric)
+			countryMetrics.push(countryMetric)
+		}
 	})
 
 	const coronaStats = {
