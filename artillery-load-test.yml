@@ -1,0 +1,23 @@
+config:
+  target: "https://nepaltoday-api-qa.herokuapp.com"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+  defaults:
+    headers:
+scenarios:
+  - flow:
+      - post:
+          url: "/graphql"
+          json:
+            query: "{  getArticles {    _id    title    shortDescription    content    source {      _id      name    }  }}"
+      - think: 3
+      - post:
+          url: "/graphql"
+          json:
+            query: "{  getTweets {    _id    text    handle    profileImage    description  }}"
+      - think: 3
+      - post:
+          url: "/graphql"
+          json:
+            query: "{  getLatestCoronaStats {    createdDate    stats {      country      total_cases      total_deaths      new_cases      new_deaths    }  }}"
