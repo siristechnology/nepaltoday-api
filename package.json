@@ -31,6 +31,7 @@
 		"mongoose": "5.9.5",
 		"morgan": "1.10.0",
 		"newrelic": "6.5.0",
+		"offline-geo-from-ip": "^1.0.1",
 		"pm2": "4.2.3",
 		"require-graphql-file": "1.0.1",
 		"twitter": "1.7.1",
