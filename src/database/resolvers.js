@@ -4,6 +4,7 @@ const mongooseSchema = require('../db-service/database/mongooseSchema')
 const { User, Article } = mongooseSchema
 const { categories } = require('../config/category')
 const { getSortedArticle } = require('../helper/articleHelper')
+const getWeather = require('../weather')
 
 module.exports = {
 	Query: {
@@ -55,6 +56,19 @@ module.exports = {
 		getLatestCoronaStats: async (parent, args, { CoronaStats }) => {
 			const { CoronaDbService } = require('../db-service')
 			return await CoronaDbService.getLatestStats()
+		},
+
+		getWeatherInfo: async (parent, args, { ip }) => {
+			if (ip === '::1') ip = '27.111.16.0'
+			const weatherInfo = await getWeather(ip)
+			weatherInfo.ipAddress = ip
+
+			return {
+				ipAddress: ip,
+				temperature: weatherInfo.main.temp,
+				condition: weatherInfo.weather[0].main,
+				description: weatherInfo.weather[0].description,
+			}
 		},
 	},
 

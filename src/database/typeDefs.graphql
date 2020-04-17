@@ -67,11 +67,19 @@ type CoronaMetrics {
 	new_deaths: Int
 }
 
+type WeatherInfo {
+	ipAddress: String
+	temperature: Float!
+	condition: String
+	description: String
+}
+
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
 	getArticle(_id: String!): Article
 	getLatestCoronaStats: CoronaStats
+	getWeatherInfo: WeatherInfo
 }
 
 type Gcm {
