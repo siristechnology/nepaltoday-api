@@ -1,4 +1,4 @@
--   [ ] Include Jira Stroy No. in Title
+-   [ ] Include Jira Story No. in Title
 -   [ ] Write Unit Tests
 -   [ ] Add screenshots whenever possible
 -   [ ] Make sure Github Action build succeed
