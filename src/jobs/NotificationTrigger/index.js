@@ -15,8 +15,8 @@ module.exports = async function(context) {
 				const notifications = []
 				let continueToSend = true
 				for (const user of userWithCurrentTime) {
-					// if (await notificationExists(user, latestArticle[0])) continueToSend = false
-					// else continueToSend = true
+					if (await notificationExists(user, latestArticle[0])) continueToSend = false
+					else continueToSend = true
 
 					if (continueToSend) {
 						const eligibleTime = verifyNoticiableTime(user.currentTime)
