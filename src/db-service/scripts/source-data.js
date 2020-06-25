@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const sourceList = [
+module.exports = [
 	{
 		name: 'सेतोपाटी',
 		link: 'https://www.setopati.com',
@@ -140,9 +140,3 @@ const sourceList = [
 		],
 	},
 ]
-
-sourceList.forEach(function (source) {
-	print('____________Updating existing source and inserting new source if not exist_________')
-	printjson(source)
-	db.sources.update({ link: source.link }, source, { upsert: true })
-})
