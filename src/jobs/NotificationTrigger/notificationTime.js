@@ -1,10 +1,11 @@
 const moment = require('moment')
 const momentTz = require('moment-timezone')
-const NOTIFICATION_TIMES = ['6:00','9:00','12:00','15:00','18:00','21:00'];
+const { NOTIFICATION_TIMES } = require('./config')
 const verifyNoticiableTime = (currentTime) => {
 	const currentNumericTime = new Date(moment(currentTime,"HH:mm:ss"));
 	let rightTimetoNotify = false;
-	NOTIFICATION_TIMES.map(time=>{
+	let notificationTimes = NOTIFICATION_TIMES.split(",")
+	notificationTimes.map(time=>{
 		let timetoSend = new Date(moment(time, "HH:mm:ss"));
 		let diff = currentNumericTime.getTime()-timetoSend.getTime();
 		if(Math.abs(diff)<=300000 && diff<=0){
