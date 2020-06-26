@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "pm2-runtime start ecosystem.config.js",
 		"format": "prettier --write \"src/**/*.js\"",
-		"test": "jest --testMatch \"**/?(*.)+(spec|test).[tj]s?(x)\" --detectOpenHandles --forceExit",
+		"test": "jest --runInBand --testMatch \"**/?(*.)+(spec|test).[tj]s?(x)\" --detectOpenHandles --forceExit",
 		"test:coverage": "jest --coverage --testMatch '**/?(*.)+(spec|test).[tj]s?(x)'  --detectOpenHandles --forceExit",
 		"updatedb": "node ./src/db-service/scripts/update-db.js"
 	},
