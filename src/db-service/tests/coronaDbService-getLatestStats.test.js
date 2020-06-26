@@ -1,8 +1,9 @@
 const { CoronaDbService } = require('../index')
 const TestDbServer = require('./test-db-server')
 
+jest.setTimeout(120000)
+
 beforeAll(async () => await TestDbServer.connect())
-afterEach(async () => await TestDbServer.clearDatabase())
 afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('coronaDbService', () => {
