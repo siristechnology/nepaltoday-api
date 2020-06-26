@@ -10,12 +10,6 @@ module.exports = {
 		await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 	},
 
-	closeDatabase: async () => {
-		await mongoose.connection.dropDatabase()
-		await mongoose.connection.close()
-		await mongod.stop()
-	},
-
 	clearDatabase: async () => {
 		const collections = mongoose.connection.collections
 
@@ -23,5 +17,11 @@ module.exports = {
 			const collection = collections[key]
 			await collection.deleteMany()
 		}
+	},
+
+	closeDatabase: async () => {
+		await mongoose.connection.dropDatabase()
+		await mongoose.connection.close()
+		await mongod.stop()
 	},
 }
