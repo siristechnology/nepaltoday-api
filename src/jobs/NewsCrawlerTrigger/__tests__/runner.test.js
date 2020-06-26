@@ -5,7 +5,6 @@ const { Source } = require('../../../db-service/database/mongooseSchema')
 jest.setTimeout(120000)
 
 beforeAll(async () => await TestDbServer.connect())
-afterEach(async () => await TestDbServer.clearDatabase())
 afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('NewsCrawlerTrigger runner integration', () => {
