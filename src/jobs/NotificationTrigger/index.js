@@ -1,4 +1,4 @@
-module.exports = async function(context) {
+module.exports = async function (context) {
 	const timeStamp = new Date().toISOString()
 
 	const { verifyNoticiableTime } = require('./notificationTime')
@@ -15,8 +15,8 @@ module.exports = async function(context) {
 				const notifications = []
 				let continueToSend = true
 				for (const user of userWithCurrentTime) {
-					// if (await notificationExists(user, latestArticle[0])) continueToSend = false
-					// else continueToSend = true
+					if (await notificationExists(user, latestArticle[0])) continueToSend = false
+					else continueToSend = true
 
 					if (continueToSend) {
 						const eligibleTime = verifyNoticiableTime(user.currentTime)
@@ -26,7 +26,7 @@ module.exports = async function(context) {
 							if (notificationSentStatus.status) {
 								const payload = {
 									article: latestArticle[0]._id,
-									user: user._id
+									user: user._id,
 								}
 								notifications.push(payload)
 							}
