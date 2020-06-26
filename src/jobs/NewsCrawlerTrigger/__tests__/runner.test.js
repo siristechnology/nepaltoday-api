@@ -8,7 +8,9 @@ beforeAll(async () => await TestDbServer.connect())
 afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('NewsCrawlerTrigger runner integration', () => {
-	it('Integration test', async (done) => {
+	it('Integration test', async () => {
+		expect.assertions(1)
+
 		const dainikSource = {
 			_id: '5ec487682d8bdd525e003c86',
 			name: 'दैनिक नेपाल',
@@ -26,6 +28,6 @@ describe('NewsCrawlerTrigger runner integration', () => {
 
 		await jobRunner()
 
-		done()
+		expect('a').toMatch('a')
 	})
 })
