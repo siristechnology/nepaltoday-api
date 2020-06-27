@@ -1,9 +1,9 @@
 const {
-	Query: { getArticles }
+	Query: { getArticles },
 } = require('../resolvers')
-import mockingoose from 'mockingoose'
 
-import { GetMockArticle } from '../mocks'
+const mockingoose = require('mockingoose').default
+const { GetMockArticle } = require('../mocks')
 
 describe('Resolvers Query getArticles', () => {
 	it('should call Article.find for each category', async () => {

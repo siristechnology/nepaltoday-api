@@ -1,7 +1,7 @@
 const {
 	Mutation: { storeFcmToken },
 } = require('../resolvers')
-import mockingoose from 'mockingoose'
+const mockingoose = require('mockingoose').default
 
 describe('Resolvers Mutation storeFcmToken', () => {
 	it('should create new fcm token on user collection', async () => {

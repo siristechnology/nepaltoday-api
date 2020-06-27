@@ -21,7 +21,6 @@
 		"dotenv": "8.2.0",
 		"express": "^4.17.1",
 		"graphql": "15.1.0",
-		"graphql-tools": "6.0.11",
 		"helmet": "^3.23.3",
 		"html-to-text": "^5.1.1",
 		"ip": "1.1.5",
@@ -39,13 +38,6 @@
 		"winston": "3.3.3"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.10.3",
-		"@babel/core": "^7.10.3",
-		"@babel/node": "^7.10.3",
-		"@babel/polyfill": "^7.10.1",
-		"@babel/preset-env": "^7.10.3",
-		"babel-jest": "^26.1.0",
-		"babel-loader": "^8.1.0",
 		"casual": "^1.6.2",
 		"eslint": "7.3.1",
 		"eslint-config-standard": "14.1.1",
