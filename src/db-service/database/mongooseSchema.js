@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const expiryTime = 604800
 
 const Article = mongoose.model(
 	'Article',
@@ -18,6 +19,7 @@ const Article = mongoose.model(
 		createdDate: { type: Date, default: Date.now },
 		modifiedDate: { type: Date, default: Date.now },
 		topic: { type: String },
+		createdAt: {type: Date, expires: expiryTime, default: Date.now}
 	}),
 )
 
