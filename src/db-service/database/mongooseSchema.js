@@ -63,7 +63,7 @@ const Tweet = mongoose.model(
 		tweetId: { type: String, required: true, unique: true },
 		handle: { type: String },
 		text: String,
-		createdAt: { type: Date, default: Date.now },
+		createdAt: { type: Date,expires: expiryTime, default: Date.now },
 		publishedDate: { type: Date },
 		name: String,
 		profileImage: String,
