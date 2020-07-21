@@ -119,6 +119,22 @@ const CoronaStats = mongoose.model(
 	}),
 )
 
+const DistrictCoronaStats = mongoose.model(
+	'DistrictCoronaStats',
+	new Schema({
+		createdDate : { type: Date, default: Date.now },
+		districts: [
+			{
+				name: String,
+				totalCases: Number,
+				activeCases: Number,
+				recovered: Number,
+				deaths: Number
+			}
+		]
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -128,4 +144,5 @@ module.exports = {
 	TwitterHandle,
 	Topic,
 	CoronaStats,
+	DistrictCoronaStats
 }
