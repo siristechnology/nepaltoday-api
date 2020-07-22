@@ -130,8 +130,8 @@ const DistrictCoronaStats = mongoose.model(
 				activeCases: Number,
 				recovered: Number,
 				deaths: Number
-			}
-		]
+			},
+		],
 	})
 )
 
