@@ -9,6 +9,8 @@ module.exports = async function () {
 
     const districtCoronaStats = await axios.get('https://data.nepalcorona.info/api/v1/covid/summary')
 
+    const coronaSummary = await axios.get('https://data.nepalcorona.info/api/v1/covid/timeline')
+
     let districtMetrics = []
 
     districts.data.forEach(district=>{
@@ -19,6 +21,7 @@ module.exports = async function () {
         let deaths = districtCoronaStats.data.district.deaths.filter(x=>x.district==district.id)[0]
         let districtMetric = {
             name: district.title,
+            nepaliName: district.title_ne,
             totalCases: totalCases && totalCases.count && totalCases.count || 0,
             activeCases: activeCases && activeCases.count && activeCases.count || 0,
             recovered: recovered && recovered.count && recovered.count || 0,
@@ -28,8 +31,11 @@ module.exports = async function () {
         districtMetrics.push(districtMetric)
     })
 
+    let coronaTimeLine = coronaSummary.data[coronaSummary.data.length-3]
+
     const toSaveStats = {
         createdDate: new Date(),
+        timeLine: coronaTimeLine,
         districts: districtMetrics
     }
 

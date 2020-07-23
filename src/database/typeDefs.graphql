@@ -69,11 +69,23 @@ type CoronaMetrics {
 
 type DistrictCoronaStats {
 	createdDate: String
+	timeLine: coronaTimeLine
 	districts: [DistrictCoronaMetrics]
+}
+
+type coronaTimeLine {
+	date: String
+	totalCases: Int
+	newCases: Int
+	totalRecoveries: Int
+	newRecoveries: Int
+	totalDeaths: Int
+	newDeaths: Int
 }
 
 type DistrictCoronaMetrics {
 	name: String
+	nepaliName: String
 	totalCases: Int
 	activeCases: Int
 	recovered: Int

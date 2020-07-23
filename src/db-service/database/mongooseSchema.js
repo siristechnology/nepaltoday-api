@@ -123,9 +123,19 @@ const DistrictCoronaStats = mongoose.model(
 	'DistrictCoronaStats',
 	new Schema({
 		createdDate : { type: Date, default: Date.now },
+		timeLine: {
+			date: String,
+			totalCases: Number,
+			newCases: Number,
+			totalRecoveries: Number,
+			newRecoveries: Number,
+			totalDeaths: Number,
+			newDeaths: Number
+		},
 		districts: [
 			{
 				name: String,
+				nepaliName: String,
 				totalCases: Number,
 				activeCases: Number,
 				recovered: Number,
