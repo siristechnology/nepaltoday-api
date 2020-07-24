@@ -60,6 +60,11 @@ module.exports = {
 			return await CoronaDbService.getLatestStats()
 		},
 
+		getDistrictCoronaStats: async (parent, args, {DistrictCoronaStats}) => {
+			const { DistrictCoronaDbService } = require('../db-service')
+			return await DistrictCoronaDbService.getDistrictCoronaStats()
+		},
+
 		getWeatherInfo: async (parent, args, { ipAddress }) => {
 			try {
 				if (ipAddress === '::1' || ipAddress === '::ffff:127.0.0.1') ipAddress = '27.111.16.0'
