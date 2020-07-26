@@ -116,6 +116,12 @@ const CoronaStats = mongoose.model(
 				new_deaths: Number,
 			},
 		],
+		worldSummary: {
+			totalCases: Number,
+			newCases: Number,
+			totalDeaths: Number,
+			newDeaths: Number
+		}
 	}),
 )
 

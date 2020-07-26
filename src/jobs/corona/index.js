@@ -2,34 +2,41 @@ require('dotenv').config()
 const axios = require('axios')
 const { CoronaDbService } = require('../../db-service')
 
-const defaultCountries = ['Nepal', 'India', 'US', 'Spain', 'Italy', 'Germany', 'France', 'China', 'Iran', 'United Kingdom', 'Australia', 'Ireland']
-
-module.exports = async function (selectedCountries) {
-	selectedCountries = selectedCountries || defaultCountries
+module.exports = async function () {
 
 	const response = await axios.get('https://pomber.github.io/covid19/timeseries.json')
 
-	const countryMetrics = []
+	const worldSummaryResponse = await axios.get('https://data.nepalcorona.info/api/v1/world')
 
-	selectedCountries.forEach((country) => {
-		const countryData = response.data[country]
+	let countryMetrics = []
 
-		if (countryData) {
-			const countryMetric = {
-				country: country,
-				total_cases: countryData[countryData.length - 1].confirmed,
-				total_deaths: countryData[countryData.length - 1].deaths,
-				new_cases: countryData[countryData.length - 1].confirmed - countryData[countryData.length - 2].confirmed,
-				new_deaths: countryData[countryData.length - 1].deaths - countryData[countryData.length - 2].deaths,
-			}
-
-			countryMetrics.push(countryMetric)
+	Object.keys(response.data).map(country=>{
+		let myData = response.data[country]
+		let total_cases = myData[myData.length-1].confirmed
+		let total_deaths = myData[myData.length-1].deaths
+		let new_cases = myData[myData.length-1].confirmed-myData[myData.length-2].confirmed
+		let new_deaths = myData[myData.length-1].deaths-myData[myData.length-2].deaths
+		let countryMetric = {
+			country,
+			total_cases,
+			total_deaths,
+			new_cases,
+			new_deaths
 		}
+		countryMetrics.push(countryMetric)
 	})
+
+	let worldSummary = {
+		totalCases: worldSummaryResponse.data.cases,
+		newCases: worldSummaryResponse.data.todayCases,
+		totalDeaths: worldSummaryResponse.data.deaths,
+		newDeaths: worldSummaryResponse.data.todayDeaths
+	}
 
 	const coronaStats = {
 		createdDate: new Date(),
 		stats: countryMetrics,
+		worldSummary: worldSummary
 	}
 
 	CoronaDbService.saveStats(coronaStats)

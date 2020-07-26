@@ -1,6 +1,6 @@
 const moment = require('moment')
 const momentTz = require('moment-timezone')
-const { NOTIFICATION_TIMES } = require('./config')
+const { NOTIFICATION_TIMES, CORONA_NOTIFICATION_TIME } = require('./config')
 
 const verifyNoticiableTime = (currentTime) => {
 	const currentNumericTime = new Date(moment(currentTime, 'HH:mm:ss'))
@@ -13,6 +13,17 @@ const verifyNoticiableTime = (currentTime) => {
 			rightTimetoNotify = true
 		}
 	})
+	return rightTimetoNotify
+}
+
+const verifyCoronaNotificationTime = (currentTime) =>{
+	const currentNumericTime = new Date(moment(currentTime, 'HH:mm:ss'))
+	let rightTimetoNotify = false
+	const timetoSend = new Date(moment(CORONA_NOTIFICATION_TIME, 'HH:mm:ss'))
+	const diff = currentNumericTime.getTime() - timetoSend.getTime()
+	if (Math.abs(diff) <= 300000 && diff <= 0) {
+		rightTimetoNotify = true
+	}
 	return rightTimetoNotify
 }
 
@@ -39,4 +50,5 @@ module.exports = {
 	getStartEndTime,
 	verifyNoticiableTime,
 	getStartEndTimeForUser,
+	verifyCoronaNotificationTime
 }

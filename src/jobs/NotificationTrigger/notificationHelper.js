@@ -30,7 +30,29 @@ const createUserWithNotification = (article, user) => {
 	}
 }
 
+const createUserWithCoronaNotification = (stats, user) => {
+	return {
+		notification: {
+			title: 'कोरोना तथ्याङ्क',
+			body: `कुल संक्रमित : ${convertNumbertoNepali(stats.totalCases)}, नयाँ संक्रमित : ${convertNumbertoNepali(stats.newCases)}, कुल मृत्यु : ${convertNumbertoNepali(stats.totalDeaths)}, नयाँ मृत्यु : ${convertNumbertoNepali(stats.newDeaths)}`
+		},
+		to: user.fcmToken,
+		data: {}
+	}
+}
+
+const convertNumbertoNepali = (num) => {
+	let nepaliNumbers = ['o','१','२','३','४','५','६','७','८','९']
+	let numStr = num.toString().split('')
+	let newNepaliNumber = ''
+	numStr.map(str=>{
+		newNepaliNumber+= nepaliNumbers[str]
+	})
+	return newNepaliNumber
+} 
+
 module.exports = {
 	notificationExists,
 	createUserWithNotification,
+	createUserWithCoronaNotification
 }

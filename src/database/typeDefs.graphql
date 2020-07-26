@@ -57,6 +57,14 @@ input TweetCriteria {
 type CoronaStats {
 	createdDate: String
 	stats: [CoronaMetrics]
+	worldSummary: worldSummary
+}
+
+type worldSummary {
+	totalCases: Int
+	newCases: Int
+	totalDeaths: Int
+	newDeaths: Int
 }
 
 type CoronaMetrics {

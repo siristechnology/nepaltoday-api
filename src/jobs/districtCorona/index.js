@@ -31,7 +31,12 @@ module.exports = async function () {
         districtMetrics.push(districtMetric)
     })
 
-    let coronaTimeLine = coronaSummary.data[coronaSummary.data.length-3]
+    let coronaTimeLine = {}
+    if(coronaSummary.data[coronaSummary.data.length-2].newCases>0){
+        coronaTimeLine = coronaSummary.data[coronaSummary.data.length-2]
+    }else{
+        coronaTimeLine = coronaSummary.data[coronaSummary.data.length-3]
+    }
 
     const toSaveStats = {
         createdDate: new Date(),
