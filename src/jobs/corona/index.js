@@ -10,7 +10,7 @@ module.exports = async function () {
 
 	let countryMetrics = []
 
-	Object.keys(response.data).map(country=>{
+	Object.keys(response.data).forEach(country=>{
 		let myData = response.data[country]
 		let total_cases = myData[myData.length-1].confirmed
 		let total_deaths = myData[myData.length-1].deaths
