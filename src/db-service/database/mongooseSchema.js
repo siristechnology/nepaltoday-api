@@ -151,6 +151,24 @@ const DistrictCoronaStats = mongoose.model(
 	})
 )
 
+const PoliticianHandle = mongoose.model(
+	'PoliticianHandle',
+	new Schema({
+		name: String,
+		handle: String,
+		searchTerms: [String]
+	})
+)
+
+const PoliticianTweetCount = mongoose.model(
+	'PoliticianTweetCount',
+	new Schema({
+		name: String,
+		handle: {type: String, unique: true},
+		count: Number
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -160,5 +178,7 @@ module.exports = {
 	TwitterHandle,
 	Topic,
 	CoronaStats,
-	DistrictCoronaStats
+	DistrictCoronaStats,
+	PoliticianHandle,
+	PoliticianTweetCount
 }

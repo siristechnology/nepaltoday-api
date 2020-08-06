@@ -6,6 +6,7 @@ const mongooseSchema = require('./database/mongooseSchema')
 const NotificationDbService = require('./NotificationDbService')
 const CoronaDbService = require('./coronaDbService')
 const DistrictCoronaDbService = require('./districtCoronaDbService')
+const TrendingPoliticiansDbService = require('./trendingPoliticiansDbService')
 // const mongoose = require('mongoose')
 // mongoose.promise = global.Promise
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -17,5 +18,6 @@ module.exports = {
 	userDbService,
 	NotificationDbService,
 	CoronaDbService,
-	DistrictCoronaDbService
+	DistrictCoronaDbService,
+	TrendingPoliticiansDbService
 }
