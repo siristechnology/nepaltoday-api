@@ -1,4 +1,4 @@
-const { TwitterHandle, Source, TrendingHandle, TrendingTweetCount } = require('../database/mongooseSchema')
+const { TwitterHandle, Source, TrendingHandle } = require('../database/mongooseSchema')
 const TwitterHandles = require('./twitter-handles')
 const NewsSources = require('./source-data')
 const TrendingTwitterHandles = require('./trending-handles')
