@@ -151,21 +151,27 @@ const DistrictCoronaStats = mongoose.model(
 	})
 )
 
-const PoliticianHandle = mongoose.model(
-	'PoliticianHandle',
+const TrendingHandle = mongoose.model(
+	'TrendingHandle',
 	new Schema({
 		name: String,
 		handle: String,
-		searchTerms: [String]
+		searchTerms: [String],
+		image: String
 	})
 )
 
-const PoliticianTweetCount = mongoose.model(
-	'PoliticianTweetCount',
+const TrendingTweetCount = mongoose.model(
+	'TrendingTweetCount',
 	new Schema({
-		name: String,
-		handle: {type: String, unique: true},
-		count: Number
+		createdDate: String,
+		createdAt: { type: Date, default: Date.now() },
+		counts: [{
+			name: String,
+			handle: String,
+			count: Number,
+			image: String
+		}]
 	})
 )
 
@@ -179,6 +185,6 @@ module.exports = {
 	Topic,
 	CoronaStats,
 	DistrictCoronaStats,
-	PoliticianHandle,
-	PoliticianTweetCount
+	TrendingHandle,
+	TrendingTweetCount
 }

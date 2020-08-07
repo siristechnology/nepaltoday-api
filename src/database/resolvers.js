@@ -65,11 +65,9 @@ module.exports = {
 			return await DistrictCoronaDbService.getDistrictCoronaStats()
 		},
 
-		getTrendingPoliticians: async (parent, args, {PoliticianTweetCount}) => {
-			const { TrendingPoliticiansDbService } = require('./../db-service')
-			let trendings = await TrendingPoliticiansDbService.getPoliticianTweetCount()
-			let sorted = trendings.sort((a,b) => (a.count < b.count) ? 1 : ((b.count < a.count) ? -1 : 0)).slice(0,5)
-			return sorted
+		getTrending: async (parent, args, {TrendingTweetCount}) => {
+			const { TrendingDbService } = require('./../db-service')
+			return await TrendingDbService.getTrendingTweetCount()
 		},
 
 		getWeatherInfo: async (parent, args, { ipAddress }) => {
