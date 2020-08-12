@@ -9,7 +9,7 @@ const verifyFacebookPostTime = () => {
     let facebookPostTimes = process.env.FACEBOOK_POST_TIME.split(',')
     facebookPostTimes.map((time)=>{
         let timetoSend = new Date(moment(time, 'HH:mm:ss'))
-		const diff = currentNumericTime.getTime() - timetoSend.getTime()
+        const diff = currentNumericTime.getTime() - timetoSend.getTime()
 		if (Math.abs(diff) <= 300000 && diff <= 0) {
 			rightTimetoPost = true
 		}
