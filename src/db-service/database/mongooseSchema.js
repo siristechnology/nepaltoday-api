@@ -175,6 +175,15 @@ const TrendingTweetCount = mongoose.model(
 	})
 )
 
+const FacebookLongLiveToken = mongoose.model(
+	'FacebookLongLiveToken',
+	new Schema({
+		createdAt: {type: Date, expires: 5616000 , default: Date.now()},
+		createdDate: {type: Date, default: Date.now()},
+		longLiveToken: String
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -186,5 +195,6 @@ module.exports = {
 	CoronaStats,
 	DistrictCoronaStats,
 	TrendingHandle,
-	TrendingTweetCount
+	TrendingTweetCount,
+	FacebookLongLiveToken
 }

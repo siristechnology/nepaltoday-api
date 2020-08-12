@@ -1,8 +1,10 @@
-const { TwitterHandle, Source, TrendingHandle } = require('../database/mongooseSchema')
+const { TwitterHandle, Source, TrendingHandle, FacebookLongLiveToken } = require('../database/mongooseSchema')
 const TwitterHandles = require('./twitter-handles')
 const NewsSources = require('./source-data')
 const TrendingTwitterHandles = require('./trending-handles')
+const axios = require('axios')
 require('../initialize')
+require('dotenv').config()
 
 const TwitterHandlesUpdate = async () => {
 	const resultPromises = TwitterHandles.map(async (handle) => {
@@ -28,8 +30,17 @@ const TrendingHandlesUpdate = async() => {
 	return Promise.all(resultPromises)
 }
 
+const FacebookTokenUpdate = async() => {
+	let myToken = await axios.get(encodeURI(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.FACEBOOK_CLIENT_ID}&client_secret=${process.env.FACEBOOK_CLIENT_SECRET}&fb_exchange_token=${process.env.FACEBOOK_ACCESS_TOKEN}`))
+	let toSaveData = new FacebookLongLiveToken({
+		longLiveToken: myToken.data.access_token
+	})
+	let saved = await toSaveData.save()
+	return saved
+}
+
 async function waitForUpdates() {
-	return Promise.all([TwitterHandlesUpdate(), NewsSourcesUpdate(), TrendingHandlesUpdate()])
+	return Promise.all([TwitterHandlesUpdate(), NewsSourcesUpdate(), TrendingHandlesUpdate(), FacebookTokenUpdate()])
 }
 
 waitForUpdates().then(() => {

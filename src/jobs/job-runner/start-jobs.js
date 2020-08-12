@@ -8,6 +8,7 @@ const twitterJob = require('../TwitterTrigger')
 const coronaJob = require('../corona')
 const districtCoronaJob = require('../districtCorona')
 const trendingJob = require('../trending')
+const facebookPost = require('../facebookPost')
 
 module.exports = async function () {
 	logger.info('starting jobs')
@@ -43,6 +44,11 @@ module.exports = async function () {
 		logger.info('fetch trending job started')
 		trendingJob()
 	})
+	
+	agenda.define('post to facebook', async(job) => {
+		logger.info('posting to facebook started')
+		facebookPost()
+	})
 
 	await agenda.start()
 
@@ -52,4 +58,5 @@ module.exports = async function () {
 	await agenda.every('2 hours', 'fetch corona stats')
 	await agenda.every('2 hours', 'fetch district corona stats')
 	await agenda.every('1 hours', 'fetch trending')
+	await agenda.every('5 minutes', 'post to facebook')
 }
