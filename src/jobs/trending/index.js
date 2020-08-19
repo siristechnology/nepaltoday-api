@@ -35,7 +35,7 @@ module.exports = async function() {
                 let midNightTimeStamp = d.getTime()
                 let currentDate = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()
                 let recentTweetsCount = searchResultsArr.filter(x=>midNightTimeStamp<(new Date(x.created_at)).getTime()).length
-                await TrendingDbService.saveTrendingTweetCount(currentDate,user.name,user.handle,recentTweetsCount,user.image)
+                await TrendingDbService.saveTrendingTweetCount(currentDate,user.name,user.handle,recentTweetsCount,user.image,user.category)
             }   
             return
 

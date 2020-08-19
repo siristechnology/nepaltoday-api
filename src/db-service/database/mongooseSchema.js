@@ -157,7 +157,8 @@ const TrendingHandle = mongoose.model(
 		name: String,
 		handle: String,
 		searchTerms: [String],
-		image: String
+		image: String,
+		category: String
 	})
 )
 
@@ -166,12 +167,17 @@ const TrendingTweetCount = mongoose.model(
 	new Schema({
 		createdDate: String,
 		createdAt: { type: Date, default: Date.now() },
-		counts: [{
-			name: String,
-			handle: String,
-			count: Number,
-			image: String
-		}]
+		trendings: [
+			{
+				category: String,
+				counts: [{
+					name: String,
+					handle: String,
+					count: Number,
+					image: String
+				}]
+			}
+		]
 	})
 )
 

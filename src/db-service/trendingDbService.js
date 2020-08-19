@@ -10,31 +10,59 @@ module.exports = {
         return TrendingHandle.find()
     },
 
-    saveTrendingTweetCount: async (date,name,handle,count,image) => {
+    saveTrendingTweetCount: async (date,name,handle,count,image,category) => {
         let todayTrending = await TrendingTweetCount.findOne({createdDate:date})
         if(todayTrending){
-            let newTrendingArr = todayTrending.counts
-            let exceptTrending = newTrendingArr.filter(x=>x.handle!=handle) || []
-            exceptTrending.push({
-                name,
-                handle,
-                count,
-                image
-            })
-            exceptTrending = exceptTrending.sort((a,b)=>(a.count < b.count) ? 1 : ((b.count < a.count) ? -1 : 0))
-            todayTrending.counts = exceptTrending.slice(0,5)
-            let res = await todayTrending.save()
-            return res
-        }else{
-            let trendingData = new TrendingTweetCount({
-                createdDate: date,
-                counts: [{
+            let trendings = todayTrending.trendings
+            let catFilter = trendings.filter(x=>x.category==category)
+            let exceptCatFilter = trendings.filter(x=>x.category!=category)
+            if(catFilter.length){
+                let counts = catFilter[0].counts
+                let exceptTrending = counts.filter(x=>x.handle!=handle) || []
+                exceptTrending.push({
                     name,
                     handle,
                     count,
                     image
-                }]
+                })
+                exceptTrending = exceptTrending.sort((a,b)=>(a.count < b.count) ? 1 : ((b.count < a.count) ? -1 : 0))
+                exceptCatFilter.push({
+                    category,
+                    counts: exceptTrending.slice(0,5)
+                })
+                todayTrending.trendings = exceptCatFilter
+                let res = await todayTrending.save()
+                return res
+            }else{
+                trendings.push({
+                    category,
+                    counts: [{
+                        name,
+                        handle,
+                        count,
+                        image
+                    }]
+                })
+                todayTrending.trendings = trendings
+                let res = todayTrending.save()
+                return res
+            }
+        }else{
+            let trendingData = new TrendingTweetCount({
+                createdDate: date,
+                trendings: [
+                    {
+                        category: category,
+                        counts: [{
+                            name,
+                            handle,
+                            count,
+                            image
+                        }]
+                    }
+                ]
             })
+
             let res = await trendingData.save()
             return res
         }   

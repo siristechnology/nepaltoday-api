@@ -110,6 +110,11 @@ type TrendingHandle{
 type TrendingTweetCount{
 	createdDate: String
 	createdAt: String
+	trendings: [TrendingArr]
+}
+
+type TrendingArr{
+	category: String
 	counts: [TrendingMetric]
 }
 

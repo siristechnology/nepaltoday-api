@@ -1,7 +1,7 @@
 const { TwitterHandle, Source, TrendingHandle, FacebookLongLiveToken } = require('../database/mongooseSchema')
 const TwitterHandles = require('./twitter-handles')
 const NewsSources = require('./source-data')
-const TrendingTwitterHandles = require('./trending-handles')
+const { TrendingTwitterHandles } = require('./trending-handles')
 const axios = require('axios')
 require('../initialize')
 require('dotenv').config()
