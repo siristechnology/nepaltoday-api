@@ -34,7 +34,7 @@ module.exports = {
                 let res = await todayTrending.save()
                 return res
             }else{
-                trendings.push({
+                todayTrending.trendings.push({
                     category,
                     counts: [{
                         name,
@@ -43,7 +43,6 @@ module.exports = {
                         image
                     }]
                 })
-                todayTrending.trendings = trendings
                 let res = todayTrending.save()
                 return res
             }
