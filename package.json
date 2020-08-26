@@ -35,7 +35,7 @@
     "mongoose": "5.9.20",
     "morgan": "1.10.0",
     "newrelic": "6.10.0",
-    "news-crawler": "^1.0.4",
+    "news-crawler": "https://github.com/siristechnology/news-crawler",
     "offline-geo-from-ip": "^1.0.1",
     "pm2": "4.4.0",
     "require-graphql-file": "1.0.1",

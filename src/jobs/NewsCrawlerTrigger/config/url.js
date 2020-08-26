@@ -4,7 +4,8 @@ const url = {
 	RATOPATI: 'https://ratopati.com',
 	DAINIK_NEPAL: 'https://www.dainiknepal.com',
 	ONLINE_KHABAR: 'https://www.onlinekhabar.com',
-	BBC_NEPALI: 'https://www.bbc.com/nepali'
+	BBC_NEPALI: 'https://www.bbc.com/nepali',
+	SWASTHYA_KHABAR: 'https://swasthyakhabar.com'
 }
 
 module.exports = {

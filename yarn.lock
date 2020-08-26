@@ -7829,10 +7829,9 @@ newrelic@6.10.0:
   optionalDependencies:
     "@newrelic/native-metrics" "^5.1.0"
 
-news-crawler@^1.0.4:
+"news-crawler@https://github.com/siristechnology/news-crawler":
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/news-crawler/-/news-crawler-1.0.4.tgz#3be1007cb422745d600b1ddc2aaf55175b44aad1"
-  integrity sha512-Sy8aL5Ip9vis8DJcZ4yUfL5x4aYvT66S7jrK2FEb2hzbtlsalLOIjzs6aSX/MwOtgE6VHaajGLCO091m+mRzOQ==
+  resolved "https://github.com/siristechnology/news-crawler#9d75748c254886a1c0c9072bb64ab681f8803b2a"
   dependencies:
     html-to-text "^5.1.1"
     puppeteer "2.1.1"

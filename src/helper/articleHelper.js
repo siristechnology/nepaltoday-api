@@ -1,17 +1,17 @@
-const { sources } = require('../config/source')
+const { url : sources } = require('./../jobs/NewsCrawlerTrigger/config/url')
 const { weights } = require('../config/weight')
 const { en } = require('../lang/en')
 const { sortArrayByWeight } = require('../utils/arrayUtil')
 
 const getSourceWeight = (source) => {
 	switch (source) {
-		case sources.EKANTIPUR:
+		case sources.KANTIPUR:
 			return weights.source.EKANTIPUR
 		case sources.SETOPATI:
 			return weights.source.SETOPATI
 		case sources.RATOPATI:
 			return weights.source.RATOPATI
-		case sources.DAINIK:
+		case sources.DAINIK_NEPAL:
 			return weights.source.DAINIK
 		default:
 			return 50

@@ -28,34 +28,6 @@ module.exports = [
 		],
 	},
 	{
-		name: 'दैनिक नेपाल',
-		link: 'https://www.dainiknepal.com',
-		logoLink: '/assets/logos/dainik.png',
-		category: [
-			{
-				name: 'news',
-				path: '/section/latest-news',
-			},
-			{
-				name: 'opinion',
-				path: '/section/views',
-			},
-			{
-				name: 'sports',
-				path: '/section/sports',
-			},
-			{
-				name: 'entertainment',
-				path: '/section/kala',
-			},
-
-			{
-				name: 'business',
-				path: '/section/market',
-			},
-		],
-	},
-	{
 		name: 'कान्तिपुर',
 		link: 'https://ekantipur.com',
 		logoLink: '/assets/logos/kantipur.jpg',
@@ -107,6 +79,10 @@ module.exports = [
 				name: 'entertainment',
 				path: '/entertainment',
 			},
+			{
+				name: 'health',
+				path: '/health'
+			}
 		],
 	},
 	{
@@ -139,4 +115,15 @@ module.exports = [
 			},
 		],
 	},
+	{
+		name: 'Swasthya Khabar',
+		link: 'https://swasthyakhabar.com',
+		logoLink: '/assets/images/sklogo.png',
+		category: [
+			{
+				name: 'health',
+				path: ''
+			}
+		]
+	}
 ]

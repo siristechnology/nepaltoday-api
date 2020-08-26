@@ -52,7 +52,7 @@ module.exports = async function () {
 
 	await agenda.start()
 
-	await agenda.every('5 minutes', 'crawl articles')
+	await agenda.every('10 minutes', 'crawl articles')
 	await agenda.every('5 minutes', 'notify users')
 	await agenda.every('10 minutes', 'pull tweets')
 	await agenda.every('2 hours', 'fetch corona stats')
