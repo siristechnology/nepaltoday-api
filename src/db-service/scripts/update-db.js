@@ -1,4 +1,4 @@
-const { TwitterHandle, Source, TrendingHandle, FacebookLongLiveToken } = require('../database/mongooseSchema')
+const { TwitterHandle, TrendingHandle, FacebookLongLiveToken } = require('../database/mongooseSchema')
 const TwitterHandles = require('./twitter-handles')
 const { TrendingTwitterHandles } = require('./trending-handles')
 const axios = require('axios')
