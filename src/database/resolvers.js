@@ -6,6 +6,7 @@ const { categories } = require('../config/category')
 const { getSortedArticle } = require('../helper/articleHelper')
 const getWeather = require('../weather')
 const logger = require('../config/logger')
+const Sources = require('./../config/source-data')
 
 module.exports = {
 	Query: {
@@ -22,7 +23,6 @@ module.exports = {
 					_id: { $gt: args.criteria.lastArticleId },
 				})
 					.lean()
-					.populate('source')
 					.sort({ _id: -1 })
 					.limit(20)
 
@@ -32,17 +32,25 @@ module.exports = {
 			const articles = await Promise.all(promises)
 			const articleFlattened = _.flatten(articles)
 
-			const articleList = articleFlattened.map((a) => {
-				return { ...a, source: { ...a.source, logoLink: process.env.SERVER_BASE_URL + a.source.logoLink } }
+			const articleList = articleFlattened.map(article=>{
+				const mySource = Sources.find(x=> x.name == article.sourceName)
+				article.source = {
+					name: mySource.name,
+					url: mySource.link,
+					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink
+				}
+				return article
 			})
+
 			const sortedArticles = getSortedArticle(articleList)
 
 			return sortedArticles
 		},
 
 		getArticle: async (parent, { _id }) => {
-			const article = await Article.findById(_id).populate('source').lean()
-			return { ...article, source: { ...article.source, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink } }
+			const article = await Article.findById(_id).lean()
+			const mySource = Sources.find(x=> x.name == article.sourceName)
+			return { ...article, source: { name: mySource.name, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink } }
 		},
 
 		getTweets: async (parent, args, { Tweet }) => {

@@ -13,7 +13,7 @@ const Article = mongoose.model(
 		shortDescription: String,
 		category: String,
 		content: String,
-		source: { type: mongoose.Schema.Types.ObjectId, ref: 'Source', required: true },
+		sourceName: String,
 		hostIp: String,
 		publishedDate: { type: Date },
 		createdDate: { type: Date, default: Date.now },

@@ -7831,7 +7831,7 @@ newrelic@6.10.0:
 
 "news-crawler@https://github.com/siristechnology/news-crawler":
   version "1.0.4"
-  resolved "https://github.com/siristechnology/news-crawler#9d75748c254886a1c0c9072bb64ab681f8803b2a"
+  resolved "https://github.com/siristechnology/news-crawler#430c255a7fb75b120e6c7951f321fe764cd880d4"
   dependencies:
     html-to-text "^5.1.1"
     puppeteer "2.1.1"

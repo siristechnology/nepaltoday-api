@@ -14,7 +14,7 @@ describe('NewsDbService', () => {
 			title: 'dummy title ' + Math.random(),
 			link: 'link' + Math.random(),
 			imageLink: 'imageLink',
-			source: mongoose.Types.ObjectId('5d6a823c623ac6d9a39391eb'),
+			sourceName: 'Swasthya Khabar',
 		}
 		const articlesSaved = await newsDbService.saveArticle(article)
 
@@ -59,11 +59,11 @@ describe('NewsDbService', () => {
 			title: 'dummy title two' + Math.random(),
 			link: 'link' + Math.random(),
 			publishedDate: date1,
-			source: sources[0]._id,
+			sourceName: sources[0].name,
 		}
 		const articlesSaved = await newsDbService.saveArticles([article])
 		expect(articlesSaved[0]).not.toBeUndefined()
-		expect(articlesSaved[0].source._id).to.equal(sources[0]._id)
+		expect(articlesSaved[0].source.sourceName).to.equal(sources[0].name)
 	})
 
 	it('saveArticles() should save multile sources', async () => {

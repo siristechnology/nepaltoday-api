@@ -2,7 +2,7 @@ const casual = require('casual')
 
 const GetMockSource = () => ({
 	_id: casual.uuid,
-	name: casual.name,
+	name: 'Swasthya Khabar',
 	url: 'news_url',
 	category: 'news_category',
 	link: 'news_link',
@@ -20,7 +20,8 @@ const GetMockArticle = () => ({
 	publishedDate: casual.date,
 	createdDate: casual.date,
 	modifiedDate: casual.date,
-	source: GetMockSource(),
+	sourceName: GetMockSource().name,
+	source: GetMockSource()
 })
 
 module.exports = {

@@ -1,7 +1,7 @@
 const Bugsnag = require('@bugsnag/js')
 const BugsnagPluginExpress = require('@bugsnag/plugin-express')
-const NewsCrawler = require('news-crawler');
-const { url } = require('./config/url')
+const NewsCrawler = require('news-crawler')
+const { url } = require('./../../config/url')
 const { selector } = require('./config/selector');
 const { saveArticles } = require('../../db-service/newsDbService');
 
@@ -61,7 +61,7 @@ module.exports = async function (context) {
 		if (sources) {
 			let sourceConfigs = []
 			for (const source of sources) {
-				const sourceId = source._id
+				const sourceName = source.name
 				const baseUrl = source.link
 				const logoLink = source.logoLink
 				const categories = source.category
@@ -81,7 +81,7 @@ module.exports = async function (context) {
 					let sourceData = {
 						pages: categoryPages,
 						"article-detail-selectors": getDetailSelector(baseUrl),
-						sourceId,
+						sourceName,
 						logoLink,
 						crawlTime
 					}

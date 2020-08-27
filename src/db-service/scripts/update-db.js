@@ -1,6 +1,5 @@
 const { TwitterHandle, Source, TrendingHandle, FacebookLongLiveToken } = require('../database/mongooseSchema')
 const TwitterHandles = require('./twitter-handles')
-const NewsSources = require('./source-data')
 const { TrendingTwitterHandles } = require('./trending-handles')
 const axios = require('axios')
 require('../initialize')
@@ -9,14 +8,6 @@ require('dotenv').config()
 const TwitterHandlesUpdate = async () => {
 	const resultPromises = TwitterHandles.map(async (handle) => {
 		return TwitterHandle.updateOne({ handle: handle.handle }, handle, { upsert: true })
-	})
-
-	return Promise.all(resultPromises)
-}
-
-const NewsSourcesUpdate = async () => {
-	const resultPromises = NewsSources.map(async (source) => {
-		return Source.updateOne({ name: source.name }, source, { upsert: true })
 	})
 
 	return Promise.all(resultPromises)
@@ -40,7 +31,7 @@ const FacebookTokenUpdate = async() => {
 }
 
 async function waitForUpdates() {
-	return Promise.all([TwitterHandlesUpdate(), NewsSourcesUpdate(), TrendingHandlesUpdate(), FacebookTokenUpdate()])
+	return Promise.all([TwitterHandlesUpdate(), TrendingHandlesUpdate(), FacebookTokenUpdate()])
 }
 
 waitForUpdates().then(() => {
