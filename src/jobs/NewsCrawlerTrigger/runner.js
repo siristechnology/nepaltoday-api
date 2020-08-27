@@ -7,7 +7,7 @@ module.exports = async function () {
 
 	const sourceConfig = require('./config/news-source-config.json')
 	const articles = await newsCrawler(sourceConfig)
-	const sources = await newsDbService.getAllSources()
+	const sources = newsDbService.getAllSources()
 
 	articles.map((article) => {
 		article.createdDate = timeStamp
