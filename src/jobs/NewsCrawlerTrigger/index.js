@@ -57,7 +57,7 @@ module.exports = async function (context) {
 	}
 
 	try {
-		const sources = await newsDbService.getAllSources()
+		const sources = newsDbService.getAllSources()
 		if (sources) {
 			let sourceConfigs = []
 			for (const source of sources) {
