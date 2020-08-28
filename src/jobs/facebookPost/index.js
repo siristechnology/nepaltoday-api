@@ -11,7 +11,7 @@ module.exports = async function(){
             const latestArticle = await newsDbService.getLatestNewsArticle()
             let articleLink = latestArticle[0].link
             const browser = await puppeteer.launch({
-                headless: false,
+                // headless: false,
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox'
