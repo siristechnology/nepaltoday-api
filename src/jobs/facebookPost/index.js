@@ -8,6 +8,7 @@ module.exports = async function(){
     try {
         const verifyPostEligibleTime = verifyFacebookPostTime()
         if(verifyPostEligibleTime){   
+            console.log("Posting to fb...")
             const latestArticle = await newsDbService.getLatestNewsArticle()
             let articleLink = latestArticle[0].link
             const browser = await puppeteer.launch({
