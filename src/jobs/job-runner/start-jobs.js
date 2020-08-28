@@ -47,7 +47,7 @@ module.exports = async function () {
 	
 	agenda.define('post to facebook', async(job) => {
 		logger.info('posting to facebook started')
-		facebookPost()
+		facebookPost(console)
 	})
 
 	await agenda.start()

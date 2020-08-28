@@ -3,12 +3,12 @@ const { verifyFacebookPostTime } = require('./facebookPostHelper')
 const puppeteer = require('puppeteer')
 require('dotenv').config()
 
-module.exports = async function(){
+module.exports = async function(context){
 
     try {
         const verifyPostEligibleTime = verifyFacebookPostTime()
         if(verifyPostEligibleTime){   
-            console.log("Posting to fb...")
+            context.log("Posting to fb...")
             const latestArticle = await newsDbService.getLatestNewsArticle()
             let articleLink = latestArticle[0].link
             const browser = await puppeteer.launch({
@@ -46,13 +46,13 @@ module.exports = async function(){
                     await browserPage.keyboard.press(String.fromCharCode(13))
                     await browserPage.keyboard.up('Control')
                     await browserPage.waitFor(10000)
-                    console.log("Posted to FB")
+                    context.log("Posted to FB")
                 }
             }
 
             browserPage.close()
         }
     } catch (error) {
-        console.log("error here fb post",error)
+        context.log("error here fb post",error)
     }
 }
