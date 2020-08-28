@@ -45,12 +45,13 @@ module.exports = async function(){
                     await browserPage.keyboard.press(String.fromCharCode(13))
                     await browserPage.keyboard.up('Control')
                     await browserPage.waitFor(10000)
+                    console.log("Posted to FB")
                 }
             }
 
             browserPage.close()
         }
     } catch (error) {
-        console.log("error here",error)
+        console.log("error here fb post",error)
     }
 }

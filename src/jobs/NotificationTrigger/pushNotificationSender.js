@@ -11,7 +11,7 @@ const sendPushNotification = async (notification) => {
 			return { status: false }
 		}
 	} catch (error) {
-		logger.error(error)
+		// logger.error(error)
 		return { status: false, message: `Notification send failed: ${error.stack}` }
 	}
 }
