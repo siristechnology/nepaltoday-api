@@ -9,7 +9,7 @@ const verifyNoticiableTime = (currentTime) => {
 	notificationTimes.map((time) => {
 		const timetoSend = new Date(moment(time, 'HH:mm:ss'))
 		const diff = currentNumericTime.getTime() - timetoSend.getTime()
-		if (Math.abs(diff) <= 300000 && diff <= 0) {
+		if (Math.abs(diff) < 300000 && diff <= 0) {
 			rightTimetoNotify = true
 		}
 	})
@@ -21,7 +21,7 @@ const verifyCoronaNotificationTime = (currentTime) =>{
 	let rightTimetoNotify = false
 	const timetoSend = new Date(moment(CORONA_NOTIFICATION_TIME, 'HH:mm:ss'))
 	const diff = currentNumericTime.getTime() - timetoSend.getTime()
-	if (Math.abs(diff) <= 300000 && diff <= 0) {
+	if (Math.abs(diff) < 300000 && diff <= 0) {
 		rightTimetoNotify = true
 	}
 	return rightTimetoNotify
