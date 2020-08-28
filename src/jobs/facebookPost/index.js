@@ -1,7 +1,6 @@
-const axios = require('axios')
 const { newsDbService } = require('../../db-service')
 const { verifyFacebookPostTime } = require('./facebookPostHelper')
-const { FacebookLongLiveToken } = require('./../../db-service/database/mongooseSchema')
+const puppeteer = require('puppeteer')
 require('dotenv').config()
 
 module.exports = async function(){
@@ -9,31 +8,47 @@ module.exports = async function(){
     try {
         const verifyPostEligibleTime = verifyFacebookPostTime()
         if(verifyPostEligibleTime){   
-            const facebookLongLiveTokens = await FacebookLongLiveToken.findOne({}, {}, { sort: { createdDate: -1 } }).lean()
-            if(facebookLongLiveTokens){
-                const pageTokens = await axios.get(encodeURI(`https://graph.facebook.com/${process.env.FACEBOOK_PAGE_ID}?fields=access_token&access_token=${facebookLongLiveTokens.longLiveToken}`))
-                const latestArticle = await newsDbService.getLatestNewsArticle()
-                let articleTitle = latestArticle[0].title
-                let articleLink = latestArticle[0].link
-                await axios.post(encodeURI(`https://graph.facebook.com/${process.env.FACEBOOK_PAGE_ID}/feed?message=${articleTitle}&link=${articleLink}&access_token=${pageTokens.data.access_token}`))
-                console.log("posted to faceboook")
-            
-                // updating token
-                let currentTimeStamp = Date.now()
-                let lastUpdatedTokenTime = new Date(facebookLongLiveTokens.createdDate)
-                let lastUpdatedTimeStamp = lastUpdatedTokenTime.getTime()
-                let diff = (currentTimeStamp-lastUpdatedTimeStamp)/1000
-                if(diff>4320000){    //50 days
-                    let myToken = await axios.get(encodeURI(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.FACEBOOK_CLIENT_ID}&client_secret=${process.env.FACEBOOK_CLIENT_SECRET}&fb_exchange_token=${facebookLongLiveTokens.longLiveToken}`))
-                    let toSaveData = new FacebookLongLiveToken({
-                        longLiveToken: myToken.data.access_token
-                    })
-                    await toSaveData.save()
+            const latestArticle = await newsDbService.getLatestNewsArticle()
+            let articleLink = latestArticle[0].link
+            const browser = await puppeteer.launch({
+                // headless: false,
+                args: [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox'
+                ],
+                slowMo: 100
+            })
+
+            const browserPage = await browser.newPage()
+            await browserPage.setDefaultNavigationTimeout(1000000)
+            await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
+
+            await browserPage.waitForSelector('#email')
+            await browserPage.type("#email", process.env.FACEBOOK_EMAIL_ID)
+
+            await browserPage.type('#pass', process.env.FACEBOOK_PASSWORD)
+
+            await browserPage.click(`[type="submit"]`)
+            await browserPage.waitForNavigation()
+
+            await browserPage.waitForSelector(`[aria-label="Write a post..."]`)
+            await browserPage.click(`[aria-label="Write a post..."]`)
+
+            // await browserPage.waitForSelector('div.g9en0fbe > div > img')
+
+            for(let i = 0; i < articleLink.length; i++){
+                await browserPage.keyboard.press(articleLink[i])
+
+                if(i === articleLink.length-1){
+                    await browserPage.waitFor(2000)
+                    await browserPage.keyboard.down('Control')
+                    await browserPage.keyboard.press(String.fromCharCode(13))
+                    await browserPage.keyboard.up('Control')
                 }
             }
 
+            browserPage.close()
         }
-
     } catch (error) {
         console.log("error here",error)
     }
