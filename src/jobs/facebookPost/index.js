@@ -11,7 +11,7 @@ module.exports = async function(){
             const latestArticle = await newsDbService.getLatestNewsArticle()
             let articleLink = latestArticle[0].link
             const browser = await puppeteer.launch({
-                // headless: false,
+                headless: false,
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox'
@@ -44,6 +44,7 @@ module.exports = async function(){
                     await browserPage.keyboard.down('Control')
                     await browserPage.keyboard.press(String.fromCharCode(13))
                     await browserPage.keyboard.up('Control')
+                    await browserPage.waitFor(10000)
                 }
             }
 
