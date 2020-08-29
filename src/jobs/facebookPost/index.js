@@ -1,6 +1,6 @@
 const { newsDbService } = require('../../db-service')
 const { verifyFacebookPostTime } = require('./facebookPostHelper')
-const puppeteer = require('puppeteer')
+const getBrowser = require('news-crawler/src/get-browser')
 require('dotenv').config()
 
 module.exports = async function(context){
@@ -11,17 +11,10 @@ module.exports = async function(context){
             context.log("Posting to fb...")
             const latestArticle = await newsDbService.getLatestNewsArticle()
             let articleLink = latestArticle[0].link
-            const browser = await puppeteer.launch({
-                // headless: false,
-                args: [
-                    '--no-sandbox',
-                    '--disable-setuid-sandbox'
-                ],
-                slowMo: 100
-            })
-
-            const browserPage = await browser.newPage()
-            await browserPage.setDefaultNavigationTimeout(1000000)
+            
+            const browser = await getBrowser()
+	        const browserPage = await browser.newPage()
+            await browserPage.setDefaultNavigationTimeout(100000)
             await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
 
             await browserPage.waitForSelector('#email')
