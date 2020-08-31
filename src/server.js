@@ -2,8 +2,8 @@ const Bugsnag = require('@bugsnag/js')
 const BugsnagPluginExpress = require('@bugsnag/plugin-express')
 
 Bugsnag.start({
-  apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
-  plugins: [BugsnagPluginExpress]
+	apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
+	plugins: [BugsnagPluginExpress],
 })
 require('newrelic')
 require('./config/env')

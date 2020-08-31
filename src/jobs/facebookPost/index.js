@@ -10,7 +10,7 @@ module.exports = async function(context){
         let articleLink = latestArticle[0].link
         
         const browser = await getBrowser()
-	    const browserPage = await browser.newPage()
+	      const browserPage = await browser.newPage()
         await browserPage.setDefaultNavigationTimeout(100000)
         await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
         await browserPage.waitForSelector('#email')

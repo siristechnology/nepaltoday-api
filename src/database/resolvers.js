@@ -32,12 +32,12 @@ module.exports = {
 			const articles = await Promise.all(promises)
 			const articleFlattened = _.flatten(articles)
 
-			const articleList = articleFlattened.map(article=>{
-				const mySource = Sources.find(x=> x.name == article.sourceName)
+			const articleList = articleFlattened.map((article) => {
+				const mySource = Sources.find((x) => x.name === article.sourceName)
 				article.source = {
 					name: mySource.name,
 					url: mySource.link,
-					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink
+					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink,
 				}
 				return article
 			})
@@ -49,8 +49,11 @@ module.exports = {
 
 		getArticle: async (parent, { _id }) => {
 			const article = await Article.findById(_id).lean()
-			const mySource = Sources.find(x=> x.name == article.sourceName)
-			return { ...article, source: { name: mySource.name, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink } }
+			const mySource = Sources.find((x) => x.name === article.sourceName)
+			return {
+				...article,
+				source: { name: mySource.name, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink },
+			}
 		},
 
 		getTweets: async (parent, args, { Tweet }) => {
@@ -68,12 +71,12 @@ module.exports = {
 			return await CoronaDbService.getLatestStats()
 		},
 
-		getDistrictCoronaStats: async (parent, args, {DistrictCoronaStats}) => {
+		getDistrictCoronaStats: async (parent, args, { DistrictCoronaStats }) => {
 			const { DistrictCoronaDbService } = require('../db-service')
 			return await DistrictCoronaDbService.getDistrictCoronaStats()
 		},
 
-		getTrending: async (parent, args, {TrendingTweetCount}) => {
+		getTrending: async (parent, args, { TrendingTweetCount }) => {
 			const { TrendingDbService } = require('./../db-service')
 			return await TrendingDbService.getTrendingTweetCount()
 		},

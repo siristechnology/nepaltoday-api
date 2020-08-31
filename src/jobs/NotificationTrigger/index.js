@@ -45,18 +45,16 @@ module.exports = async function (context) {
 			}
 
 			const latestSummary = await DistrictCoronaDbService.getDistrictCoronaStats()
-			if(latestSummary){
+			if (latestSummary) {
 				for (const user of userWithCurrentTime) {
 					const coronaNotificationEligibleTime = verifyCoronaNotificationTime(user.currentTime)
 
-					if(coronaNotificationEligibleTime){
+					if (coronaNotificationEligibleTime) {
 						const userWithNotification = createUserWithCoronaNotification(latestSummary.timeLine, user)
 						sendPushNotification(userWithNotification)
 					}
-
 				}
 			}
-
 		}
 	} catch (error) {
 		context.log('_____________error__________', error)

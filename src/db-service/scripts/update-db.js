@@ -12,9 +12,9 @@ const TwitterHandlesUpdate = async () => {
 	return Promise.all(resultPromises)
 }
 
-const TrendingHandlesUpdate = async() => {
+const TrendingHandlesUpdate = async () => {
 	const resultPromises = TrendingTwitterHandles.map(async (handle) => {
-		return TrendingHandle.updateOne({ handle: handle.handle}, handle, {upsert: true})
+		return TrendingHandle.updateOne({ handle: handle.handle }, handle, { upsert: true })
 	})
 
 	return Promise.all(resultPromises)

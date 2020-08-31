@@ -1,13 +1,4 @@
-const categories = [
-	'politics', 
-	'entertainment', 
-	'business', 
-	'news', 
-	'opinion', 
-	'social', 
-	'sports',
-	'health'
-]
+const categories = ['politics', 'entertainment', 'business', 'news', 'opinion', 'social', 'sports', 'health']
 
 module.exports = {
 	categories,

@@ -4,7 +4,8 @@
 		"node": true,
 		"jest": true
 	},
-	"extends": ["standard", "plugin:prettier/recommended"],
+	"extends": ["standard", "prettier"],
+	"plugins": ["prettier"],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly",
@@ -18,30 +19,7 @@
 		"ecmaVersion": 2018,
 		"sourceType": "module"
 	},
-	"plugins": ["prettier"],
 	"rules": {
-		"semi": "off",
-		"indent": [
-			"error",
-			"tab",
-			{
-				"SwitchCase": 1
-			}
-		],
-		"max-len": [
-			"error",
-			{
-				"code": 150,
-				"ignoreComments": true,
-				"ignoreStrings": true,
-				"ignoreUrls": true
-			}
-		],
-		"no-tabs": "off",
-		"eol-last": "off",
-		"generator-star-spacing": "off",
-		"quotes": "warn",
-		"comma-dangle": "off",
-		"camelcase": "off"
+		"prettier/prettier": ["error"]
 	}
 }

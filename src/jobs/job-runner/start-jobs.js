@@ -44,8 +44,8 @@ module.exports = async function () {
 		logger.info('fetch trending job started')
 		trendingJob()
 	})
-	
-	agenda.define('post to facebook', async(job) => {
+
+	agenda.define('post to facebook', async (job) => {
 		logger.info('posting to facebook started')
 		facebookPost(console)
 	})

@@ -16,7 +16,7 @@ const verifyNoticiableTime = (currentTime) => {
 	return rightTimetoNotify
 }
 
-const verifyCoronaNotificationTime = (currentTime) =>{
+const verifyCoronaNotificationTime = (currentTime) => {
 	const currentNumericTime = new Date(moment(currentTime, 'HH:mm:ss'))
 	let rightTimetoNotify = false
 	const timetoSend = new Date(moment(CORONA_NOTIFICATION_TIME, 'HH:mm:ss'))
@@ -50,5 +50,5 @@ module.exports = {
 	getStartEndTime,
 	verifyNoticiableTime,
 	getStartEndTimeForUser,
-	verifyCoronaNotificationTime
+	verifyCoronaNotificationTime,
 }

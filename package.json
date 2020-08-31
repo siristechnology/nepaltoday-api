@@ -9,9 +9,7 @@
     "test": "jest --runInBand --testMatch \"**/?(*.)+(spec|test).[tj]s?(x)\" --detectOpenHandles --forceExit",
     "test:coverage": "jest --coverage --testMatch '**/?(*.)+(spec|test).[tj]s?(x)'  --detectOpenHandles --forceExit",
     "lint": "eslint src/**/**/*.js",
-    "updatedb": "node ./src/db-service/scripts/update-db.js",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "updatedb": "node ./src/db-service/scripts/update-db.js"
   },
   "dependencies": {
     "@bearer/node-agent": "3.1.3",
@@ -38,11 +36,10 @@
     "news-crawler": "https://github.com/siristechnology/news-crawler",
     "offline-geo-from-ip": "^1.0.1",
     "pm2": "4.4.0",
+    "puppeteer": "2.1.1",
     "require-graphql-file": "1.0.1",
-    "snyk": "^1.360.0",
     "twitter": "1.7.1",
-    "winston": "3.3.3",
-    "puppeteer": "2.1.1"
+    "winston": "3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -82,6 +79,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/siristechnology/nepaltoday-api/issues"
-  },
-  "snyk": true
+  }
 }

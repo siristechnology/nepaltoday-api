@@ -21,7 +21,7 @@ const GetMockArticle = () => ({
 	createdDate: casual.date,
 	modifiedDate: casual.date,
 	sourceName: GetMockSource().name,
-	source: GetMockSource()
+	source: GetMockSource(),
 })
 
 module.exports = {

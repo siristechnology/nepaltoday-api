@@ -41,17 +41,14 @@ module.exports = {
 	},
 
 	getLatestNewsArticle: async () => {
-		const latestNewsArticle = await Article.find({ category: 'news' })
-			.sort({ _id: -1 })
-			.limit(1)
-			.lean()
+		const latestNewsArticle = await Article.find({ category: 'news' }).sort({ _id: -1 }).limit(1).lean()
 
-		const articleWithSource = latestNewsArticle.map(article=>{
-			const mySource = Sources.find(x=> x.name == article.sourceName)
+		const articleWithSource = latestNewsArticle.map((article) => {
+			const mySource = Sources.find((x) => x.name === article.sourceName)
 			article.source = {
 				name: mySource.name,
 				url: mySource.link,
-				logoLink: process.env.SERVER_BASE_URL + mySource.logoLink
+				logoLink: process.env.SERVER_BASE_URL + mySource.logoLink,
 			}
 			return article
 		})
