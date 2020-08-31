@@ -1,5 +1,6 @@
 const { newsDbService } = require('../../db-service')
 const getBrowser = require('news-crawler/src/get-browser')
+const { default: Bugsnag } = require('@bugsnag/js')
 require('dotenv').config()
 
 module.exports = async function(context){
@@ -34,6 +35,7 @@ module.exports = async function(context){
         }
         browserPage.close()
     } catch (error) {
-        context.log("error here fb post",error)
+        Bugsnag.notify("Error here fb post ", error)
+        context.log("error here fb post ",error)
     }
 }
