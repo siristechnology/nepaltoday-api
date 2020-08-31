@@ -14,9 +14,9 @@ describe('coronaDbService', () => {
 		const stats2 = generateDummyStats(new Date('Jan 02 2001 UTC'))
 		await CoronaDbService.saveStats(stats2)
 
-		const new_stats = await CoronaDbService.getLatestStats()
+		const newStats = await CoronaDbService.getLatestStats()
 
-		expect(new_stats.createdDate.getUTCDate()).toBe(2)
+		expect(newStats.createdDate.getUTCDate()).toBe(2)
 	})
 })
 

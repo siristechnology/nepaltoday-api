@@ -1,4 +1,4 @@
-const { url : sources } = require('../config/url')
+const { url: sources } = require('../config/url')
 const { weights } = require('../config/weight')
 const { en } = require('../lang/en')
 const { sortArrayByWeight } = require('../utils/arrayUtil')

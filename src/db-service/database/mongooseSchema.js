@@ -19,7 +19,7 @@ const Article = mongoose.model(
 		createdDate: { type: Date, default: Date.now },
 		modifiedDate: { type: Date, default: Date.now },
 		topic: { type: String },
-		createdAt: {type: Date, expires: expiryTime, default: Date.now}
+		createdAt: { type: Date, expires: expiryTime, default: Date.now },
 	}),
 )
 
@@ -63,7 +63,7 @@ const Tweet = mongoose.model(
 		tweetId: { type: String, required: true, unique: true },
 		handle: { type: String },
 		text: String,
-		createdAt: { type: Date,expires: expiryTime, default: Date.now },
+		createdAt: { type: Date, expires: expiryTime, default: Date.now },
 		publishedDate: { type: Date },
 		name: String,
 		profileImage: String,
@@ -120,15 +120,15 @@ const CoronaStats = mongoose.model(
 			totalCases: Number,
 			newCases: Number,
 			totalDeaths: Number,
-			newDeaths: Number
-		}
+			newDeaths: Number,
+		},
 	}),
 )
 
 const DistrictCoronaStats = mongoose.model(
 	'DistrictCoronaStats',
 	new Schema({
-		createdDate : { type: Date, default: Date.now },
+		createdDate: { type: Date, default: Date.now },
 		timeLine: {
 			date: String,
 			totalCases: Number,
@@ -136,7 +136,7 @@ const DistrictCoronaStats = mongoose.model(
 			totalRecoveries: Number,
 			newRecoveries: Number,
 			totalDeaths: Number,
-			newDeaths: Number
+			newDeaths: Number,
 		},
 		districts: [
 			{
@@ -145,10 +145,10 @@ const DistrictCoronaStats = mongoose.model(
 				totalCases: Number,
 				activeCases: Number,
 				recovered: Number,
-				deaths: Number
+				deaths: Number,
 			},
 		],
-	})
+	}),
 )
 
 const TrendingHandle = mongoose.model(
@@ -158,8 +158,8 @@ const TrendingHandle = mongoose.model(
 		handle: String,
 		searchTerms: [String],
 		image: String,
-		category: String
-	})
+		category: String,
+	}),
 )
 
 const TrendingTweetCount = mongoose.model(
@@ -170,15 +170,17 @@ const TrendingTweetCount = mongoose.model(
 		trendings: [
 			{
 				category: String,
-				counts: [{
-					name: String,
-					handle: String,
-					count: Number,
-					image: String
-				}]
-			}
-		]
-	})
+				counts: [
+					{
+						name: String,
+						handle: String,
+						count: Number,
+						image: String,
+					},
+				],
+			},
+		],
+	}),
 )
 
 module.exports = {

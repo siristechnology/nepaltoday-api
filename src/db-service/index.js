@@ -19,5 +19,5 @@ module.exports = {
 	NotificationDbService,
 	CoronaDbService,
 	DistrictCoronaDbService,
-	TrendingDbService
+	TrendingDbService,
 }

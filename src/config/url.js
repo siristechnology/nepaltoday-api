@@ -5,9 +5,9 @@ const url = {
 	DAINIK_NEPAL: 'https://www.dainiknepal.com',
 	ONLINE_KHABAR: 'https://www.onlinekhabar.com',
 	BBC_NEPALI: 'https://www.bbc.com/nepali',
-	SWASTHYA_KHABAR: 'https://swasthyakhabar.com'
+	SWASTHYA_KHABAR: 'https://swasthyakhabar.com',
 }
 
 module.exports = {
-	url
+	url,
 }

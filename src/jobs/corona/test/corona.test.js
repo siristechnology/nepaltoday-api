@@ -9,9 +9,7 @@ afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('corona job', () => {
 	it('should fetch stats abt Nepal', async () => {
-		nock('https://pomber.github.io')
-			.get('/covid19/timeseries.json')
-			.reply(200, mockStatsResponse)
+		nock('https://pomber.github.io').get('/covid19/timeseries.json').reply(200, mockStatsResponse)
 
 		await coronaJob(['Albania'])
 	})

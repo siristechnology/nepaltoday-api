@@ -81,8 +81,8 @@ module.exports = [
 			},
 			{
 				name: 'health',
-				path: '/health'
-			}
+				path: '/health',
+			},
 		],
 	},
 	{
@@ -122,8 +122,8 @@ module.exports = [
 		category: [
 			{
 				name: 'health',
-				path: ''
-			}
-		]
-	}
+				path: '',
+			},
+		],
+	},
 ]
