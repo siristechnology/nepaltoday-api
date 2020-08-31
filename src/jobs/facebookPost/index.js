@@ -1,50 +1,38 @@
 const { newsDbService } = require('../../db-service')
-const { verifyFacebookPostTime } = require('./facebookPostHelper')
 const getBrowser = require('news-crawler/src/get-browser')
 require('dotenv').config()
 
 module.exports = async function(context){
 
     try {
-        const verifyPostEligibleTime = verifyFacebookPostTime()
-        if(verifyPostEligibleTime){   
-            context.log("Posting to fb...")
-            const latestArticle = await newsDbService.getLatestNewsArticle()
-            let articleLink = latestArticle[0].link
-            
-            const browser = await getBrowser()
-	        const browserPage = await browser.newPage()
-            await browserPage.setDefaultNavigationTimeout(100000)
-            await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
-
-            await browserPage.waitForSelector('#email')
-            await browserPage.type("#email", process.env.FACEBOOK_EMAIL_ID)
-
-            await browserPage.type('#pass', process.env.FACEBOOK_PASSWORD)
-
-            await browserPage.click(`[type="submit"]`)
-            await browserPage.waitForNavigation()
-
-            await browserPage.waitForSelector(`[aria-label="Write a post..."]`)
-            await browserPage.click(`[aria-label="Write a post..."]`)
-
-            // await browserPage.waitForSelector('div.g9en0fbe > div > img')
-
-            for(let i = 0; i < articleLink.length; i++){
-                await browserPage.keyboard.press(articleLink[i])
-
-                if(i === articleLink.length-1){
-                    await browserPage.waitFor(2000)
-                    await browserPage.keyboard.down('Control')
-                    await browserPage.keyboard.press(String.fromCharCode(13))
-                    await browserPage.keyboard.up('Control')
-                    await browserPage.waitFor(10000)
-                    context.log("Posted to FB")
-                }
+        context.log("Posting to fb...")
+        const latestArticle = await newsDbService.getLatestNewsArticle()
+        let articleLink = latestArticle[0].link
+        
+        const browser = await getBrowser()
+	    const browserPage = await browser.newPage()
+        await browserPage.setDefaultNavigationTimeout(100000)
+        await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
+        await browserPage.waitForSelector('#email')
+        await browserPage.type("#email", process.env.FACEBOOK_EMAIL_ID)
+        await browserPage.type('#pass', process.env.FACEBOOK_PASSWORD)
+        await browserPage.click(`[type="submit"]`)
+        await browserPage.waitForNavigation()
+        await browserPage.waitForSelector(`[aria-label="Write a post..."]`)
+        await browserPage.click(`[aria-label="Write a post..."]`)
+        // await browserPage.waitForSelector('div.g9en0fbe > div > img')
+        for(let i = 0; i < articleLink.length; i++){
+            await browserPage.keyboard.press(articleLink[i])
+            if(i === articleLink.length-1){
+                await browserPage.waitFor(2000)
+                await browserPage.keyboard.down('Control')
+                await browserPage.keyboard.press(String.fromCharCode(13))
+                await browserPage.keyboard.up('Control')
+                await browserPage.waitFor(10000)
+                context.log("Posted to FB")
             }
-
-            browserPage.close()
         }
+        browserPage.close()
     } catch (error) {
         context.log("error here fb post",error)
     }
