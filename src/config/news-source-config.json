@@ -1,6 +1,8 @@
 [
 	{
-		"name": "कान्तिपुर",
+		"name": "ekantipur",
+		"sourceName": "ekantipur",
+		"nepaliName": "कान्तिपुर",
 		"logoLink": "/assets/logos/kantipur.jpg",
 		"weight": 50,
 		"pages": [

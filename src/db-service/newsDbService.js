@@ -44,7 +44,7 @@ module.exports = {
 		const latestNewsArticle = await Article.find({ category: 'news' }).sort({ _id: -1 }).limit(1).lean()
 
 		const articleWithSource = latestNewsArticle.map((article) => {
-			const mySource = SourceConfig.find((x) => x.name === article.sourceName)
+			const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 			article.source = {
 				name: mySource.name,
 				url: mySource.link,

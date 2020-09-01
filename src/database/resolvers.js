@@ -32,7 +32,7 @@ module.exports = {
 			const articleFlattened = _.flatten(articles)
 
 			const articleList = articleFlattened.map((article) => {
-				const mySource = SourceConfig.find((x) => x.name === article.sourceName)
+				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
 					name: mySource.name,
 					url: mySource.link,
@@ -46,7 +46,7 @@ module.exports = {
 
 		getArticle: async (parent, { _id }) => {
 			const article = await Article.findById(_id).lean()
-			const mySource = SourceConfig.find((x) => x.name === article.sourceName)
+			const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 			return {
 				...article,
 				source: { name: mySource.name, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink },

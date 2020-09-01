@@ -22,7 +22,7 @@ module.exports = async function () {
 
 	agenda.define('notify users', async (job) => {
 		logger.info('notify users job started')
-		notifier()
+		notifier(console)
 	})
 
 	agenda.define('pull tweets', async (job) => {
