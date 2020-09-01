@@ -24,7 +24,7 @@ const TrendingTwitterHandles = [
 		name: 'Gagan Thapa',
 		category: 'Politics',
 		handle: '@thapagk',
-		image: 'https://pbs.twimg.com/profile_images/1271785371127480321/4_Ic0B7m_400x400.jpg',
+		image: 'https://pbs.twimg.com/profile_images/1294237288390512640/RktZchMv_200x200.jpg',
 		searchTerms: ['Gagan Thapa'],
 	},
 	{
@@ -228,7 +228,7 @@ const TrendingTwitterHandles = [
 		category: 'Actor',
 		handle: '@KekiAdhikari',
 		searchTerms: ['Keki Adhikari'],
-		image: 'https://pbs.twimg.com/profile_images/1293446913212071936/pbg5lZxD_200x200.jpg',
+		image: 'https://pbs.twimg.com/profile_images/1297515211293745153/KX3QXGvs_200x200.jpg',
 	},
 	{
 		name: 'Rajesh Hamal',

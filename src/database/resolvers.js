@@ -35,7 +35,7 @@ module.exports = {
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
-					name: mySource.name,
+					name: mySource.nepaliName,
 					url: mySource.link,
 					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink,
 				}
@@ -50,7 +50,7 @@ module.exports = {
 			const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 			return {
 				...article,
-				source: { name: mySource.name, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink },
+				source: { name: mySource.nepaliName, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink },
 			}
 		},
 

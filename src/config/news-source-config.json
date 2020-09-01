@@ -7,11 +7,6 @@
 		"weight": 50,
 		"pages": [
 			{
-				"url": "https://ekantipur.com",
-				"category": "headlines",
-				"link-selector": "article.normal > h1 > a"
-			},
-			{
 				"url": "https://ekantipur.com/news",
 				"category": "news",
 				"link-selector": "#wrapper > main > section article > div.teaser > a"
@@ -44,6 +39,164 @@
 			"content": ["main article div.text-wrap p.description", "main article div.text-wrap div.description"],
 			"tags": "",
 			"likes-count": "main > article > header div.total.shareTotal"
+		}
+	},
+	{
+		"name": "setopati",
+		"sourceName": "setopati",
+		"nepaliName": "सेतोपाटी",
+		"logoLink": "/assets/logos/setopati.jpg",
+		"weight": 45,
+		"pages":[
+			{
+				"url": "https://www.setopati.com/politics",
+				"category": "politics",
+				"link-selector": "#content > div > section > div > div > a"
+			},
+			{
+				"url": "https://www.setopati.com/social",
+				"category": "social",
+				"link-selector": "#content > div > section > div > div > a"
+			},
+			{
+				"url": "https://www.setopati.com/opinion",
+				"category": "opinion",
+				"link-selector": "#content > div > section > div > div > a"
+			},
+			{
+				"url": "https://www.setopati.com/sports",
+				"category": "sports",
+				"link-selector": "#content > div > section > div > div > a"
+			},
+			{
+				"url": "https://www.setopati.com/entertainment",
+				"category": "entertainment",
+				"link-selector": "#content > div > section > div > div > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "section.news-detail-section div.title-names span.news-big-title",
+			"excerpt": "#content > div.container > div > aside.left-side > div.row > div > div.editor-box > p:nth-child(2)",
+			"lead-image": "section.news-detail-section div.featured-images figure img",
+			"content": ["aside.left-side div.detail-box div.editor-box"],
+			"tags": "#header > div.container.main-menu > div > div > div > ul > li > a.selected"	
+		}
+	},
+	{
+		"name": "ratopati",
+		"sourceName": "ratopati",
+		"nepaliName": "रातोपाटी",
+		"logoLink": "/assets/logos/ratopati.png",
+		"weight": 40,
+		"pages":[
+			{
+				"url": "https://ratopati.com/news",
+				"category": "news",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/business",
+				"category": "business",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/opinion",
+				"category": "opinion",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/sports",
+				"category": "sports",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/entertainment",
+				"category": "entertainment",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/health",
+				"category": "health",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": ".article-head > h1",
+			"excerpt": ".ratopati-table-border-layout p:first-child",
+			"lead-image": "div .ot-material-card-content > div .img-with-no-margin > img",
+			"content": [".ratopati-table-border-layout"],
+			"tags": "#content > div > div.ot-content-with-sidebar-right > div.col-md-9 > nav > ol > li.breadcrumb-item.active > a"
+		}
+	},
+	{
+		"name": "onlinekhabar",
+		"sourceName": "Online Khabar",
+		"nepaliName": "अनलाईन खबर",
+		"logoLink": "/assets/logos/online-khabar.png",
+		"weight": 35,
+		"pages":[
+			{
+				"url": "https://www.onlinekhabar.com/business",
+				"category": "business",
+				"link-selector": "#main > section > div .post__heading > h2 > a"
+			},
+			{
+				"url": "https://www.onlinekhabar.com/sports",
+				"category": "sports",
+				"link-selector": "#main > section > div .post__heading > h2 > a"
+			},
+			{
+				"url": "https://www.onlinekhabar.com/entertainment",
+				"category": "entertainment",
+				"link-selector": "#main > section > div .post__heading > h2 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "h2.mb-0",
+			"excerpt": "div.main__read--content p:first-child",
+			"lead-image": "div.col.colspan3.dtl-img img",
+			"content": ["div.main__read--content"],
+			"tags": "#main > section > div > div.nws__title--card > div.custom_breadcrumb > a:nth-child(2)"
+		}
+	},
+	{
+		"name": "bbcnepali",
+		"sourceName": "BBC Nepali",
+		"nepaliName": "BBC नेपाली",
+		"logoLink": "/assets/logos/bbc.png",
+		"weight": 50,
+		"pages":[
+			{
+				"url": "https://www.bbc.com/nepali",
+				"category": "news",
+				"link-selector": "h3 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "#content",
+			"excerpt": "main > div > p",
+			"lead-image": "main > div > figure > div > div.NestedGridItemChildLarge-sc-12lwanc-9.fkKpIa > div > img",
+			"content": ["main > div > p"]
+		}
+	},
+	{
+		"name": "Swasthya Khabar",
+		"sourceName": "Swasthya Khabar",
+		"nepaliName": "स्वास्थ्य खबर",
+		"logoLink": "/assets/logos/sklogo.png",
+		"weight": 50,
+		"pages":[
+			{
+				"url": "https://swasthyakhabar.com",
+				"category": "health",
+				"link-selector": "article > header > h2 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "article.module.module-detail > h1",
+			"excerpt": "article.module.module-detail > section > p:nth-child(7)",
+			"lead-image": "article.module.module-detail > section > div.img-wrap > figure > fig > img",
+			"content": ["article.module.module-detail > section > p"]
 		}
 	}
 ]
