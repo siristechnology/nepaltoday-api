@@ -1,8 +1,9 @@
 const NewsCrawler = require('news-crawler')
 const { saveArticles } = require('../../db-service/newsDbService')
 const SourceConfig = require('../../config/news-source-config.json')
+const logger = require('../../config/logger')
 
-module.exports = async function (context) {
+module.exports = async function () {
 	const ipAddress = require('ip').address()
 
 	try {
@@ -10,7 +11,7 @@ module.exports = async function (context) {
 		articles.forEach((x) => (x.hostIp = ipAddress))
 		await saveArticles(articles)
 	} catch (error) {
-		context.log('error occured here', error)
+		logger.error('error occured here', error)
 	}
-	context.log('JavaScript timer trigger function ran!', new Date().toISOString())
+	logger.info('JavaScript timer trigger function ran!', new Date().toISOString())
 }

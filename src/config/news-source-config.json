@@ -2,6 +2,7 @@
 	{
 		"name": "कान्तिपुर",
 		"logoLink": "/assets/logos/kantipur.jpg",
+		"weight": 50,
 		"pages": [
 			{
 				"url": "https://ekantipur.com",
