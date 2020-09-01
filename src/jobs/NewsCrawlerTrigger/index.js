@@ -1,6 +1,6 @@
 const NewsCrawler = require('news-crawler')
 const { saveArticles } = require('../../db-service/newsDbService')
-const SourceConfig = require('../config/news-source-config.json')
+const SourceConfig = require('../../config/news-source-config.json')
 
 module.exports = async function (context) {
 	const ipAddress = require('ip').address()
