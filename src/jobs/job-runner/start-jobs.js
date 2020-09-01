@@ -17,17 +17,17 @@ module.exports = async function () {
 
 	agenda.define('crawl articles', async (job) => {
 		logger.info('crawl articles job started')
-		crawler(console)
+		crawler()
 	})
 
 	agenda.define('notify users', async (job) => {
 		logger.info('notify users job started')
-		notifier(console)
+		notifier()
 	})
 
 	agenda.define('pull tweets', async (job) => {
 		logger.info('pull tweets job started')
-		twitterJob(console)
+		twitterJob()
 	})
 
 	agenda.define('fetch corona stats', async (job) => {
