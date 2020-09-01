@@ -9,7 +9,7 @@ const TrendingTwitterHandles = [
 	{
 		name: 'KP Sharma Oli',
 		category: 'Politics',
-		handle: '@pm_nepal',
+		handle: '@PM_Nepal',
 		image: 'https://pbs.twimg.com/profile_images/964093929002946560/RrZvsn_9_400x400.jpg',
 		searchTerms: ['KP Oli', 'PM Oli', 'KP Sharma Oli'],
 	},
@@ -37,7 +37,7 @@ const TrendingTwitterHandles = [
 	{
 		name: 'Kamal Thapa',
 		category: 'Politics',
-		handle: '@kTnepal',
+		handle: '@KTnepal',
 		searchTerms: ['Kamal Thapa'],
 		image: 'https://pbs.twimg.com/profile_images/1109620803962851328/kLFiAf4Z_400x400.jpg',
 	},

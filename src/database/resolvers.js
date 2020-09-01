@@ -7,6 +7,7 @@ const { getSortedArticle } = require('../helper/articleHelper')
 const getWeather = require('../weather')
 const logger = require('../config/logger')
 const Sources = require('./../config/source-data')
+const { Tweet } = require('../db-service/database/mongooseSchema')
 
 module.exports = {
 	Query: {
@@ -61,8 +62,13 @@ module.exports = {
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastTweetId = args.criteria.lastTweetId || '000000000000000000000000'
 
-			const tweets = await Tweet.find().populate('twitterHandle').sort({ publishedDate: -1 }).limit(100)
+			const tweets = await Tweet.find().sort({ publishedDate: -1 }).limit(100)
 
+			return tweets
+		},
+
+		getTweetByHandle: async (parent, { handle }) => {
+			const tweets = await Tweet.find({ handle }).sort({ publishedDate: -1 }).limit(100)
 			return tweets
 		},
 

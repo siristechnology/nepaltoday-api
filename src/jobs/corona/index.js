@@ -11,16 +11,16 @@ module.exports = async function () {
 
 	Object.keys(response.data).forEach((country) => {
 		const myData = response.data[country]
-		const totalCases = myData[myData.length - 1].confirmed
-		const totalDeaths = myData[myData.length - 1].deaths
-		const newCases = myData[myData.length - 1].confirmed - myData[myData.length - 2].confirmed
-		const newDeaths = myData[myData.length - 1].deaths - myData[myData.length - 2].deaths
+		const total_cases = myData[myData.length - 1].confirmed
+		const total_deaths = myData[myData.length - 1].deaths
+		const new_cases = myData[myData.length - 1].confirmed - myData[myData.length - 2].confirmed
+		const new_deaths = myData[myData.length - 1].deaths - myData[myData.length - 2].deaths
 		const countryMetric = {
 			country,
-			totalCases,
-			totalDeaths,
-			newCases,
-			newDeaths,
+			total_cases,
+			total_deaths,
+			new_cases,
+			new_deaths,
 		}
 		countryMetrics.push(countryMetric)
 	})

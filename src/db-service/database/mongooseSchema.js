@@ -26,10 +26,6 @@ const Article = mongoose.model(
 const Tweet = mongoose.model(
 	'Tweet',
 	new Schema({
-		twitterHandle: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'TwitterHandle',
-		},
 		tweetId: { type: String, required: true, unique: true },
 		handle: { type: String },
 		text: String,
@@ -76,7 +72,7 @@ const Topic = mongoose.model(
 const CoronaStats = mongoose.model(
 	'CoronaStats',
 	new Schema({
-		createdDate: { type: Date, default: Date.now },
+		createdDate: { type: Date, default: Date.now, expires: expiryTime },
 		stats: [
 			{
 				country: String,
