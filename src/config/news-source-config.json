@@ -1,23 +1,46 @@
 [
 	{
-		"name": "दैनिक नेपाल",
+		"name": "कान्तिपुर",
+		"logoLink": "/assets/logos/kantipur.jpg",
 		"pages": [
 			{
-				"url": "https://www.dainiknepal.com/",
+				"url": "https://ekantipur.com",
 				"category": "headlines",
-				"link-selector": "#body_a #visesh > h1 > a"
+				"link-selector": "article.normal > h1 > a"
+			},
+			{
+				"url": "https://ekantipur.com/news",
+				"category": "news",
+				"link-selector": "#wrapper > main > section article > div.teaser > a"
+			},
+			{
+				"url": "https://ekantipur.com/business",
+				"category": "business",
+				"link-selector": "#wrapper > main > section article > div.teaser > a"
+			},
+			{
+				"url": "https://ekantipur.com/opinion",
+				"category": "opinion",
+				"link-selector": "#wrapper > main > section article > div.teaser > a"
+			},
+			{
+				"url": "https://ekantipur.com/sports",
+				"category": "sports",
+				"link-selector": "#wrapper > main > section article > div.teaser > a"
+			},
+			{
+				"url": "https://ekantipur.com/entertainment",
+				"category": "entertainment",
+				"link-selector": "#wrapper > main > section article > div.teaser > a"
 			}
 		],
 		"article-detail-selectors": {
-			"title": "main div div h1.inside_head",
-			"excerpt": "main div div div.content p:nth-child(3)",
-			"lead-image": "main div.content p img",
-			"content": [
-				"main div.content"
-			],
+			"title": "main > article > header > h1",
+			"excerpt": "main > article .description> p:nth-child(1)",
+			"lead-image": "#wrapper main article header figure img",
+			"content": ["main article div.text-wrap p.description", "main article div.text-wrap div.description"],
 			"tags": "",
-			"likes-count": "",
-			"date": ""
+			"likes-count": "main > article > header div.total.shareTotal"
 		}
 	}
 ]
