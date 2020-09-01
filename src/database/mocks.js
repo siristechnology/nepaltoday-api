@@ -2,7 +2,7 @@ const casual = require('casual')
 
 const GetMockSource = () => ({
 	_id: casual.uuid,
-	name: 'Swasthya Khabar',
+	name: 'ekantipur',
 	url: 'news_url',
 	category: 'news_category',
 	link: 'news_link',
