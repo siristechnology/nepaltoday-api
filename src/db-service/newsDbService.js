@@ -1,6 +1,6 @@
 const { Article } = require('./database/mongooseSchema')
 const logger = require('../config/logger')
-const Sources = require('./../config/source-data')
+const SourceConfig = require('../config/news-source-config.json')
 
 module.exports = {
 	saveArticles: async (articles) => {
@@ -44,7 +44,7 @@ module.exports = {
 		const latestNewsArticle = await Article.find({ category: 'news' }).sort({ _id: -1 }).limit(1).lean()
 
 		const articleWithSource = latestNewsArticle.map((article) => {
-			const mySource = Sources.find((x) => x.name === article.sourceName)
+			const mySource = SourceConfig.find((x) => x.name === article.sourceName)
 			article.source = {
 				name: mySource.name,
 				url: mySource.link,
@@ -57,7 +57,7 @@ module.exports = {
 	},
 
 	getAllSources: () => {
-		return Sources
+		return SourceConfig
 	},
 
 	isExist: async (newslink) => {
