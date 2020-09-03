@@ -1,7 +1,13 @@
+require('dotenv').config()
 const { newsDbService } = require('../../db-service')
 const getBrowser = require('news-crawler/src/get-browser')
-const { default: Bugsnag } = require('@bugsnag/js')
-require('dotenv').config()
+const Bugsnag = require('@bugsnag/js')
+const BugsnagPluginExpress = require('@bugsnag/plugin-express')
+
+Bugsnag.start({
+	apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
+	plugins: [BugsnagPluginExpress],
+})
 
 module.exports = async function(context){
 
