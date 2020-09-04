@@ -147,6 +147,56 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1036251513843318784/2nI3h4vm_200x200.jpg',
 	},
 	{
+		name: 'Bina Magar',
+		category: 'Politics',
+		handle: '@magarbina1',
+		searchTerms: ['Bina Magar'],
+		image: 'https://pbs.twimg.com/profile_images/1037585103227117568/LH8TK1tg_normal.jpg'
+	},
+	{
+		name: 'Renu Dahal',
+		category: 'Politics',
+		handle: '@RenuDahal1',
+		searchTerms: ['Renu Dahal'],
+		image: 'https://pbs.twimg.com/profile_images/1254573473000636417/09ZQQiQB_x96.jpg'
+	},
+	{
+		name: 'Minendra Rijal',
+		category: 'Politics',
+		handle: '@MinendraRijal',
+		searchTerms: ['Minendra Rijal'],
+		image: 'https://pbs.twimg.com/profile_images/1277094572103921664/V7t4ezgg_x96.jpg'
+	},
+	{
+		name: 'Binod Chaudhary',
+		category: 'Politics',
+		handle: '@BinodKChaudhary',
+		searchTerms: ['Binod Chaudhary'],
+		image: 'https://pbs.twimg.com/profile_images/927590536168407040/OqxqSYWf_x96.jpg'
+	},
+	{
+		name: 'Sashank Koirala',
+		category: 'Politics',
+		handle: '@sashank_koirala',
+		searchTerms: ['Sashank Koirala'],
+		image: 'https://pbs.twimg.com/profile_images/1293059089971335168/7Qey-wZL_bigger.jpg'
+	},
+	{
+		name: 'Bhimarjun Acharya',
+		category: 'Politics',
+		handle: '@BhimarjunPhD',
+		searchTerms: ['Bhimarjun Acharya'],
+		image: 'https://pbs.twimg.com/profile_images/3297014097/78caeb4e74942e4b746780b52b49d098_bigger.jpeg'
+	},
+	{
+		name: 'Dr. Shekhar Koirala',
+		category: 'Politics',
+		handle: '@Shekharnc',
+		searchTerms: ['Dr Shekhar Koirala'],
+		image: 'https://pbs.twimg.com/profile_images/1253916222154031105/bDWqPUN7_bigger.jpg'
+	},
+
+	{
 		name: 'Khagendra Sangroula',
 		category: 'Media Celebrity',
 		handle: '@belakoboli',
@@ -203,6 +253,132 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1293055891877453827/B4c-rO4e_200x200.jpg',
 	},
 	{
+		name: 'Suman Kharel',
+		category: 'Media Celebrity',
+		handle: '@kharel8',
+		searchTerms: ['Suman Kharel'],
+		image: 'https://pbs.twimg.com/profile_images/2730470518/711a10d884e75e76edb822cbffc63456_bigger.jpeg'
+	},
+	{
+		name: 'Buddhisagar',
+		category: 'Media Celebrity',
+		handle: '@buddhisagar',
+		searchTerms: ['Buddhisagar'],
+		image: 'https://pbs.twimg.com/profile_images/1192153740142399488/ILnu-4hF_bigger.jpg'
+	},
+	{
+		name: 'Govinda Adhikari',
+		category: 'Media Celebrity',
+		handle: '@agovinda',
+		searchTerms: ['Govinda Adhikari'],
+		image: 'https://pbs.twimg.com/profile_images/378800000443225033/776805b83902603dcf5bfe04e04111d6_bigger.jpeg'
+	},
+	{
+		name: 'Bidhya Chapagain',
+		category: 'Media Celebrity',
+		handle: '@cbidhya',
+		searchTerms: ['Bidhya Chapagain'],
+		image: 'https://pbs.twimg.com/profile_images/1237621856305172480/Uy4txODI_bigger.jpg'
+	},
+	{
+		name: 'Suraj Singh Thakuri',
+		category: 'Media Celebrity',
+		handle: '@Tsuraj111',
+		searchTerms: ['Suraj Singh Thakuri'],
+		image: 'https://pbs.twimg.com/profile_images/946067092536569856/69tCcN6y_bigger.jpg'
+	},
+	{
+		name: 'Shivani Singh Tharu',
+		category: 'Media Celebrity',
+		handle: '@shivanitharu',
+		searchTerms: ['Shivani Singh Tharu'],
+		image: 'https://pbs.twimg.com/profile_images/1001365129391304704/59h9ZoBA_bigger.jpg'
+	},
+	{
+		name: 'Narayan Wagle',
+		category: 'Media Celebrity',
+		handle: '@narayanwagle',
+		searchTerms: ['Narayan Wagle'],
+		image: 'https://pbs.twimg.com/profile_images/783526626659295233/sQghQzY0_bigger.jpg'
+	},
+	{
+		name: 'Jagdish Ghimire',
+		category: 'Media Celebrity',
+		handle: '@JagdishGhimire',
+		searchTerms: ['Jagdish Ghimire'],
+		image: 'https://pbs.twimg.com/profile_images/3191072615/5b445bdb8bc65e8a0332cbc1cca4a9b9_bigger.jpeg'
+	},
+	{
+		name: 'Jhamak Ghimire',
+		category: 'Media Celebrity',
+		handle: '@jhamakghimire',
+		searchTerms: ['Jhamak Ghimire'],
+		image: 'https://pbs.twimg.com/profile_images/956842437703446528/EFnPhNhu_bigger.jpg'
+	},
+	{
+		name: 'Krishna Dharabasi',
+		category: 'Media Celebrity',
+		handle: '@KrishnaDharaba2',
+		searchTerms: ['Krishna Dharabasi'],
+		image: 'https://pbs.twimg.com/profile_images/1258945302968406016/y7-egjp4_bigger.jpg'
+	},
+	{
+		name: 'Narayan Shrestha',
+		category: 'Media Celebrity',
+		handle: '@NrnShrestha',
+		searchTerms: ['Narayan Shrestha'],
+		image: 'https://pbs.twimg.com/profile_images/1058764536356859906/ZV0NBje0_bigger.jpg'
+	},
+	{
+		name: 'Kailash Sirohiya',
+		category: 'Media Celebrity',
+		handle: '@KailashSirohiya',
+		searchTerms: ['Kailash Sirohiya'],
+		image: 'https://pbs.twimg.com/profile_images/1034844194660147206/6LONSlFP_bigger.jpg'
+	},
+	{
+		name: 'Surya Raj Acharya',
+		category: 'Media Celebrity',
+		handle: '@SuryaRAcharya',
+		searchTerms: ['Surya Raj Acharya'],
+		image: 'https://pbs.twimg.com/profile_images/964724758767067136/pynIRX0O_bigger.jpg'
+	},
+	{
+		name: 'Subin Bhattarai',
+		category: 'Media Celebrity',
+		handle: '@subinbhattarai1',
+		searchTerms: ['Subin Bhattarai'],
+		image: 'https://pbs.twimg.com/profile_images/1184444078500352001/E_ccouCZ_bigger.jpg'
+	},
+	{
+		name: 'Achyut Ghimire',
+		category: 'Media Celebrity',
+		handle: '@achyutbulbul',
+		searchTerms: ['Achyut Ghimire'],
+		image: 'https://pbs.twimg.com/profile_images/946045207367135232/2o4gMHQc_bigger.jpg'
+	},
+	{
+		name: 'Rishi Dhamala',
+		category: 'Media Celebrity',
+		handle: '@RishiDhamala',
+		searchTerms: ['Rishi Dhamala'],
+		image: 'https://pbs.twimg.com/profile_images/2863667700/4b97a6ae8586135bb66c2915d2d45151_bigger.jpeg'
+	},
+	{
+		name: 'Kala Subba',
+		category: 'Media Celebrity',
+		handle: '@kalasubba1',
+		searchTerms: ['Kala Subba'],
+		image: 'https://pbs.twimg.com/profile_images/1297785886638084096/do3B63as_bigger.jpg'
+	},
+	{
+		name: 'Sameer M Dixit',
+		category: 'Media Celebrity',
+		handle: '@smadixit',
+		searchTerms: ['Sameer M Dixit, PhD'],
+		image: 'https://pbs.twimg.com/profile_images/1292814402865922048/44BtABOY_bigger.jpg'
+	},
+	{
 		name: 'Pramod Kharel',
 		category: 'Singer',
 		handle: '@kharel777',
@@ -215,6 +391,83 @@ const TrendingTwitterHandles = [
 		handle: '@dpkbajra',
 		searchTerms: ['Deepak Bajracharya'],
 		image: 'https://pbs.twimg.com/profile_images/867739088329289729/SWx6ngN8_200x200.jpg',
+	},
+	{
+		name: 'Amrit Gurung',
+		category: 'Singer',
+		handle: '@amritnepathya',
+		searchTerms: ['Amrit Gurung'],
+		image: 'https://pbs.twimg.com/profile_images/2662938816/59e44bb1f8ca647004c4bff01218c44b_bigger.jpeg'
+	},
+	{
+		name: 'Astha Tamang-Maskey',
+		category: 'Singer',
+		handle: '@asthamusic',
+		searchTerms: ['Astha Tamang-Maskey'],
+		image: 'https://pbs.twimg.com/profile_images/1248314195705135104/02lx9Ol4_bigger.jpg'
+	},
+	{
+		name: 'Manoj Kumar KC',
+		category: 'Singer',
+		handle: '@manoj1974',
+		searchTerms: ['Manoj Kumar KC'],
+		image: 'https://pbs.twimg.com/profile_images/979715460211015680/i4CgJ1U7_bigger.jpg'
+	},
+	{
+		name: 'Raju Lama',
+		category: 'Singer',
+		handle: '@RajuLama',
+		searchTerms: ['Raju Lama'],
+		image: 'https://pbs.twimg.com/profile_images/445498168/DSC_0959_bigger.JPG'
+	},
+	{
+		name: 'Astha Raut',
+		category: 'Singer',
+		handle: '@astharaut',
+		searchTerms: ['Astha Raut'],
+		image: 'https://pbs.twimg.com/profile_images/813965343001456640/IStKorpj_bigger.jpg'
+	},
+	{
+		name: 'Ram Krishna Dhakal',
+		category: 'Singer',
+		handle: '@ramkdhakal',
+		searchTerms: ['Ram Krishna Dhakal'],
+		image: 'https://pbs.twimg.com/profile_images/1130468156684742656/f9Bf6IUn_bigger.jpg'
+	},
+	{
+		name: 'Nima Rumba',
+		category: 'Singer',
+		handle: '@nimarumba',
+		searchTerms: ['Nima Rumba'],
+		image: 'https://pbs.twimg.com/profile_images/708656879262629888/PgZ64hwl_bigger.jpg'
+	},
+	{
+		name: 'Nabin K Bhattarai',
+		category: 'Singer',
+		handle: '@nabinkbhattarai',
+		searchTerms: ['Nabin K Bhattarai'],
+		image: 'https://pbs.twimg.com/profile_images/1295000946498363392/vCHvDoRz_bigger.jpg'
+	},
+	{
+		name: 'Abhaya Subba',
+		category: 'Singer',
+		handle: '@AbhayaSubba',
+		searchTerms: ['Abhaya Subba'],
+		image: 'https://pbs.twimg.com/profile_images/1278699629412941824/MeFz1RAl_bigger.jpg'
+	},
+	{
+		name: 'Samriddhi Rai',
+		category: 'Singer',
+		handle: '@samriddhirai13',
+		searchTerms: ['Samriddhi Rai'],
+		image: 'https://pbs.twimg.com/profile_images/1218485932241801216/OtB95SXU_bigger.jpg'
+	},
+	{
+		name: 'Sajja Chaulagain',
+		category: 'Singer',
+		handle: '@Sajjachaulagain',
+		searchTerms: ['Sajja Chaulagain'],
+		image: 'https://pbs.twimg.com/profile_images/1299528355268632578/McPvW6___bigger.jpg'
 	},
 	{
 		name: 'Manisha Koirala',
@@ -322,6 +575,13 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/686208528088875008/7dN-KKz2_200x200.jpg',
 	},
 	{
+		name: 'Namrata Sapkota',
+		category: 'Actor',
+		handle: '@inamratasapkota',
+		searchTerms: ['Namrata Sapkota'],
+		image: 'https://pbs.twimg.com/profile_images/807072671615721472/ULCYnA_5_bigger.jpg'
+	},
+	{
 		name: 'Nirmal Purja',
 		category: 'Sports',
 		handle: '@nimsdai',
@@ -350,7 +610,7 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1282074805026594819/stoZRfKq_200x200.jpg',
 	},
 	{
-		name: 'Siporta Gurung',
+		name: 'Sipora Gurung',
 		category: 'Sports',
 		handle: '@GurungSipora',
 		searchTerms: ['Sipora Gurung'],
@@ -364,12 +624,82 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1024227850189254656/kzLSPbl8_200x200.jpg',
 	},
 	{
+		name: 'Karan KC',
+		category: 'Sports',
+		handle: '@karankc33',
+		searchTerms: ['Karan KC'],
+		image: 'https://pbs.twimg.com/profile_images/1114023812813791233/XuL_fow6_bigger.jpg'
+	},
+	{
+		name: 'Binod Das',
+		category: 'Sports',
+		handle: '@binodsum',
+		searchTerms: ['Binod Das'],
+		image: 'https://pbs.twimg.com/profile_images/1270050160131751936/JTrB03OY_bigger.jpg'
+	},
+	{
 		name: 'Gyanendra Shah',
-		category: 'Celebrity',
+		category: 'Other Celebrity',
 		handle: '@GBBShah',
 		searchTerms: ['Gyanendra Shah'],
 		image: 'https://pbs.twimg.com/profile_images/1249686060088451073/SmdhKkDN_200x200.jpg',
 	},
+	{
+		name: 'Shrinkhala Khatiwada',
+		category: 'Other Celebrity',
+		handle: '@shrinkhalak_',
+		searchTerms: ['Shrinkhala Khatiwada'],
+		image: 'https://pbs.twimg.com/profile_images/1236735749967372288/h2_MoJNK_bigger.jpg'
+	},
+	{
+		name: 'Malvika Subba',
+		category: 'Other Celebrity',
+		handle: '@malvikasubba',
+		searchTerms: ['Malvika Subba'],
+		image: 'https://pbs.twimg.com/profile_images/3340344956/236b48c27cde0dff139ae54f26085ce3_bigger.jpeg'
+	},
+	{
+		name: 'Himani Shah',
+		category: 'Other Celebrity',
+		handle: '@Himani_Shah_Nep',
+		searchTerms: ['Himani Shah'],
+		image: 'https://pbs.twimg.com/profile_images/1280879232084656130/22B3onqZ_bigger.jpg'
+	},
+	{
+		name: 'Nikita Acharya',
+		category: 'Other Celebrity',
+		handle: '@nikitacharyaa',
+		searchTerms: ['Nikita Acharya'],
+		image: 'https://pbs.twimg.com/profile_images/1113307549816774656/uMUgNSk6_bigger.png'
+	},
+	{
+		name: 'Anil Shah',
+		category: 'Other Celebrity',
+		handle: '@AnilKesharyShah',
+		searchTerms: ['Anil Shah', 'Anil Keshary Shah'],
+		image: 'https://pbs.twimg.com/profile_images/1242755605455966208/sGvZ_jyY_bigger.jpg'
+	},
+	{
+		name: 'Dr Govinda KC',
+		category: 'Other Celebrity',
+		handle: '@DrGovindaKC',
+		searchTerms: ['Govinda KC'],
+		image: 'https://pbs.twimg.com/profile_images/581000405246558208/qRhMZ9lM_bigger.jpg'
+	},
+	{
+		name: 'Mahabir Pun',
+		category: 'Other Celebrity',
+		handle: '@MahabirPun',
+		searchTerms: ['Mahabir Pun'],
+		image: 'https://pbs.twimg.com/profile_images/3256983670/0d96411852fb0aea173f5607b5af9c9d_bigger.jpeg'
+	},
+	{
+		name: 'Sugat Kansakar',
+		category: 'Other Celebrity',
+		handle: '@SugatKansakar',
+		searchTerms: ['Sugat Kansakar'],
+		image: 'https://pbs.twimg.com/profile_images/1895806178/sugat_pp_bigger.jpg'
+	}
 ]
 
 module.exports = {

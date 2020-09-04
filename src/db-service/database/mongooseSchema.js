@@ -15,7 +15,7 @@ const Article = mongoose.model(
 		content: String,
 		sourceName: String,
 		hostIp: String,
-		publishedDate: { type: Date },
+		publishedDate: { type: Date, default: Date.now },
 		createdDate: { type: Date, default: Date.now },
 		modifiedDate: { type: Date, default: Date.now },
 		topic: { type: String },
