@@ -1,7 +1,13 @@
+require('dotenv').config()
 const { newsDbService } = require('../../db-service')
 const getBrowser = require('news-crawler/src/get-browser')
-const { default: Bugsnag } = require('@bugsnag/js')
-require('dotenv').config()
+const Bugsnag = require('@bugsnag/js')
+const BugsnagPluginExpress = require('@bugsnag/plugin-express')
+
+Bugsnag.start({
+	apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
+	plugins: [BugsnagPluginExpress],
+})
 
 module.exports = async function(context){
 
@@ -27,9 +33,19 @@ module.exports = async function(context){
             if(i === articleLink.length-1){
                 await browserPage.waitFor(2000)
                 await browserPage.keyboard.down('Control')
-                await browserPage.keyboard.press(String.fromCharCode(13))
+                await browserPage.keyboard.press('KeyA')
+                await browserPage.waitFor(2000)
+                await browserPage.keyboard.press('KeyX')
+                await browserPage.waitFor(2000)
+                await browserPage.keyboard.press('KeyV')
                 await browserPage.keyboard.up('Control')
-                await browserPage.waitFor(10000)
+                await browserPage.waitFor(4000)
+                // await browserPage.keyboard.down('Control')
+                // await browserPage.keyboard.press(String.fromCharCode(13))
+                // await browserPage.keyboard.up('Control')
+                await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
+                await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
+                await browserPage.waitFor(15000)
                 context.log("Posted to FB")
             }
         }
