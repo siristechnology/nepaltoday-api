@@ -1,10 +1,3 @@
-const Bugsnag = require('@bugsnag/js')
-const BugsnagPluginExpress = require('@bugsnag/plugin-express')
-
-Bugsnag.start({
-	apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
-	plugins: [BugsnagPluginExpress],
-})
 require('newrelic')
 require('./config/env')
 const morgan = require('morgan')
@@ -23,7 +16,13 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const app = express()
 
 const middleware = Bugsnag.getPlugin('express')
+const Bugsnag = require('@bugsnag/js')
+const BugsnagPluginExpress = require('@bugsnag/plugin-express')
 
+Bugsnag.start({
+	apiKey: process.env.BUGSNAG_KEY,
+	plugins: [BugsnagPluginExpress],
+})
 // This must be the first piece of middleware in the stack.
 // It can only capture errors in downstream middleware
 app.use(middleware.requestHandler)

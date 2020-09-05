@@ -5,7 +5,7 @@ const Bugsnag = require('@bugsnag/js')
 const BugsnagPluginExpress = require('@bugsnag/plugin-express')
 
 Bugsnag.start({
-	apiKey: 'bf6ecbb87c478df6c456d6d297a82f4f',
+	apiKey: process.env.BUGSNAG_KEY,
 	plugins: [BugsnagPluginExpress],
 })
 
@@ -46,7 +46,7 @@ module.exports = async function(context){
                 // await browserPage.keyboard.up('Control')
                 await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
                 await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
-                await browserPage.waitFor(25000)
+                await browserPage.waitFor(50000)
                 context.log("Posted to FB")
             }
         }
