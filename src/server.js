@@ -15,8 +15,8 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 const app = express()
 
-const middleware = Bugsnag.getPlugin('express')
 const Bugsnag = require('@bugsnag/js')
+const middleware = Bugsnag.getPlugin('express')
 const BugsnagPluginExpress = require('@bugsnag/plugin-express')
 
 Bugsnag.start({
