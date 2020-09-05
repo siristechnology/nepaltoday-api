@@ -14,7 +14,7 @@ module.exports = async function(context){
     try {
         context.log("Posting to fb...")
         const latestArticle = await newsDbService.getLatestNewsArticle()
-        let articleLink = latestArticle[0].link
+        let articleLink = latestArticle[0].link 
         
         const browser = await getBrowser()
 	    const browserPage = await browser.newPage()
