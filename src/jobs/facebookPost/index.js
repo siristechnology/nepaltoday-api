@@ -25,7 +25,7 @@ module.exports = async function(context){
         await browserPage.type('#pass', process.env.FACEBOOK_PASSWORD)
         await browserPage.click(`[type="submit"]`)
         await browserPage.waitForNavigation()
-        await browserPage.waitFor(10000)
+        await browserPage.waitFor(15000)
         await browserPage.waitForSelector(`[aria-label="Write a post..."]`)
         await browserPage.click(`[aria-label="Write a post..."]`)
         // await browserPage.waitForSelector('div.g9en0fbe > div > img')
@@ -46,7 +46,7 @@ module.exports = async function(context){
                 // await browserPage.keyboard.up('Control')
                 await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
                 await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
-                await browserPage.waitFor(15000)
+                await browserPage.waitFor(25000)
                 context.log("Posted to FB")
             }
         }

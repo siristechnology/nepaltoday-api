@@ -30,8 +30,8 @@ module.exports = {
 			})
 
 			const articles = await Promise.all(promises)
-			const articleFlattened = _.flatten(articles)
-
+			let articleFlattened = _.flatten(articles)
+			articleFlattened = articleFlattened.sort((a,b) => (a._id < b._id) ? 1 : ((b._id < a._id) ? -1 : 0));
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
