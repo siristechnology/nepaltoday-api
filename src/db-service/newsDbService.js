@@ -1,4 +1,4 @@
-const { Article } = require('./database/mongooseSchema')
+const { Article, FacebookPosts } = require('./database/mongooseSchema')
 const logger = require('../config/logger')
 const SourceConfig = require('../config/news-source-config.json')
 
@@ -64,4 +64,16 @@ module.exports = {
 		const count = await Article.count({ link: newslink })
 		return count > 0
 	},
+
+	checkFacebookPostExist: async(articleLink) => {
+		const count = await FacebookPosts.countDocuments({articleLink})
+		if(count > 0) return true
+		else return false
+	},
+
+	saveFacebookPost: async(articleLink) => {
+		const newsLink = new FacebookPosts({articleLink})
+		await newsLink.save()
+	}
+
 }
