@@ -146,6 +146,13 @@ const FacebookPosts = mongoose.model(
 	})
 )
 
+const TrendingTopic = mongoose.model(
+	'TrendingTopic',
+	new Schema({
+		topics: [{type: String, unique: true}]
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -155,5 +162,6 @@ module.exports = {
 	CoronaStats,
 	DistrictCoronaStats,
 	TrendingTweetCount,
-	FacebookPosts
+	FacebookPosts,
+	TrendingTopic
 }

@@ -236,7 +236,7 @@ const TrendingTwitterHandles = [
 		category: 'Media Celebrity',
 		handle: '@kishorenepal',
 		searchTerms: ['Kishore Nepal'],
-		image: 'https://pbs.twimg.com/profile_images/1262063327607316482/H21K4AVn_200x200.jpg',
+		image: 'https://pbs.twimg.com/profile_images/1299652841175277568/JYipFj_x_200x200.jpg',
 	},
 	{
 		name: 'Kanak Mani Dixit',
