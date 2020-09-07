@@ -138,6 +138,14 @@ const TrendingTweetCount = mongoose.model(
 	}),
 )
 
+const FacebookPosts = mongoose.model(
+	'FacebookPosts',
+	new Schema({
+		createdAt: {type: Date, default: Date.now(), expires: 86400},
+		articleLink: {type: String, required: true, unique: true}
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -147,4 +155,5 @@ module.exports = {
 	CoronaStats,
 	DistrictCoronaStats,
 	TrendingTweetCount,
+	FacebookPosts
 }
