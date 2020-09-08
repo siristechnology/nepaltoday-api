@@ -20,6 +20,7 @@ const Article = mongoose.model(
 		modifiedDate: { type: Date, default: Date.now },
 		topic: { type: String },
 		createdAt: { type: Date, expires: expiryTime, default: Date.now },
+		nouns: [String]
 	}),
 )
 
@@ -146,6 +147,13 @@ const FacebookPosts = mongoose.model(
 	})
 )
 
+const TrendingTopic = mongoose.model(
+	'TrendingTopic',
+	new Schema({
+		topics: [{type: String, unique: true}]
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -155,5 +163,6 @@ module.exports = {
 	CoronaStats,
 	DistrictCoronaStats,
 	TrendingTweetCount,
-	FacebookPosts
+	FacebookPosts,
+	TrendingTopic
 }

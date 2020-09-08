@@ -2,7 +2,8 @@ const NewsCrawler = require('news-crawler')
 const { saveArticles } = require('../../db-service/newsDbService')
 const SourceConfig = require('../../config/news-source-config.json')
 const logger = require('../../config/logger')
-const { googleTranslate, removeDuplicateArticles } = require('./helper')
+const { googleTranslate, removeDuplicateArticles, filterNewArticles } = require('./helper')
+const { Article } = require('../../db-service/database/mongooseSchema')
 const WordPOS = require('wordpos'), wordpos = new WordPOS();
 
 module.exports = async function () {
@@ -10,6 +11,9 @@ module.exports = async function () {
 
 	try {
 		const articles = await NewsCrawler(SourceConfig, 3)
+
+		const savedArticles = await Article.find({"createdDate":{$gt: new Date(Date.now() - 12*60*60*1000)}})
+
 		let articleWithNouns = []
 		for(const article of articles){
 			let translated = await googleTranslate(article.title)
@@ -18,9 +22,13 @@ module.exports = async function () {
 			articleWithNouns.push(article)
 		}
 
-		let newArticles = removeDuplicateArticles(articleWithNouns)
-		newArticles.forEach((x) => (x.hostIp = ipAddress))
-		await saveArticles(newArticles)
+		let newFilteredArticles = removeDuplicateArticles(articleWithNouns)
+
+		let checkWithOldArticles = filterNewArticles(newFilteredArticles, savedArticles)
+
+		checkWithOldArticles.forEach((x) => (x.hostIp = ipAddress))
+		
+		await saveArticles(checkWithOldArticles)
 	} catch (error) {
 		logger.error('error occured here', error)
 	}

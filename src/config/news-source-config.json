@@ -133,6 +133,8 @@
 		"sourceName": "Online Khabar",
 		"nepaliName": "अनलाईन खबर",
 		"logoLink": "/assets/logos/online-khabar.png",
+		"trendingSelector": "#trendingTicker > div > div > ul > li > a",
+		"mainUrl": "https://www.onlinekhabar.com",
 		"weight": 35,
 		"pages":[
 			{
