@@ -19,6 +19,24 @@ const repeatedArticles = (articles) => {
     return repeated;
 }
 
+const getMatchedNewArticles = (newArticles, oldArticles) => {
+    let repeated = []
+    for(let i = 0; i < newArticles.length; i++){
+        for(let j = 0; j < oldArticles.length; j++){
+            if(newArticles[i].nouns.length > oldArticles[j].nouns.length){
+                if(isSubsentence(newArticles[i].nouns, oldArticles[j].nouns)){
+                    repeated.push(newArticles[i])
+                }
+            }else{
+                if(isSubsentence(oldArticles[j].nouns, newArticles[i].nouns)){
+                    repeated.push(newArticles[i])
+                }
+            }
+        }
+    }
+    return repeated;
+}
+
 const isSubsentence = (array1, array2) => {
     const result = array2.every(val => array1.includes(val));
     return result
@@ -42,6 +60,15 @@ module.exports = {
     removeDuplicateArticles: function(articles){
         let set1 = new Set(articles)
         let set2 = new Set(repeatedArticles(articles))
+        let difference = new Set(
+            [...set1].filter(x=> !set2.has(x))
+        )
+        return Array.from(difference)
+    },
+
+    filterNewArticles: function(newArticles, oldArticles){
+        let set1 = new Set(newArticles)
+        let set2 = new Set(getMatchedNewArticles(newArticles, oldArticles))
         let difference = new Set(
             [...set1].filter(x=> !set2.has(x))
         )
