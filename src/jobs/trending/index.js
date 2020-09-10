@@ -26,12 +26,15 @@ module.exports = async function () {
 					searchResultsArr = searchResultsArr.filter((thing, index, self) => index === self.findIndex((t) => t.id === thing.id))
 				}
 
+				const userInfo = await client.get('users/show.json',{screen_name:user.handle})
+				const profileImage = userInfo.profile_image_url_https
+
 				const d = new Date()
 				d.setHours(0, 0, 0, 0)
 				const midNightTimeStamp = d.getTime()
 				const currentDate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
 				const recentTweetsCount = searchResultsArr.filter((x) => midNightTimeStamp < new Date(x.created_at).getTime()).length
-				await TrendingDbService.saveTrendingTweetCount(currentDate, user.name, user.handle, recentTweetsCount, user.image, user.category)
+				await TrendingDbService.saveTrendingTweetCount(currentDate, user.name, user.handle, recentTweetsCount, profileImage, user.category)
 			}
 			return
 		}

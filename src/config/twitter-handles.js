@@ -198,182 +198,182 @@ const TrendingTwitterHandles = [
 
 	{
 		name: 'Khagendra Sangroula',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@belakoboli',
 		searchTerms: ['Khagendra Sangroula'],
 		image: 'https://pbs.twimg.com/profile_images/777430819748974592/RAxgtDyd_200x200.jpg',
 	},
 	{
 		name: 'Vijay Kumar Panday',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@Vijaykumarko',
 		searchTerms: ['Vijay Kumar Panday'],
 		image: 'https://pbs.twimg.com/profile_images/891293756737036288/xR3s_3gO_200x200.jpg',
 	},
 	{
 		name: 'Bhusan Dahal',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@DahalTbd',
 		searchTerms: ['Bhusan Dahal'],
 		image: 'https://pbs.twimg.com/profile_images/1280013586824224768/bDX_trnN_200x200.jpg',
 	},
 	{
 		name: 'Dil Bhusan Pathak',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@DilBhusanPathak',
 		searchTerms: ['Dil Bhusan Pathak'],
 		image: 'https://pbs.twimg.com/profile_images/1182300102280413187/nDlqQ9rD_200x200.jpg',
 	},
 	{
 		name: 'Yubraj Ghimire',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@YubarajGhimire3',
 		searchTerms: ['Yubaraj Ghimire'],
 		image: 'https://pbs.twimg.com/profile_images/3442008702/66e02b757c23c671223ad7936b5cc085_200x200.jpeg',
 	},
 	{
 		name: 'Kishore Nepal',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@kishorenepal',
 		searchTerms: ['Kishore Nepal'],
 		image: 'https://pbs.twimg.com/profile_images/1299652841175277568/JYipFj_x_200x200.jpg',
 	},
 	{
 		name: 'Kanak Mani Dixit',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@KanakManiDixit',
 		searchTerms: ['Kanak Mani Dixit'],
 		image: 'https://pbs.twimg.com/profile_images/1093343506016493568/4OBk94Gk_200x200.jpg',
 	},
 	{
 		name: 'Subhash Ghimire',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@subhash580',
 		searchTerms: ['Subhash Ghimire'],
 		image: 'https://pbs.twimg.com/profile_images/1293055891877453827/B4c-rO4e_200x200.jpg',
 	},
 	{
 		name: 'Suman Kharel',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@kharel8',
 		searchTerms: ['Suman Kharel'],
 		image: 'https://pbs.twimg.com/profile_images/2730470518/711a10d884e75e76edb822cbffc63456_bigger.jpeg'
 	},
 	{
 		name: 'Buddhisagar',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@buddhisagar',
 		searchTerms: ['Buddhisagar'],
 		image: 'https://pbs.twimg.com/profile_images/1192153740142399488/ILnu-4hF_bigger.jpg'
 	},
 	{
 		name: 'Govinda Adhikari',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@agovinda',
 		searchTerms: ['Govinda Adhikari'],
 		image: 'https://pbs.twimg.com/profile_images/378800000443225033/776805b83902603dcf5bfe04e04111d6_bigger.jpeg'
 	},
 	{
 		name: 'Bidhya Chapagain',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@cbidhya',
 		searchTerms: ['Bidhya Chapagain'],
 		image: 'https://pbs.twimg.com/profile_images/1237621856305172480/Uy4txODI_bigger.jpg'
 	},
 	{
 		name: 'Suraj Singh Thakuri',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@Tsuraj111',
 		searchTerms: ['Suraj Singh Thakuri'],
 		image: 'https://pbs.twimg.com/profile_images/946067092536569856/69tCcN6y_bigger.jpg'
 	},
 	{
 		name: 'Shivani Singh Tharu',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@shivanitharu',
 		searchTerms: ['Shivani Singh Tharu'],
 		image: 'https://pbs.twimg.com/profile_images/1001365129391304704/59h9ZoBA_bigger.jpg'
 	},
 	{
 		name: 'Narayan Wagle',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@narayanwagle',
 		searchTerms: ['Narayan Wagle'],
 		image: 'https://pbs.twimg.com/profile_images/783526626659295233/sQghQzY0_bigger.jpg'
 	},
 	{
 		name: 'Jagdish Ghimire',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@JagdishGhimire',
 		searchTerms: ['Jagdish Ghimire'],
 		image: 'https://pbs.twimg.com/profile_images/3191072615/5b445bdb8bc65e8a0332cbc1cca4a9b9_bigger.jpeg'
 	},
 	{
 		name: 'Jhamak Ghimire',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@jhamakghimire',
 		searchTerms: ['Jhamak Ghimire'],
 		image: 'https://pbs.twimg.com/profile_images/956842437703446528/EFnPhNhu_bigger.jpg'
 	},
 	{
 		name: 'Krishna Dharabasi',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@KrishnaDharaba2',
 		searchTerms: ['Krishna Dharabasi'],
 		image: 'https://pbs.twimg.com/profile_images/1258945302968406016/y7-egjp4_bigger.jpg'
 	},
 	{
 		name: 'Narayan Shrestha',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@NrnShrestha',
 		searchTerms: ['Narayan Shrestha'],
 		image: 'https://pbs.twimg.com/profile_images/1058764536356859906/ZV0NBje0_bigger.jpg'
 	},
 	{
 		name: 'Kailash Sirohiya',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@KailashSirohiya',
 		searchTerms: ['Kailash Sirohiya'],
 		image: 'https://pbs.twimg.com/profile_images/1034844194660147206/6LONSlFP_bigger.jpg'
 	},
 	{
 		name: 'Surya Raj Acharya',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@SuryaRAcharya',
 		searchTerms: ['Surya Raj Acharya'],
 		image: 'https://pbs.twimg.com/profile_images/964724758767067136/pynIRX0O_bigger.jpg'
 	},
 	{
 		name: 'Subin Bhattarai',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@subinbhattarai1',
 		searchTerms: ['Subin Bhattarai'],
 		image: 'https://pbs.twimg.com/profile_images/1184444078500352001/E_ccouCZ_bigger.jpg'
 	},
 	{
 		name: 'Achyut Ghimire',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@achyutbulbul',
 		searchTerms: ['Achyut Ghimire'],
 		image: 'https://pbs.twimg.com/profile_images/946045207367135232/2o4gMHQc_bigger.jpg'
 	},
 	{
 		name: 'Rishi Dhamala',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@RishiDhamala',
 		searchTerms: ['Rishi Dhamala'],
 		image: 'https://pbs.twimg.com/profile_images/2863667700/4b97a6ae8586135bb66c2915d2d45151_bigger.jpeg'
 	},
 	{
 		name: 'Kala Subba',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@kalasubba1',
 		searchTerms: ['Kala Subba'],
 		image: 'https://pbs.twimg.com/profile_images/1297785886638084096/do3B63as_bigger.jpg'
 	},
 	{
 		name: 'Sameer M Dixit',
-		category: 'Media Celebrity',
+		category: 'Media',
 		handle: '@smadixit',
 		searchTerms: ['Sameer M Dixit, PhD'],
 		image: 'https://pbs.twimg.com/profile_images/1292814402865922048/44BtABOY_bigger.jpg'
@@ -583,119 +583,119 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sandeep Lamichhane',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@Sandeep25',
 		searchTerms: ['Sandeep Lamicchane'],
 		image: 'https://pbs.twimg.com/profile_images/1291014777955921921/5-KR7GNa_200x200.jpg',
 	},
 	{
 		name: 'Paras Khadka',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@paras77',
 		searchTerms: ['Paras Khadka'],
 		image: 'https://pbs.twimg.com/profile_images/1264936585008517122/QG3YAxGA_200x200.jpg',
 	},
 	{
 		name: 'Gaurika Singh',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@gaurika_singh',
 		searchTerms: ['Gaurika Singh'],
 		image: 'https://pbs.twimg.com/profile_images/1282074805026594819/stoZRfKq_200x200.jpg',
 	},
 	{
 		name: 'Sipora Gurung',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@GurungSipora',
 		searchTerms: ['Sipora Gurung'],
 		image: 'https://pbs.twimg.com/profile_images/996204655460978688/5WNzHlUg_200x200.jpg',
 	},
 	{
 		name: 'Gyanendra Malla',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@gyanu_gm11',
 		searchTerms: ['Gyanendra Malla'],
 		image: 'https://pbs.twimg.com/profile_images/1024227850189254656/kzLSPbl8_200x200.jpg',
 	},
 	{
 		name: 'Karan KC',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@karankc33',
 		searchTerms: ['Karan KC'],
 		image: 'https://pbs.twimg.com/profile_images/1114023812813791233/XuL_fow6_bigger.jpg'
 	},
 	{
 		name: 'Binod Das',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@binodsum',
 		searchTerms: ['Binod Das'],
 		image: 'https://pbs.twimg.com/profile_images/1270050160131751936/JTrB03OY_bigger.jpg'
 	},
 	{
 		name: 'Nirmal Purja',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@nimsdai',
 		searchTerms: ['Nirmal Purja'],
 		image: 'https://pbs.twimg.com/profile_images/1155908331170619393/GUiExdN3_200x200.jpg',
 	},
 	{
 		name: 'Gyanendra Shah',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@GBBShah',
 		searchTerms: ['Gyanendra Shah'],
 		image: 'https://pbs.twimg.com/profile_images/1249686060088451073/SmdhKkDN_200x200.jpg',
 	},
 	{
 		name: 'Shrinkhala Khatiwada',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@shrinkhalak_',
 		searchTerms: ['Shrinkhala Khatiwada'],
 		image: 'https://pbs.twimg.com/profile_images/1236735749967372288/h2_MoJNK_bigger.jpg'
 	},
 	{
 		name: 'Malvika Subba',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@malvikasubba',
 		searchTerms: ['Malvika Subba'],
 		image: 'https://pbs.twimg.com/profile_images/3340344956/236b48c27cde0dff139ae54f26085ce3_bigger.jpeg'
 	},
 	{
 		name: 'Himani Shah',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@Himani_Shah_Nep',
 		searchTerms: ['Himani Shah'],
 		image: 'https://pbs.twimg.com/profile_images/1280879232084656130/22B3onqZ_bigger.jpg'
 	},
 	{
 		name: 'Nikita Acharya',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@nikitacharyaa',
 		searchTerms: ['Nikita Acharya'],
 		image: 'https://pbs.twimg.com/profile_images/1113307549816774656/uMUgNSk6_bigger.png'
 	},
 	{
 		name: 'Anil Shah',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@AnilKesharyShah',
 		searchTerms: ['Anil Shah', 'Anil Keshary Shah'],
 		image: 'https://pbs.twimg.com/profile_images/1242755605455966208/sGvZ_jyY_bigger.jpg'
 	},
 	{
 		name: 'Dr Govinda KC',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@DrGovindaKC',
 		searchTerms: ['Govinda KC'],
 		image: 'https://pbs.twimg.com/profile_images/581000405246558208/qRhMZ9lM_bigger.jpg'
 	},
 	{
 		name: 'Mahabir Pun',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@MahabirPun',
 		searchTerms: ['Mahabir Pun'],
 		image: 'https://pbs.twimg.com/profile_images/3256983670/0d96411852fb0aea173f5607b5af9c9d_bigger.jpeg'
 	},
 	{
 		name: 'Sugat Kansakar',
-		category: 'Other Celebrity',
+		category: 'Others',
 		handle: '@SugatKansakar',
 		searchTerms: ['Sugat Kansakar'],
 		image: 'https://pbs.twimg.com/profile_images/1895806178/sugat_pp_bigger.jpg'
