@@ -73,7 +73,8 @@ const Topic = mongoose.model(
 const CoronaStats = mongoose.model(
 	'CoronaStats',
 	new Schema({
-		createdDate: { type: Date, default: Date.now, expires: expiryTime },
+		createdDate: { type: Date, default: Date.now },
+		createdAt: {type: Date, default: Date.now, expires: expiryTime},
 		stats: [
 			{
 				country: String,
@@ -96,6 +97,7 @@ const DistrictCoronaStats = mongoose.model(
 	'DistrictCoronaStats',
 	new Schema({
 		createdDate: { type: Date, default: Date.now },
+		createdAt: {type: Date, default: Date.now, expires: expiryTime},
 		timeLine: {
 			date: String,
 			totalCases: Number,
