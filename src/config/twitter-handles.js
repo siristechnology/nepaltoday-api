@@ -465,7 +465,7 @@ const TrendingTwitterHandles = [
 	{
 		name: 'Sajja Chaulagain',
 		category: 'Singer',
-		handle: '@Sajjachaulagain',
+		handle: '@sajja_npidol3',
 		searchTerms: ['Sajja Chaulagain'],
 		image: 'https://pbs.twimg.com/profile_images/1299528355268632578/McPvW6___bigger.jpg'
 	},
@@ -486,7 +486,7 @@ const TrendingTwitterHandles = [
 	{
 		name: 'Rajesh Hamal',
 		category: 'Actor',
-		handle: '@MN_RajeshHamal',
+		handle: '@RajeshHamal64',
 		searchTerms: ['Rajesh Hamal'],
 		image: 'https://pbs.twimg.com/profile_images/1223595122945753093/ZubYq5hK_200x200.jpg',
 	},
@@ -528,7 +528,7 @@ const TrendingTwitterHandles = [
 	{
 		name: 'Reeccha Sharma',
 		category: 'Actor',
-		handle: '@reecchasharma',
+		handle: '@reecchasharrma',
 		searchTerms: ['Reeccha Sharma'],
 		image: 'https://pbs.twimg.com/profile_images/1233090377684381696/KMah4dNV_200x200.jpg',
 	},
