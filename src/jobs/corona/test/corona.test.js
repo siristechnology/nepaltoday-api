@@ -8,9 +8,9 @@ afterEach(async () => await TestDbServer.clearDatabase())
 afterAll(async () => await TestDbServer.closeDatabase())
 
 describe('corona job', () => {
-	it('should fetch stats abt Nepal', async () => {
+	it('should fetch stats', async () => {
 		nock('https://pomber.github.io').get('/covid19/timeseries.json').reply(200, mockStatsResponse)
 
-		await coronaJob(['Albania'])
+		await coronaJob()
 	})
 })
