@@ -356,7 +356,7 @@
 		"pages": [
 			{
 				"url": "https://www.nepalipaisa.com/",
-				"category": "business",
+				"category": "share",
 				"link-selector": "#sfBreakingnews > div > div > div > div > div > h2 > a"
 			}
 		],
@@ -365,6 +365,26 @@
 			"excerpt": "#divNewsDetail > div.newsDesc > div",
 			"lead-image": "#image_share > div > ul > li > img",
 			"content": ["#divNewsDetail > div.newsDesc > div"]
+		}
+	},	
+	{
+		"name": "Mero Lagani",
+		"sourceName": "Mero Lagani",
+		"nepaliName": "मेरो लगानी",
+		"logoLink": "/assets/logos/merolagani.png",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://merolagani.com/",
+				"category": "share",
+				"link-selector": "h4 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "#ctl00_ContentPlaceHolder1_newsTitle",
+			"excerpt": "#ctl00_ContentPlaceHolder1_newsOverview > p > span",
+			"lead-image": "#ctl00_ContentPlaceHolder1_newsDetail > p > span > img",
+			"content": ["#ctl00_ContentPlaceHolder1_newsDetail"]
 		}
 	}
 ]
