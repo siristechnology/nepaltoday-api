@@ -72,6 +72,11 @@
 				"url": "https://www.setopati.com/entertainment",
 				"category": "entertainment",
 				"link-selector": "#content > div > section > div > div > a"
+			},
+			{
+				"url": "https://www.setopati.com/kinmel/information-technology",
+				"category": "technology",
+				"link-selector": "#content > div > section > div > div > a"
 			}
 		],
 		"article-detail-selectors":{
@@ -118,6 +123,11 @@
 				"url": "https://ratopati.com/health",
 				"category": "health",
 				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
+			},
+			{
+				"url": "https://ratopati.com/science",
+				"category": "technology",
+				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
 			}
 		],
 		"article-detail-selectors":{
@@ -151,6 +161,11 @@
 				"url": "https://www.onlinekhabar.com/entertainment",
 				"category": "entertainment",
 				"link-selector": "#main > section > div .post__heading > h2 > a"
+			},
+			{
+				"url": "https://www.onlinekhabar.com/content/business/technology",
+				"category": "technology",
+				"link-selector": "div.list_child_wrp > div > div > div > a"
 			}
 		],
 		"article-detail-selectors":{
@@ -199,6 +214,177 @@
 			"excerpt": "article.module.module-detail > section > p:nth-child(7)",
 			"lead-image": "article.module.module-detail > section > div.img-wrap > figure > fig > img",
 			"content": ["article.module.module-detail > section > p"]
+		}
+	},
+	{
+		"name": "Halo Khabar",
+		"sourceName": "Halo Khabar",
+		"nepaliName": "हलो खबर",
+		"logoLink": "/assets/logos/halokhabar.jpeg",
+		"weight": 50,
+		"pages": [
+			{
+				"url":"https://halokhabar.com/",
+				"category": "agriculture",
+				"link-selector": "body > div.container-wrapper > div > article > header > h2 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "article > header > h2",
+			"excerpt": "article > section > p:nth-child(5)",
+			"lead-image": "article > section > figure > img",
+			"content": ["article > section"]
+		}
+	},
+	{
+		"name": "Krishi Patrika",
+		"sourceName": "Krishi Patrika",
+		"nepaliName": "कृषि पत्रिका",
+		"logoLink": "/assets/logos/krishipatrika.jpg",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://krishipatrika.com/",
+				"category": "agriculture",
+				"link-selector": "#latest-update > ul > li > h3 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "div.post-header > h1",
+			"excerpt": "div.section > div.post-content > p:nth-child(2)",
+			"lead-image": "div.section > div.post-content > img",
+			"content": ["div.section > div.post-content"]
+		}
+	},
+	{
+		"name": "Techpana",
+		"sourceName": "Techpana",
+		"nepaliName": "टेकपाना",
+		"logoLink": "/assets/logos/techpana.png",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://www.techpana.com/",
+				"category": "technology",
+				"link-selector": "div.col-md-12.main-list.calc-height > div > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "article > header > h1",
+			"excerpt": "article > p:nth-child(3)",
+			"lead-image": "article > div.mb-3 > img",
+			"content": ["article"]
+		}
+	},
+	{
+		"name": "Baahrakhari",
+		"sourceName": "Baahrakhari",
+		"nepaliName": "बाह्रखरी",
+		"logoLink": "/assets/logos/baahrakhari.png",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://baahrakhari.com/news-article/1/Politics",
+				"category": "politics",
+				"link-selector":"h3 > a"
+			},
+			{
+				"url": "https://baahrakhari.com/news-article/2/Economy",
+				"category": "business",
+				"link-selector": "h3 > a"
+			},
+			{
+				"url": "https://baahrakhari.com/news-article/3/Sports",
+				"category": "sports",
+				"link-selector": "h3 > a"
+			},
+			{
+				"url": "https://baahrakhari.com/news-article/6/Thought",
+				"category": "opinion",
+				"link-selector": "h3 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "article > header > h2",
+			"excerpt": "section > p:nth-child(2)",
+			"lead-image": "section > div.img-wrap > figure > fig > img",
+			"content": ["article > div > div > section"]	
+		}
+	},
+	{
+		"name": "Pahilo Post",
+		"sourceName": "Pahilo Post",
+		"nepaliName": "पहिलो पोष्ट",
+		"logoLink": "/assets/logos/pahilopost.png",
+		"weight": 50,
+		"pages":[
+			{
+				"url": "https://pahilopost.com/content/category/politics.html",
+				"category": "politics",
+				"link-selector": "h2 > a"
+			},
+			{
+				"url": "https://pahilopost.com/content/category/entertainment.html",
+				"category": "entertainment",
+				"link-selector": "h2 > a"
+			},
+			{
+				"url": "https://pahilopost.com/content/category/sports.html",
+				"category": "sports",
+				"link-selector": "h2 > a"
+			},
+			{
+				"url": "https://pahilopost.com/content/category/technology.html",
+				"category": "technology",
+				"link-selector": "h2 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "h1",
+			"excerpt": "article > div.pahilo-news-content.pahilo-styled-news > div > div > p:nth-child(2)",
+			"lead-image": "article > figure > img",
+			"content": ["article > div.pahilo-news-content.pahilo-styled-news > div > div"]
+			
+		}
+	},
+	{
+		"name": "Nepali Paisa",
+		"sourceName": "Nepali Paisa",
+		"nepaliName": "नेपाली पैसा",
+		"logoLink": "/assets/logos/nepalipaisa.png",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://www.nepalipaisa.com/",
+				"category": "share",
+				"link-selector": "#sfBreakingnews > div > div > div > div > div > h2 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "#divNewsDetail > h1",
+			"excerpt": "#divNewsDetail > div.newsDesc > div",
+			"lead-image": "#image_share > div > ul > li > img",
+			"content": ["#divNewsDetail > div.newsDesc > div"]
+		}
+	},	
+	{
+		"name": "Mero Lagani",
+		"sourceName": "Mero Lagani",
+		"nepaliName": "मेरो लगानी",
+		"logoLink": "/assets/logos/merolagani.png",
+		"weight": 50,
+		"pages": [
+			{
+				"url": "https://merolagani.com/",
+				"category": "share",
+				"link-selector": "h4 > a"
+			}
+		],
+		"article-detail-selectors":{
+			"title": "#ctl00_ContentPlaceHolder1_newsTitle",
+			"excerpt": "#ctl00_ContentPlaceHolder1_newsOverview > p > span",
+			"lead-image": "#ctl00_ContentPlaceHolder1_newsDetail > p > span > img",
+			"content": ["#ctl00_ContentPlaceHolder1_newsDetail"]
 		}
 	}
 ]

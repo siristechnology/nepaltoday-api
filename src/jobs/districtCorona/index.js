@@ -30,17 +30,22 @@ module.exports = async function () {
 	})
 
 	let coronaTimeLine = {}
-	if (coronaSummary.data[coronaSummary.data.length - 2].newCases > 0) {
+	if (
+		coronaSummary.data[coronaSummary.data.length - 2].newCases > 0 &&
+		coronaSummary.data[coronaSummary.data.length - 2].newCases < 1.5 * coronaSummary.data[coronaSummary.data.length - 3].newCases
+	) {
 		coronaTimeLine = coronaSummary.data[coronaSummary.data.length - 2]
 	} else {
 		coronaTimeLine = coronaSummary.data[coronaSummary.data.length - 3]
 	}
 
-	const toSaveStats = {
+	const stats = {
 		createdDate: new Date(),
 		timeLine: coronaTimeLine,
 		districts: districtMetrics,
 	}
 
-	DistrictCoronaDbService.saveDistrictStats(toSaveStats)
+	DistrictCoronaDbService.saveDistrictStats(stats)
+
+	return stats
 }

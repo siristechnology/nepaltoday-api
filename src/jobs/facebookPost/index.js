@@ -47,13 +47,17 @@ module.exports = async function(context){
                     await browserPage.keyboard.press('KeyX')
                     await browserPage.waitFor(2000)
                     await browserPage.keyboard.up('Control')
-                    // await browserPage.keyboard.down('Control')
-                    // await browserPage.keyboard.press(String.fromCharCode(13))
-                    // await browserPage.keyboard.up('Control')
-                    await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
-                    await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
-                    await browserPage.waitFor(50000)
-                    context.log("Posted to FB")
+
+                    const facebookTag = process.env.FACEBOOK_TAG
+                    for(let j = 0; j < facebookTag.length; j++){
+                        await browserPage.keyboard.press(facebookTag[j])
+                        if(j === facebookTag.length-1){
+                            await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
+                            await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
+                            await browserPage.waitFor(50000)
+                            context.log("Posted to FB")
+                        }
+                    }
                 }
             }
             browserPage.close()

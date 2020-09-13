@@ -4,7 +4,8 @@ const SourceConfig = require('../../config/news-source-config.json')
 const logger = require('../../config/logger')
 const { googleTranslate, removeDuplicateArticles, filterNewArticles } = require('./helper')
 const { Article } = require('../../db-service/database/mongooseSchema')
-const WordPOS = require('wordpos'), wordpos = new WordPOS();
+const WordPOS = require('wordpos')
+const wordpos = new WordPOS()
 
 module.exports = async function () {
 	const ipAddress = require('ip').address()
@@ -12,25 +13,25 @@ module.exports = async function () {
 	try {
 		const articles = await NewsCrawler(SourceConfig, 3)
 
-		const savedArticles = await Article.find({"createdDate":{$gt: new Date(Date.now() - 12*60*60*1000)}})
+		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } })
 
-		let articleWithNouns = []
-		for(const article of articles){
-			let translated = await googleTranslate(article.title)
-			let nouns = await wordpos.getNouns(translated)
+		const articleWithNouns = []
+		for (const article of articles) {
+			const translated = await googleTranslate(article.title)
+			const nouns = await wordpos.getNouns(translated)
 			article.nouns = nouns
 			articleWithNouns.push(article)
 		}
 
-		let newFilteredArticles = removeDuplicateArticles(articleWithNouns)
+		const newFilteredArticles = removeDuplicateArticles(articleWithNouns)
 
-		let checkWithOldArticles = filterNewArticles(newFilteredArticles, savedArticles)
+		const checkWithOldArticles = filterNewArticles(newFilteredArticles, savedArticles)
 
 		checkWithOldArticles.forEach((x) => (x.hostIp = ipAddress))
-		
+
 		await saveArticles(checkWithOldArticles)
 	} catch (error) {
-		logger.error('error occured here', error)
+		logger.error('Error while crawling:', error)
 	}
-	logger.info('JavaScript timer trigger function ran!', new Date().toISOString())
+	logger.info('News Crawler ran!', new Date().toISOString())
 }

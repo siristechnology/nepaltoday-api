@@ -39,4 +39,6 @@ module.exports = async function () {
 	}
 
 	CoronaDbService.saveStats(coronaStats)
+
+	return coronaStats
 }
