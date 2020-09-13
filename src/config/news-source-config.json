@@ -286,22 +286,22 @@
 			{
 				"url": "https://baahrakhari.com/news-article/1/Politics",
 				"category": "politics",
-				"link-selector":"h3 > a"
+				"link-selector":"article > section > div.row.page-news-list > div > div > h3 > a"
 			},
 			{
 				"url": "https://baahrakhari.com/news-article/2/Economy",
 				"category": "business",
-				"link-selector": "h3 > a"
+				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			},
 			{
 				"url": "https://baahrakhari.com/news-article/3/Sports",
 				"category": "sports",
-				"link-selector": "h3 > a"
+				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			},
 			{
 				"url": "https://baahrakhari.com/news-article/6/Thought",
 				"category": "opinion",
-				"link-selector": "h3 > a"
+				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			}
 		],
 		"article-detail-selectors":{
