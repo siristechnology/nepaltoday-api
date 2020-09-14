@@ -31,7 +31,7 @@ module.exports = {
 
 			const articles = await Promise.all(promises)
 			let articleFlattened = _.flatten(articles)
-			articleFlattened = articleFlattened.sort((a,b) => (a._id < b._id) ? 1 : ((b._id < a._id) ? -1 : 0));
+			articleFlattened = articleFlattened.sort((a, b) => (a._id < b._id ? 1 : b._id < a._id ? -1 : 0))
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
@@ -59,9 +59,12 @@ module.exports = {
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastTweetId = args.criteria.lastTweetId || '000000000000000000000000'
 
-			const tweets = await Tweet.find().sort({ publishedDate: -1 }).limit(100)
+			const tweets = await Tweet.find().lean().sort({ publishedDate: -1 }).limit(100)
+			const tweetsWithHandle = tweets.map((t) => {
+				return { ...t, twitterHandle: { name: t.handle, handle: t.handle, _id: t._id } }
+			})
 
-			return tweets
+			return tweetsWithHandle
 		},
 
 		getTweetByHandle: async (parent, { handle }) => {

@@ -2,7 +2,6 @@ const { TrendingTweetCount } = require('./database/mongooseSchema')
 const { TrendingTwitterHandles } = require('./../config/twitter-handles')
 
 module.exports = {
-	
 	getTrendingHandles: async () => {
 		return TrendingTwitterHandles
 	},
@@ -69,6 +68,13 @@ module.exports = {
 	},
 
 	getTrendingTweetCount: async () => {
-		return await TrendingTweetCount.findOne({}, {}, { sort: { createdDate: -1 } }).lean()
+		const trendingTweetCount = await TrendingTweetCount.findOne({}, {}, { sort: { createdDate: -1 } }).lean()
+
+		if (trendingTweetCount.trendings) {
+			const trendingTweetCountWithOldModel = { ...trendingTweetCount, counts: [...trendingTweetCount.trendings[0].counts] }
+			return trendingTweetCountWithOldModel
+		} else {
+			return trendingTweetCount
+		}
 	},
 }
