@@ -14,13 +14,14 @@ module.exports = async function () {
 		const articles = await NewsCrawler(SourceConfig, 3)
 
 		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } })
-
 		const articleWithNouns = []
 		for (const article of articles) {
-			const translated = await googleTranslate(article.title)
-			const nouns = await wordpos.getNouns(translated)
-			article.nouns = nouns
-			articleWithNouns.push(article)
+			if(savedArticles.filter(x=> x.title==article.title).length == 0){
+				const translated = await googleTranslate(article.title)
+				const nouns = await wordpos.getNouns(translated)
+				article.nouns = nouns
+				articleWithNouns.push(article)
+			}
 		}
 
 		const newFilteredArticles = removeDuplicateArticles(articleWithNouns)
