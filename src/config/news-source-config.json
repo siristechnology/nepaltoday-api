@@ -193,7 +193,7 @@
 			"title": "#content",
 			"excerpt": "main > div > p",
 			"lead-image": "main > div > figure > div > div.NestedGridItemChildLarge-sc-12lwanc-9.fkKpIa > div > img",
-			"content": ["main > div > p"]
+			"content": ["main > div"]
 		}
 	},
 	{
@@ -213,7 +213,7 @@
 			"title": "article.module.module-detail > h1",
 			"excerpt": "article.module.module-detail > section > p:nth-child(7)",
 			"lead-image": "article.module.module-detail > section > div.img-wrap > figure > fig > img",
-			"content": ["article.module.module-detail > section > p"]
+			"content": ["article.module.module-detail > section"]
 		}
 	},
 	{
@@ -384,7 +384,7 @@
 			"title": "#ctl00_ContentPlaceHolder1_newsTitle",
 			"excerpt": "#ctl00_ContentPlaceHolder1_newsOverview > p > span",
 			"lead-image": "#ctl00_ContentPlaceHolder1_newsDetail > p > span > img",
-			"content": ["#ctl00_ContentPlaceHolder1_newsDetail"]
+			"content": ["#ctl00_ContentPlaceHolder1_newsOverview > p > span", "#ctl00_ContentPlaceHolder1_newsDetail"]
 		}
 	}
 ]
