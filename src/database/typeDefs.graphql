@@ -19,6 +19,7 @@ input ArticleCriteria {
 }
 
 type Source {
+	_id: String
 	name: String
 	url: String
 	category: String
