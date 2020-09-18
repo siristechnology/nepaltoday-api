@@ -54,7 +54,7 @@ module.exports = async function(context){
                         if(j === facebookTag.length-1){
                             await browserPage.waitForSelector('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
                             await browserPage.click('div._1j2v > div._2dck._4-u3._57d8 > div.clearfix > div._ohf.rfloat > div > button')
-                            await browserPage.waitFor(50000)
+                            await browserPage.waitFor(10000)
                             context.log("Posted to FB")
                         }
                     }
