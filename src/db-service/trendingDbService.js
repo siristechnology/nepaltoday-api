@@ -1,5 +1,6 @@
 const { TrendingTweetCount } = require('./database/mongooseSchema')
 const { TrendingTwitterHandles } = require('./../config/twitter-handles')
+const { trendingCategories } = require('../config/category')
 
 module.exports = {
 	getTrendingHandles: async () => {
@@ -26,7 +27,14 @@ module.exports = {
 					category,
 					counts: exceptTrending.slice(0, 5),
 				})
-				todayTrending.trendings = exceptCatFilter
+				let sortedTrendings = []
+				trendingCategories.forEach(iCategory=>{
+					let myCategoryCount = exceptCatFilter.filter(x=>x.category==iCategory)
+					if(myCategoryCount.length > 0){
+						sortedTrendings.push(myCategoryCount[0])
+					}
+				})
+				todayTrending.trendings = sortedTrendings
 				const res = await todayTrending.save()
 				return res
 			} else {
@@ -41,6 +49,14 @@ module.exports = {
 						},
 					],
 				})
+				let sortedTrendings = []
+				trendingCategories.forEach(iCategory=>{
+					let myCategoryCount = todayTrending.trendings.filter(x=>x.category==iCategory)
+					if(myCategoryCount.length > 0){
+						sortedTrendings.push(myCategoryCount[0])
+					}
+				})
+				todayTrending.trendings = sortedTrendings
 				const res = todayTrending.save()
 				return res
 			}

@@ -463,13 +463,6 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1218485932241801216/OtB95SXU_bigger.jpg'
 	},
 	{
-		name: 'Sajja Chaulagain',
-		category: 'Singer',
-		handle: '@sajja_npidol3',
-		searchTerms: ['Sajja Chaulagain'],
-		image: 'https://pbs.twimg.com/profile_images/1299528355268632578/McPvW6___bigger.jpg'
-	},
-	{
 		name: 'Manisha Koirala',
 		category: 'Actor',
 		handle: '@mkoirala',
