@@ -21,6 +21,7 @@ const Article = mongoose.model(
 		topic: { type: String },
 		createdAt: { type: Date, expires: expiryTime, default: Date.now },
 		nouns: [String],
+		tags: [String]
 	}),
 )
 

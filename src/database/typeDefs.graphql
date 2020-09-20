@@ -11,6 +11,7 @@ type Article {
 	createdDate: String
 	modifiedDate: String
 	topic: String
+	tags: [String]
 }
 
 input ArticleCriteria {

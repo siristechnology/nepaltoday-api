@@ -271,7 +271,7 @@
 		],
 		"article-detail-selectors":{
 			"title": "article > header > h1",
-			"excerpt": "article > p:nth-child(3)",
+			"excerpt": "article > p:nth-child(4)",
 			"lead-image": "article > div.mb-3 > img",
 			"content": ["article"]
 		}
