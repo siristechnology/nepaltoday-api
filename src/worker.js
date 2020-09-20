@@ -1,4 +1,3 @@
-require('newrelic')
 require('./config/env')
 const Bearer = require('@bearer/node-agent')
 require('./db-service/initialize')

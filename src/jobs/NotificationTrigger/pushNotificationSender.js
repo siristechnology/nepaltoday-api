@@ -1,17 +1,18 @@
 const logger = require('../../config/logger')
 const axios = require('axios')
 const { FIREBASE_SERVER_KEY } = require('./config')
+
 const sendPushNotification = async (notification) => {
 	try {
 		const response = await makeRequest(notification)
 		if (response.status === 200 && response.data.success === 1) {
 			return { status: true, success: response.data.success, failure: response.data.failure }
 		} else {
-			logger.error(response.data.results)
+			logger.error('Notification send failed: ', { response: response.data.results })
 			return { status: false }
 		}
 	} catch (error) {
-		// logger.error(error)
+		logger.error('Notification send exception: ', { error })
 		return { status: false, message: `Notification send failed: ${error.stack}` }
 	}
 }

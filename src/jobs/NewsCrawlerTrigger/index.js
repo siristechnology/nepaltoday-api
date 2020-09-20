@@ -11,12 +11,12 @@ module.exports = async function () {
 	const ipAddress = require('ip').address()
 
 	try {
-		const articles = await NewsCrawler(SourceConfig, 3)
+		const articles = await NewsCrawler(SourceConfig, { headless: true })
 		const trendingTopics = await TrendingTopic.find()
 		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } })
 		const articleWithNouns = []
 		for (const article of articles) {
-			if(savedArticles.filter(x=> x.title==article.title).length == 0){
+			if (savedArticles.filter((x) => x.title === article.title).length === 0) {
 				const translated = await googleTranslate(article.title)
 				const nouns = await wordpos.getNouns(translated)
 				article.nouns = nouns
@@ -35,7 +35,7 @@ module.exports = async function () {
 
 		await saveArticles(checkWithOldArticles)
 	} catch (error) {
-		logger.error('Error while crawling:', error)
+		logger.error('Error while crawling:', { error })
 	}
-	logger.info('News Crawler ran!', new Date().toISOString())
+	logger.info('News Crawler ran!', { date: new Date().toISOString() })
 }

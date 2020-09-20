@@ -9,4 +9,4 @@ mongoose
 		useUnifiedTopology: true,
 		useCreateIndex: true,
 	})
-	.catch((reason) => logger.error('mongo error: ', reason))
+	.catch((reason) => logger.error('mongo error: ', { reason }))

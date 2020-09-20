@@ -47,10 +47,10 @@
 		"nepaliName": "सेतोपाटी",
 		"logoLink": "/assets/logos/setopati.jpg",
 		"weight": 45,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://www.setopati.com/politics",
-				"category": "politics",
+				"category": "news",
 				"link-selector": "#content > div > section > div > div > a"
 			},
 			{
@@ -79,12 +79,12 @@
 				"link-selector": "#content > div > section > div > div > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "section.news-detail-section div.title-names span.news-big-title",
 			"excerpt": "#content > div.container > div > aside.left-side > div.row > div > div.editor-box > p:nth-child(2)",
 			"lead-image": "section.news-detail-section div.featured-images figure img",
 			"content": ["aside.left-side div.detail-box div.editor-box"],
-			"tags": "#header > div.container.main-menu > div > div > div > ul > li > a.selected"	
+			"tags": "#header > div.container.main-menu > div > div > div > ul > li > a.selected"
 		}
 	},
 	{
@@ -93,7 +93,7 @@
 		"nepaliName": "रातोपाटी",
 		"logoLink": "/assets/logos/ratopati.png",
 		"weight": 40,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://ratopati.com/news",
 				"category": "news",
@@ -130,7 +130,7 @@
 				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": ".article-head > h1",
 			"excerpt": ".ratopati-table-border-layout p:first-child",
 			"lead-image": "div .ot-material-card-content > div .img-with-no-margin > img",
@@ -146,7 +146,7 @@
 		"trendingSelector": "#trendingTicker > div > div > ul > li > a",
 		"mainUrl": "https://www.onlinekhabar.com",
 		"weight": 35,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://www.onlinekhabar.com/business",
 				"category": "business",
@@ -168,7 +168,7 @@
 				"link-selector": "div.list_child_wrp > div > div > div > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "h2.mb-0",
 			"excerpt": "div.main__read--content p:first-child",
 			"lead-image": "div.col.colspan3.dtl-img img",
@@ -182,17 +182,17 @@
 		"nepaliName": "BBC नेपाली",
 		"logoLink": "/assets/logos/bbc.png",
 		"weight": 50,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://www.bbc.com/nepali",
 				"category": "news",
 				"link-selector": "h3 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "#content",
 			"excerpt": "main > div > p",
-			"lead-image": "main > div > figure > div > div.NestedGridItemChildLarge-sc-12lwanc-9.fkKpIa > div > img",
+			"lead-image": "main > div > figure div > img",
 			"content": ["main > div"]
 		}
 	},
@@ -202,16 +202,16 @@
 		"nepaliName": "स्वास्थ्य खबर",
 		"logoLink": "/assets/logos/sklogo.png",
 		"weight": 50,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://swasthyakhabar.com",
 				"category": "health",
-				"link-selector": "article > header > h2 > a"
+				"link-selector": "article.module-flash-news > header > h2 > a:nth-child(1)"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "article.module.module-detail > h1",
-			"excerpt": "article.module.module-detail > section > p:nth-child(7)",
+			"excerpt": "article.module.module-detail > section > p:nth-of-type(2)",
 			"lead-image": "article.module.module-detail > section > div.img-wrap > figure > fig > img",
 			"content": ["article.module.module-detail > section"]
 		}
@@ -224,14 +224,14 @@
 		"weight": 50,
 		"pages": [
 			{
-				"url":"https://halokhabar.com/",
+				"url": "https://halokhabar.com",
 				"category": "agriculture",
-				"link-selector": "body > div.container-wrapper > div > article > header > h2 > a"
+				"link-selector": "#home.tab-pane.active ul.section > li > h3 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "article > header > h2",
-			"excerpt": "article > section > p:nth-child(5)",
+			"excerpt": ".detail-wrap > p:nth-of-type(2)",
 			"lead-image": "article > section > figure > img",
 			"content": ["article > section"]
 		}
@@ -249,7 +249,7 @@
 				"link-selector": "#latest-update > ul > li > h3 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "div.post-header > h1",
 			"excerpt": "div.section > div.post-content > p:nth-child(2)",
 			"lead-image": "div.section > div.post-content > img",
@@ -269,9 +269,9 @@
 				"link-selector": "div.col-md-12.main-list.calc-height > div > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "article > header > h1",
-			"excerpt": "article > p:nth-child(4)",
+			"excerpt": "article > p:nth-of-type(1)",
 			"lead-image": "article > div.mb-3 > img",
 			"content": ["article"]
 		}
@@ -285,8 +285,8 @@
 		"pages": [
 			{
 				"url": "https://baahrakhari.com/news-article/1/Politics",
-				"category": "politics",
-				"link-selector":"article > section > div.row.page-news-list > div > div > h3 > a"
+				"category": "news",
+				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			},
 			{
 				"url": "https://baahrakhari.com/news-article/2/Economy",
@@ -304,11 +304,11 @@
 				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "article > header > h2",
 			"excerpt": "section > p:nth-child(2)",
 			"lead-image": "section > div.img-wrap > figure > fig > img",
-			"content": ["article > div > div > section"]	
+			"content": ["article > div > div > section"]
 		}
 	},
 	{
@@ -317,10 +317,10 @@
 		"nepaliName": "पहिलो पोष्ट",
 		"logoLink": "/assets/logos/pahilopost.png",
 		"weight": 50,
-		"pages":[
+		"pages": [
 			{
 				"url": "https://pahilopost.com/content/category/politics.html",
-				"category": "politics",
+				"category": "news",
 				"link-selector": "h2 > a"
 			},
 			{
@@ -339,12 +339,11 @@
 				"link-selector": "h2 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "h1",
 			"excerpt": "article > div.pahilo-news-content.pahilo-styled-news > div > div > p:nth-child(2)",
 			"lead-image": "article > figure > img",
 			"content": ["article > div.pahilo-news-content.pahilo-styled-news > div > div"]
-			
 		}
 	},
 	{
@@ -355,18 +354,18 @@
 		"weight": 50,
 		"pages": [
 			{
-				"url": "https://www.nepalipaisa.com/",
+				"url": "https://nepalipaisa.com/Stock-Market.aspx",
 				"category": "share",
-				"link-selector": "#sfBreakingnews > div > div > div > div > div > h2 > a"
+				"link-selector": "#divCategoryNews .list-wrap-latestNews h2 > a"
 			}
 		],
-		"article-detail-selectors":{
+		"article-detail-selectors": {
 			"title": "#divNewsDetail > h1",
 			"excerpt": "#divNewsDetail > div.newsDesc > div",
 			"lead-image": "#image_share > div > ul > li > img",
 			"content": ["#divNewsDetail > div.newsDesc > div"]
 		}
-	},	
+	},
 	{
 		"name": "Mero Lagani",
 		"sourceName": "Mero Lagani",
@@ -375,15 +374,15 @@
 		"weight": 50,
 		"pages": [
 			{
-				"url": "https://merolagani.com/",
+				"url": "https://merolagani.com/NewsList.aspx?id=6&type=latest",
 				"category": "share",
-				"link-selector": "h4 > a"
+				"link-selector": ".container .row h4.media-title > a"
 			}
 		],
-		"article-detail-selectors":{
-			"title": "#ctl00_ContentPlaceHolder1_newsTitle",
+		"article-detail-selectors": {
+			"title": ".media-body .media-title.newsTitle",
 			"excerpt": "#ctl00_ContentPlaceHolder1_newsOverview > p > span",
-			"lead-image": "#ctl00_ContentPlaceHolder1_newsDetail > p > span > img",
+			"lead-image": ".media-body .media-content span img:nth-of-type(1)",
 			"content": ["#ctl00_ContentPlaceHolder1_newsOverview > p > span", "#ctl00_ContentPlaceHolder1_newsDetail"]
 		}
 	}

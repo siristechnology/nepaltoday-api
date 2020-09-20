@@ -6,7 +6,7 @@ Bugsnag.start({
 	apiKey: process.env.BUGSNAG_KEY,
 	plugins: [BugsnagPluginExpress],
 })
-require('newrelic')
+
 const morgan = require('morgan')
 const express = require('express')
 const timeout = require('connect-timeout')
