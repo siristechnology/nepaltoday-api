@@ -15,6 +15,16 @@ module.exports = async function () {
 		const trendingTopics = await TrendingTopic.find()
 		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } })
 		const articleWithNouns = []
+		
+		const exceptHeadlineArticles = articles.filter(x => x.category != 'headline')
+		const savedHeadlineArticles = savedArticles.filter(x => x.category == 'headline')
+		for(const article of exceptHeadlineArticles){
+			let repeated = savedHeadlineArticles.filter(x => x.link == article.link)
+			if(repeated.length > 0){
+				await Article.findOneAndUpdate({link: repeated[0].link},{category: article.category})
+			}
+		}
+		
 		for (const article of articles) {
 			if (savedArticles.filter((x) => x.title === article.title).length === 0) {
 				const translated = await googleTranslate(article.title)
