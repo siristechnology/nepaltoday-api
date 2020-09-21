@@ -18,7 +18,7 @@ module.exports = async function(context){
         if(!exists){
             context.log("Posting to fb...")
         
-            const browser = await getBrowser()
+            const browser = await getBrowser({ headless: true })
             const browserPage = await browser.newPage()
             await browserPage.setDefaultNavigationTimeout(100000)
             await browserPage.goto(process.env.FACEBOOK_PAGE_LINK)
@@ -56,7 +56,7 @@ module.exports = async function(context){
                             await browserPage.keyboard.down('Control')
                             await browserPage.keyboard.press(String.fromCharCode(13))
                             await browserPage.keyboard.up('Control')
-                            await browserPage.waitFor(10000)
+                            await browserPage.waitFor(15000)
                             context.log("Posted to FB")
                         }
                     }
