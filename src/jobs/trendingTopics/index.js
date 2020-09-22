@@ -3,7 +3,7 @@ const sourceConfig = require('./../../config/news-source-config.json')
 const trendingTopicDbService = require('../../db-service/trendingTopicDbService')
 module.exports = async function(){
     try{
-        const browser = await getBrowser()
+        const browser = await getBrowser({ headless: true })
         const browserPage = await browser.newPage()
         await browserPage.setDefaultNavigationTimeout(10000)
 
