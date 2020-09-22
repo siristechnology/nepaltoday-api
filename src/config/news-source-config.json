@@ -23,7 +23,7 @@
 			},
 			{
 				"url": "https://ekantipur.com/opinion",
-				"category": "opinion",
+				"category": "social",
 				"link-selector": "#wrapper > main > section article > div.teaser > a"
 			},
 			{
@@ -70,7 +70,7 @@
 			},
 			{
 				"url": "https://www.setopati.com/opinion",
-				"category": "opinion",
+				"category": "social",
 				"link-selector": "#content > div > section > div > div > a"
 			},
 			{
@@ -121,7 +121,7 @@
 			},
 			{
 				"url": "https://ratopati.com/opinion",
-				"category": "opinion",
+				"category": "social",
 				"link-selector": "div.ot-articles-material-blog-list .item-content > span > a"
 			},
 			{
@@ -325,7 +325,7 @@
 			},
 			{
 				"url": "https://baahrakhari.com/news-article/6/Thought",
-				"category": "opinion",
+				"category": "social",
 				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
 			}
 		],
