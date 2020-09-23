@@ -80,6 +80,7 @@ type DistrictCoronaStats {
 	createdDate: String
 	timeLine: coronaTimeLine
 	districts: [DistrictCoronaMetrics]
+	source: String
 }
 
 type coronaTimeLine {

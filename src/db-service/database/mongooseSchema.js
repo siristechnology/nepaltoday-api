@@ -118,6 +118,7 @@ const DistrictCoronaStats = mongoose.model(
 				deaths: Number,
 			},
 		],
+		source: String
 	}),
 )
 

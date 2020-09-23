@@ -28,12 +28,11 @@ module.exports = async function () {
 
 		districtMetrics.push(districtMetric)
 	})
-
+	
+	let lastSavedStats = await DistrictCoronaDbService.getDistrictCoronaStats()
+	
 	let coronaTimeLine = {}
-	if (
-		coronaSummary.data[coronaSummary.data.length - 2].newCases > 0 &&
-		coronaSummary.data[coronaSummary.data.length - 2].newCases < 1.5 * coronaSummary.data[coronaSummary.data.length - 3].newCases
-	) {
+	if (coronaSummary.data[coronaSummary.data.length - 2].newCases > 0) {
 		coronaTimeLine = coronaSummary.data[coronaSummary.data.length - 2]
 	} else {
 		coronaTimeLine = coronaSummary.data[coronaSummary.data.length - 3]
@@ -43,9 +42,11 @@ module.exports = async function () {
 		createdDate: new Date(),
 		timeLine: coronaTimeLine,
 		districts: districtMetrics,
+		source: 'data.nepalcorona.info'
 	}
-
-	DistrictCoronaDbService.saveDistrictStats(stats)
+	if(stats.timeLine.totalCases < 1.5 * lastSavedStats.timeLine.totalCases){
+		DistrictCoronaDbService.saveDistrictStats(stats)
+	}
 
 	return stats
 }
