@@ -29,7 +29,8 @@ module.exports = async function () {
 		districtMetrics.push(districtMetric)
 	})
 	
-	let lastSavedStats = await DistrictCoronaDbService.getDistrictCoronaStats()
+	const lastSavedStats = await DistrictCoronaDbService.getDistrictCoronaStats()
+	console.log(lastSavedStats)
 	
 	let coronaTimeLine = {}
 	if (coronaSummary.data[coronaSummary.data.length - 2].newCases > 0) {
@@ -44,6 +45,7 @@ module.exports = async function () {
 		districts: districtMetrics,
 		source: 'data.nepalcorona.info'
 	}
+	console.log(stats.timeLine)
 	if(stats.timeLine.totalCases < 1.5 * lastSavedStats.timeLine.totalCases){
 		DistrictCoronaDbService.saveDistrictStats(stats)
 	}
