@@ -126,8 +126,7 @@ const DistrictCoronaStats = mongoose.model(
 const TrendingTweetCount = mongoose.model(
 	'TrendingTweetCount',
 	new Schema({
-		createdDate: String,
-		createdAt: { type: Date, default: Date.now() },
+		createdAt: { type: Date, default: Date.now(), expires: expiryTime },
 		trendings: [
 			{
 				category: String,

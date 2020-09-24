@@ -11,6 +11,7 @@ module.exports = async function () {
 		access_token_secret: TWITTER_ACCESS_TOKEN_SECRET,
 	})
 	if (trendingHandles) {
+		let twitterHandlesWithCount = []
 		for (const user of trendingHandles) {
 			try{
 				let searches = user.searchTerms
@@ -31,12 +32,21 @@ module.exports = async function () {
 				const d = new Date()
 				d.setHours(0, 0, 0, 0)
 				const midNightTimeStamp = d.getTime()
-				const currentDate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
 				const recentTweetsCount = searchResultsArr.filter((x) => midNightTimeStamp < new Date(x.created_at).getTime()).length
-				await TrendingDbService.saveTrendingTweetCount(currentDate, user.name, user.handle, recentTweetsCount, profileImage, user.category)
+				let counts = {
+					name: user.name,
+					handle: user.handle,
+					image: profileImage,
+					category: user.category,
+					count: recentTweetsCount
+				}
+				twitterHandlesWithCount.push(counts)
 			}catch (error) {
 				console.log('error in trending count', error)
 			}
+		}
+		if(twitterHandlesWithCount.length > 0){
+			await TrendingDbService.saveTrendingTweetCount(twitterHandlesWithCount)
 		}
 		return
 	}
