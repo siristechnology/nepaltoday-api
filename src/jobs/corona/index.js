@@ -36,6 +36,7 @@ module.exports = async function () {
 		createdDate: new Date(),
 		stats: countryMetrics,
 		worldSummary: worldSummary,
+		source: 'pomber.github.io/covid19'
 	}
 
 	CoronaDbService.saveStats(coronaStats)

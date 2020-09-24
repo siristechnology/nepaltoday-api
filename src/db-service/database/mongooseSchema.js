@@ -91,6 +91,7 @@ const CoronaStats = mongoose.model(
 			totalDeaths: Number,
 			newDeaths: Number,
 		},
+		source: String
 	}),
 )
 
