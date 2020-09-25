@@ -42,7 +42,7 @@ module.exports = async function () {
 		createdDate: new Date(),
 		timeLine: coronaTimeLine,
 		districts: districtMetrics,
-		source: 'data.nepalcorona.info'
+		source: 'nepalcorona.info'
 	}
 	if(lastSavedStats){
 		if(stats.timeLine.totalCases < 1.5 * lastSavedStats.timeLine.totalCases){
