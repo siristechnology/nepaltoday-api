@@ -1,7 +1,10 @@
 require('dotenv').config()
 const axios = require('axios')
 const { DistrictCoronaDbService } = require('../../db-service')
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
+const https = require('https')
+const httpsAgent = new https.Agent({
+	rejectUnauthorized: false,
+})
 
 const getTodayDate = () => {
 	const dateObj = new Date()
@@ -69,9 +72,9 @@ module.exports = async function () {
 			totalRecovered+=parseInt(district["Number of cases recovered"])
 		})
 
-		let allCases = await axios.get(`https://portal.edcd.gov.np/rest/api/fetch?filter=casesBetween&type=dayByDay&eDate=${today}&disease=COVID-19`)
+		let allCases = await axios.get(`https://portal.edcd.gov.np/rest/api/fetch?filter=casesBetween&type=dayByDay&eDate=${today}&disease=COVID-19`,{httpsAgent})
 		if(allCases.data.length==0){
-			allCases = await axios.get(`https://portal.edcd.gov.np/rest/api/fetch?filter=casesBetween&type=dayByDay&eDate=${yesterday}&disease=COVID-19`)
+			allCases = await axios.get(`https://portal.edcd.gov.np/rest/api/fetch?filter=casesBetween&type=dayByDay&eDate=${yesterday}&disease=COVID-19`,{httpsAgent})
 		}
 
 		let totalCases = 0
