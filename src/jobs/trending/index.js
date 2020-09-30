@@ -28,7 +28,7 @@ module.exports = async function () {
 					searchResultsArr = searchResultsArr.filter((thing, index, self) => index === self.findIndex((t) => t.id === thing.id))
 				}
 				const userInfo = await client.get('users/show.json', { screen_name: user.handle })
-				const profileImage = userInfo.profile_image_url_https
+				const profileImage = userInfo.profile_image_url_https.replace('_normal','')
 				const d = new Date()
 				d.setHours(0, 0, 0, 0)
 				const midNightTimeStamp = d.getTime()
