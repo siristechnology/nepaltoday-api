@@ -27,7 +27,6 @@ module.exports = async function () {
 			if (savedArticles.filter((x) => x.title === article.title).length === 0) {
 				const translated = await googleTranslate(article.title)
 				const nouns = await getNouns(translated)
-				console.log("----------", nouns)
 				article.nouns = nouns
 				if(trendingTopics.length > 0){
 					article.tags = getTagsFromArticle(trendingTopics[0].topics, article.content)
