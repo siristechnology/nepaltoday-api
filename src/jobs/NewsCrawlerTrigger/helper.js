@@ -39,8 +39,12 @@ const getMatchedNewArticles = (newArticles, oldArticles) => {
 }
 
 const isSubsentence = (array1, array2) => {
-	const result = array2.every((val) => array1.includes(val))
-	return result
+	if(array1.length && array2.length){
+		const result = array2.every((val) => array1.includes(val))
+		return result
+	}else{
+		return false
+	}
 }
 
 module.exports = {

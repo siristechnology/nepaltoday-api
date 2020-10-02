@@ -11,9 +11,8 @@ module.exports = async function () {
 	try {
 		const articles = await NewsCrawler(SourceConfig, { headless: true })
 		const trendingTopics = await TrendingTopic.find()
-		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 12 * 60 * 60 * 1000) } })
+		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000) } })
 		const articleWithNouns = []
-		
 		const exceptHeadlineArticles = articles.filter(x => x.category != 'headline')
 		const savedHeadlineArticles = savedArticles.filter(x => x.category == 'headline')
 		for(const article of exceptHeadlineArticles){
@@ -22,11 +21,11 @@ module.exports = async function () {
 				await Article.findOneAndUpdate({link: repeated[0].link},{category: article.category})
 			}
 		}
-		
+
 		for (const article of articles) {
 			if (savedArticles.filter((x) => x.title === article.title).length === 0) {
 				const translated = await googleTranslate(article.title)
-				const nouns = await getNouns(translated)
+				const nouns = getNouns(translated)
 				article.nouns = nouns
 				if(trendingTopics.length > 0){
 					article.tags = getTagsFromArticle(trendingTopics[0].topics, article.content)
@@ -40,7 +39,6 @@ module.exports = async function () {
 		const checkWithOldArticles = filterNewArticles(newFilteredArticles, savedArticles)
 
 		checkWithOldArticles.forEach((x) => (x.hostIp = ipAddress))
-
 		await saveArticles(checkWithOldArticles)
 	} catch (error) {
 		logger.error('Error while crawling:', { error })
