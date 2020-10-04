@@ -1,11 +1,4 @@
 require('./config/env')
-const Bugsnag = require('@bugsnag/js')
-const BugsnagPluginExpress = require('@bugsnag/plugin-express')
-
-Bugsnag.start({
-	apiKey: process.env.BUGSNAG_KEY,
-	plugins: [BugsnagPluginExpress],
-})
 
 const morgan = require('morgan')
 const express = require('express')
@@ -17,21 +10,12 @@ require('./db-service/initialize')
 const mongooseSchema = require('./db-service/database/mongooseSchema')
 const resolvers = require('./database/resolvers')
 const colors = require('colors/safe')
+const Agenda = require('agenda')
+const Agendash = require('agendash')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
 const app = express()
-
-const middleware = Bugsnag.getPlugin('express')
-
-// This must be the first piece of middleware in the stack.
-// It can only capture errors in downstream middleware
-app.use(middleware.requestHandler)
-
-/* all other middleware and application routes go here */
-
-// This handles any errors that Express catches
-app.use(middleware.errorHandler)
 
 app.use(timeout('30s'))
 app.use((req, res, next) => {
@@ -44,6 +28,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('combined'))
 app.use('/assets', express.static('assets'))
+
+const agenda = new Agenda({ db: { address: process.env.DATABASE_READONLY_URL } })
+app.use('/dash', Agendash(agenda))
 
 const typeDefSchema = requireGraphQLFile('./database/typeDefs.graphql')
 const typeDefs = gql(typeDefSchema)

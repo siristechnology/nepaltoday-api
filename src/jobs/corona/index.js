@@ -36,7 +36,7 @@ module.exports = async function () {
 		createdDate: new Date(),
 		stats: countryMetrics,
 		worldSummary: worldSummary,
-		source: 'jhu.edu',
+		source: 'source: jhu.edu',
 	}
 
 	CoronaDbService.saveStats(coronaStats)

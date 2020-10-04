@@ -15,7 +15,7 @@ module.exports = {
 			if (error.code === 11000 || error.code === 11001) {
 				logger.debug('ignored duplicates')
 			} else {
-				logger.error(error)
+				logger.error('Error on saveNotifications:', error)
 			}
 			throw new Error(error)
 		}

@@ -11,7 +11,7 @@ module.exports = {
 			if (error.code === 11000 || error.code === 11001) {
 				logger.debug('ignored duplicates')
 			} else {
-				logger.error(error)
+				logger.error('Error on saveArticles:', error)
 			}
 			return error
 		}
@@ -24,7 +24,7 @@ module.exports = {
 			if (error.code === 11000 || error.code === 11001) {
 				logger.debug('ignored duplicates')
 			} else {
-				logger.error(error)
+				logger.error('Error on saveArticle:', error)
 			}
 		}
 		return null
@@ -65,15 +65,14 @@ module.exports = {
 		return count > 0
 	},
 
-	checkFacebookPostExist: async(articleLink) => {
-		const count = await FacebookPosts.countDocuments({articleLink})
-		if(count > 0) return true
+	checkFacebookPostExist: async (articleLink) => {
+		const count = await FacebookPosts.countDocuments({ articleLink })
+		if (count > 0) return true
 		else return false
 	},
 
-	saveFacebookPost: async(articleLink) => {
-		const newsLink = new FacebookPosts({articleLink})
+	saveFacebookPost: async (articleLink) => {
+		const newsLink = new FacebookPosts({ articleLink })
 		await newsLink.save()
-	}
-
+	},
 }

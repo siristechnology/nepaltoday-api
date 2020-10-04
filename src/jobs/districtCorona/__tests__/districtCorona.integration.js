@@ -4,6 +4,8 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 const districtCoronaJob = require('../index')
 
+jest.setTimeout(60000)
+
 describe('districtCoronaJob integration', () => {
 	it('should fetch stats abt Nepal', async () => {
 		await districtCoronaJob()

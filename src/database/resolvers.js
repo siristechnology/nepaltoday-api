@@ -48,10 +48,16 @@ module.exports = {
 
 		getArticle: async (parent, { _id }) => {
 			const article = await Article.findById(_id).lean()
-			const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
+
+			if (article == null) {
+				logger.warn(`Article Id ${_id} not found in db`)
+				return null
+			}
+
+			const source = SourceConfig.find((x) => x.sourceName === article.sourceName)
 			return {
 				...article,
-				source: { name: mySource.nepaliName, url: mySource.link, logoLink: process.env.SERVER_BASE_URL + article.source.logoLink },
+				source: { name: source.nepaliName, url: source.link, logoLink: process.env.SERVER_BASE_URL + source.logoLink },
 			}
 		},
 
@@ -69,6 +75,7 @@ module.exports = {
 		},
 
 		getTweetByHandle: async (parent, { handle }) => {
+			if (handle.charAt(0) !== '@') handle = '@' + handle
 			const tweets = await Tweet.find({ handle }).sort({ publishedDate: -1 }).limit(100)
 			return tweets
 		},
@@ -104,8 +111,7 @@ module.exports = {
 					place: weatherInfo.name,
 				}
 			} catch (error) {
-				logger.error(`Printing ip: ${ipAddress}`)
-				throw error
+				logger.error(`Error to getWeatherInfo for ip: ${ipAddress}`)
 			}
 		},
 	},

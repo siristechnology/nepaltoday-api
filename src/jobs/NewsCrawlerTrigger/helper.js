@@ -78,17 +78,17 @@ module.exports = {
 
 	getTagsFromArticle: function (trendingTopics, content) {
 		let tags = []
-		trendingTopics.forEach(topic=>{
-			if(content.indexOf(topic) >=0 ){
+		trendingTopics.forEach((topic) => {
+			if (content.indexOf(topic) >= 0) {
 				tags.push(topic)
 			}
 		})
 		return tags
 	},
 
-	getNouns: function (sentence){
-		const sentenceArr = sentence.split(" ")
-		const sentenceNouns = sentenceArr.filter(x => nouns.includes(x))
+	getNouns: function (sentence) {
+		const sentenceArr = sentence.split(' ')
+		const sentenceNouns = sentenceArr.filter((x) => nouns.includes(x))
 		return sentenceNouns
-	}
+	},
 }
