@@ -443,19 +443,5 @@
 				"image-selector": "div.row.page-news-list > div > div > figure > img"
 			}
 		]
-	},
-	{
-		"name": "Nagarik News",
-		"sourceName": "Nagarik News",
-		"nepaliName": "नागरिक न्युज",
-		"logoLink": "/assets/logos/nagarik.png",
-		"weight": 50,
-		"pages":[
-			{
-				"url": "https://nagariknews.nagariknetwork.com/cartoon",
-				"category": "cartoon",
-				"image-selector": "article > div.image > figure > a > img"
-			}
-		]
 	}
 ]
