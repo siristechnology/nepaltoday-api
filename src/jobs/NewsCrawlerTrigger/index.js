@@ -16,7 +16,7 @@ module.exports = async function () {
 
 		const exceptHeadlineArticles = articles.filter((x) => x.category !== 'headline')
 		const savedHeadlineArticles = savedArticles.filter((x) => x.category === 'headline')
-		for (const article of exceptHeadlineArticles) {
+		for (const article of exceptHeadlineArticles)  {
 			const repeated = savedHeadlineArticles.filter((x) => x.link === article.link)
 			if (repeated.length > 0) {
 				await Article.findOneAndUpdate({ link: repeated[0].link }, { category: article.category })
