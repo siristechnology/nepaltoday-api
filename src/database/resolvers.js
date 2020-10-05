@@ -7,6 +7,7 @@ const getWeather = require('../weather')
 const logger = require('../config/logger')
 const { Tweet } = require('../db-service/database/mongooseSchema')
 const SourceConfig = require('../config/news-source-config.json')
+const { fmDetails } = require('./../config/fm')
 
 module.exports = {
 	Query: {
@@ -114,6 +115,11 @@ module.exports = {
 				logger.error(`Error to getWeatherInfo for ip: ${ipAddress}`)
 			}
 		},
+
+		getFmList: async (parent, args, {FM}) => {
+			return fmDetails
+		}
+
 	},
 
 	Mutation: {
