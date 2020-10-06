@@ -20,7 +20,7 @@ module.exports = async function () {
 			const repeated = savedHeadlineArticles.filter((x) => x.link === article.link)
 			if (repeated.length > 0) {
 				await Article.findOneAndUpdate({ link: repeated[0].link }, { category: article.category })
-			}
+			} 
 		}
 
 		for (const article of articles) {
