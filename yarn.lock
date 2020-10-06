@@ -6704,9 +6704,9 @@ netmask@^1.0.6:
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
   integrity sha1-ICl+idhvb2QA8lDZ9Pa0wZRfzTU=
 
-"news-crawler@https://github.com/siristechnology/news-crawler#master":
+"news-crawler@https://github.com/siristechnology/news-crawler":
   version "1.11.1"
-  resolved "https://github.com/siristechnology/news-crawler#f68618bd7ec1091259b0d7721d4dc8687272a66f"
+  resolved "https://github.com/siristechnology/news-crawler#fc0f626d30fed02d99cd7b92bf5e8ac6268a71f1"
   dependencies:
     html-to-text "^5.1.1"
     puppeteer "5.3.0"
