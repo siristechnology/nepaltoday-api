@@ -150,6 +150,7 @@ type FM {
 	title: String
 	artist: String
 	artwork: String
+	province: String
 }
 
 type Query {
