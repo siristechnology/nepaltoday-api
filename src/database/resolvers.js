@@ -5,7 +5,7 @@ const { User, Article } = mongooseSchema
 const { categories } = require('../config/category')
 const getWeather = require('../weather')
 const logger = require('../config/logger')
-const { Tweet } = require('../db-service/database/mongooseSchema')
+const { Tweet, FavoriteFM } = require('../db-service/database/mongooseSchema')
 const SourceConfig = require('../config/news-source-config.json')
 const { fmDetails } = require('./../config/fm')
 const { calculateTotalWeights } = require('./calculateTotalWeights')
@@ -122,6 +122,16 @@ module.exports = {
 		getFmList: async (parent, args, { FM }) => {
 			return fmDetails
 		},
+
+		getMyFavoriteFm: async (parent, { nid }) => {
+			const myFavorites = await FavoriteFM.find({ nid })
+			let myFavoriteFm = []
+			myFavorites.forEach(favorite=>{
+				const myFm = fmDetails.filter(x=>x.id==favorite.fmId)[0]
+				myFavoriteFm.push(myFm)
+			})
+			return myFavoriteFm
+		}
 	},
 
 	Mutation: {
@@ -147,5 +157,15 @@ module.exports = {
 
 			return { success: !!response.ok }
 		},
+
+		saveFavorite: async (parent, args, {}) => {
+			const {
+				input: { nid, fmId }
+			} = args
+
+			const favoriteData = new FavoriteFM({nid, fmId})
+			const response = await favoriteData.save()
+			return { success: !!response.nid }
+		}
 	},
 }

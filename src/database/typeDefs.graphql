@@ -163,6 +163,7 @@ type Query {
 	getTrending: TrendingTweetCount
 	getTweetByHandle(handle: String): [Tweet]
 	getFmList: [FM]
+	getMyFavoriteFm(nid: String): [FM]
 }
 
 type Response {
@@ -178,6 +179,12 @@ input StoreFcmInput {
 	modifiedDate: String
 }
 
+input SaveFavorite {
+	nid: String!
+	fmId: String
+}
+
 type Mutation {
 	storeFcmToken(input: StoreFcmInput): Response
+	saveFavorite(input: SaveFavorite): Response
 }
