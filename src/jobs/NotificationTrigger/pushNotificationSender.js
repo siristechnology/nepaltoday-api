@@ -25,7 +25,7 @@ const makeRequest = async (data = {}) => {
 		method: 'post',
 		url: FIREBASE_NOTIFICATION_URL,
 		data: data,
-		headers: { Authorization: `key=${FIREBASE_SERVER_KEY}` },
+		headers: { Authorization: `key=${FIREBASE_SERVER_KEY}`, 'Content-Type': 'application/json' },
 	})
 }
 

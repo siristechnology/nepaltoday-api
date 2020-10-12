@@ -8,6 +8,7 @@ const logger = require('../config/logger')
 const { Tweet } = require('../db-service/database/mongooseSchema')
 const SourceConfig = require('../config/news-source-config.json')
 const { fmDetails } = require('./../config/fm')
+const { calculateTotalWeights } = require('./calculateTotalWeights')
 
 module.exports = {
 	Query: {
@@ -15,24 +16,26 @@ module.exports = {
 			args.criteria = args.criteria || {}
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastArticleId = args.criteria.lastArticleId || '000000000000000000000000'
+			args.criteria.categories = args.criteria.categories || categories
 
-			const promises = categories.map(async (category) => {
+			const promises = args.criteria.categories.map(async (category) => {
 				const _articles = await Article.find({
-					category,
+					category: category.name,
 					link: { $ne: null },
 					modifiedDate: { $gt: new Date(args.criteria.lastQueryDate) },
 					_id: { $gt: args.criteria.lastArticleId },
 				})
 					.lean()
 					.sort({ _id: -1 })
-					.limit(20)
+					.limit(category.count || 20)
 
-				return [..._articles]
+				return calculateTotalWeights([..._articles])
 			})
 
 			const articles = await Promise.all(promises)
 			let articleFlattened = _.flatten(articles)
-			articleFlattened = articleFlattened.sort((a, b) => (a._id < b._id ? 1 : b._id < a._id ? -1 : 0))
+			articleFlattened = articleFlattened.sort((a, b) => b.totalWeight - a.totalWeight)
+
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
@@ -116,10 +119,9 @@ module.exports = {
 			}
 		},
 
-		getFmList: async (parent, args, {FM}) => {
+		getFmList: async (parent, args, { FM }) => {
 			return fmDetails
-		}
-
+		},
 	},
 
 	Mutation: {

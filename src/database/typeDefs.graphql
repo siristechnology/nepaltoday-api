@@ -12,11 +12,18 @@ type Article {
 	modifiedDate: String
 	topic: String
 	tags: [String]
+	totalWeight: Int
 }
 
 input ArticleCriteria {
 	lastArticleId: String
 	lastQueryDate: String
+	categories: [ArticleCriteriaCategory]
+}
+
+input ArticleCriteriaCategory {
+	name: String
+	count: Int
 }
 
 type Source {
@@ -58,7 +65,7 @@ input TweetCriteria {
 type CoronaStats {
 	createdDate: String
 	stats: [CoronaMetrics]
-	worldSummary: worldSummary,
+	worldSummary: worldSummary
 	source: String
 }
 
@@ -139,10 +146,10 @@ type WeatherInfo {
 
 type FM {
 	id: String
-    url: String
-    title: String
-    artist: String
-    artwork: String
+	url: String
+	title: String
+	artist: String
+	artwork: String
 }
 
 type Query {

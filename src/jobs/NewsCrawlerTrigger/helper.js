@@ -1,79 +1,30 @@
 require('dotenv').config()
-const { nouns } = require('./../../config/nouns')
+const SourceConfig = require('../../config/news-source-config.json')
+const { categories } = require('../../config/category')
 
-const repeatedArticles = (articles) => {
-	const repeated = []
-	for (let i = 0; i < articles.length; i++) {
-		for (let j = i + 1; j < articles.length; j++) {
-			if (articles[i].nouns.length > articles[j].length) {
-				if (isSubsentence(articles[i].nouns, articles[j].nouns)) {
-					repeated.push(articles[j])
-				}
-			} else {
-				if (isSubsentence(articles[j].nouns, articles[i].nouns)) {
-					repeated.push(articles[i])
-				}
-			}
-		}
-	}
-	return repeated
+const assignWeights = (articles) => {
+	const articlesWithWeight = articles.map((article) => {
+		article.weights = article.weights || {}
+		article.weights.source = SourceConfig.find((config) => config.sourceName === article.sourceName).weight
+		article.weights.category = categories.find((category) => category.name === article.category).weight
+
+		return article
+	})
+
+	return articlesWithWeight
 }
 
-const getMatchedNewArticles = (newArticles, oldArticles) => {
-	const repeated = []
-	for (let i = 0; i < newArticles.length; i++) {
-		for (let j = 0; j < oldArticles.length; j++) {
-			if (newArticles[i].nouns.length > oldArticles[j].nouns.length) {
-				if (isSubsentence(newArticles[i].nouns, oldArticles[j].nouns)) {
-					repeated.push(newArticles[i])
-				}
-			} else {
-				if (isSubsentence(oldArticles[j].nouns, newArticles[i].nouns)) {
-					repeated.push(newArticles[i])
-				}
-			}
+const getTagsFromArticle = (trendingTopics, content) => {
+	const tags = []
+	trendingTopics.forEach((topic) => {
+		if (content.indexOf(topic) >= 0) {
+			tags.push(topic)
 		}
-	}
-	return repeated
-}
-
-const isSubsentence = (array1, array2) => {
-	if (array1.length && array2.length) {
-		const result = array2.every((val) => array1.includes(val))
-		return result
-	} else {
-		return false
-	}
+	})
+	return tags
 }
 
 module.exports = {
-	removeDuplicateArticles: function (articles) {
-		const set1 = new Set(articles)
-		const set2 = new Set(repeatedArticles(articles))
-		const difference = new Set([...set1].filter((x) => !set2.has(x)))
-		return Array.from(difference)
-	},
-
-	filterNewArticles: function (newArticles, oldArticles) {
-		const set1 = new Set(newArticles)
-		const set2 = new Set(getMatchedNewArticles(newArticles, oldArticles))
-		const difference = new Set([...set1].filter((x) => !set2.has(x)))
-		return Array.from(difference)
-	},
-
-	getTagsFromArticle: function (trendingTopics, content) {
-		let tags = []
-		trendingTopics.forEach((topic) => {
-			if (content.indexOf(topic) >= 0) {
-				tags.push(topic)
-			}
-		})
-		return tags
-	},
-
-	getNouns: function (sentence) {
-		const sentenceArr = sentence.split(' ')
-		const sentenceNouns = sentenceArr.filter((x) => nouns.includes(x))
-		return sentenceNouns
-	},
+	getTagsFromArticle,
+	assignWeights,
 }

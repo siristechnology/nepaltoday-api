@@ -2,7 +2,7 @@ const NewsCrawler = require('news-crawler')
 const { saveArticles } = require('../../db-service/newsDbService')
 const SourceConfig = require('../../config/news-source-config.json')
 const logger = require('../../config/logger')
-const { getTagsFromArticle } = require('./helper')
+const { getTagsFromArticle, assignWeights } = require('./helper')
 const { Article, TrendingTopic } = require('../../db-service/database/mongooseSchema')
 
 module.exports = async function () {
@@ -34,12 +34,13 @@ module.exports = async function () {
 			}
 		}
 
-		const checkWithOldArticles = articleWithTags.filter((article) => !savedArticles.some((sa) => sa.link === article.link))
+		const newArticles = articleWithTags.filter((article) => !savedArticles.some((sa) => sa.link === article.link))
+		const newArticlesWithWeight = assignWeights(newArticles)
 
-		checkWithOldArticles.forEach((x) => (x.hostIp = ipAddress))
-		await saveArticles(checkWithOldArticles)
+		newArticlesWithWeight.forEach((x) => (x.hostIp = ipAddress))
+		await saveArticles(newArticlesWithWeight)
 
-		logger.info(`News Crawler ran! Articles Saved: ${checkWithOldArticles.length}`, { date: new Date().toISOString() })
+		logger.info(`News Crawler ran! Articles Saved: ${newArticlesWithWeight.length}`, { date: new Date().toISOString() })
 	} catch (error) {
 		logger.error('Error while crawling:', error)
 	}

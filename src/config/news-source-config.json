@@ -4,7 +4,7 @@
 		"sourceName": "ekantipur",
 		"nepaliName": "कान्तिपुर",
 		"logoLink": "/assets/logos/kantipur.jpg",
-		"weight": 50,
+		"weight": 10,
 		"pages": [
 			{
 				"url": "https://ekantipur.com",
@@ -51,7 +51,7 @@
 		"sourceName": "setopati",
 		"nepaliName": "सेतोपाटी",
 		"logoLink": "/assets/logos/setopati.jpg",
-		"weight": 45,
+		"weight": 9,
 		"pages": [
 			{
 				"url": "https://www.setopati.com",
@@ -102,7 +102,7 @@
 		"sourceName": "ratopati",
 		"nepaliName": "रातोपाटी",
 		"logoLink": "/assets/logos/ratopati.png",
-		"weight": 40,
+		"weight": 9,
 		"pages": [
 			{
 				"url": "https://ratopati.com",
@@ -160,7 +160,7 @@
 		"logoLink": "/assets/logos/online-khabar.png",
 		"trendingSelector": "#trendingTicker > div > div > ul > li > a",
 		"mainUrl": "https://www.onlinekhabar.com",
-		"weight": 35,
+		"weight": 9,
 		"pages": [
 			{
 				"url": "https://www.onlinekhabar.com",
@@ -201,7 +201,7 @@
 		"sourceName": "BBC Nepali",
 		"nepaliName": "BBC नेपाली",
 		"logoLink": "/assets/logos/bbc-1.png",
-		"weight": 50,
+		"weight": 10,
 		"pages": [
 			{
 				"url": "https://www.bbc.com/nepali",
@@ -221,7 +221,7 @@
 		"sourceName": "Swasthya Khabar",
 		"nepaliName": "स्वास्थ्य खबर",
 		"logoLink": "/assets/logos/sklogo-1.png",
-		"weight": 50,
+		"weight": 7,
 		"pages": [
 			{
 				"url": "https://swasthyakhabar.com",
@@ -241,7 +241,7 @@
 		"sourceName": "Halo Khabar",
 		"nepaliName": "हलो खबर",
 		"logoLink": "/assets/logos/halokhabar.png",
-		"weight": 50,
+		"weight": 7,
 		"pages": [
 			{
 				"url": "https://halokhabar.com",
@@ -261,7 +261,7 @@
 		"sourceName": "Krishi Patrika",
 		"nepaliName": "कृषि पत्रिका",
 		"logoLink": "/assets/logos/krishipatrika.jpg",
-		"weight": 50,
+		"weight": 6,
 		"pages": [
 			{
 				"url": "https://krishipatrika.com/",
@@ -281,7 +281,7 @@
 		"sourceName": "Techpana",
 		"nepaliName": "टेकपाना",
 		"logoLink": "/assets/logos/techpana.png",
-		"weight": 50,
+		"weight": 6,
 		"pages": [
 			{
 				"url": "https://www.techpana.com/",
@@ -301,7 +301,7 @@
 		"sourceName": "Baahrakhari",
 		"nepaliName": "बाह्रखरी",
 		"logoLink": "/assets/logos/baahrakhari-1.png",
-		"weight": 50,
+		"weight": 8,
 		"pages": [
 			{
 				"url": "https://baahrakhari.com",
@@ -341,7 +341,7 @@
 		"sourceName": "Pahilo Post",
 		"nepaliName": "पहिलो पोष्ट",
 		"logoLink": "/assets/logos/pahilopost.png",
-		"weight": 50,
+		"weight": 7,
 		"pages": [
 			{
 				"url": "https://pahilopost.com",
@@ -381,7 +381,7 @@
 		"sourceName": "Nepali Paisa",
 		"nepaliName": "नेपाली पैसा",
 		"logoLink": "/assets/logos/nepalipaisa.png",
-		"weight": 50,
+		"weight": 6,
 		"pages": [
 			{
 				"url": "https://nepalipaisa.com/Stock-Market.aspx",
@@ -401,7 +401,7 @@
 		"sourceName": "Mero Lagani",
 		"nepaliName": "मेरो लगानी",
 		"logoLink": "/assets/logos/merolagani-1.png",
-		"weight": 50,
+		"weight": 6,
 		"pages": [
 			{
 				"url": "https://merolagani.com/NewsList.aspx?id=6&type=latest",
@@ -421,7 +421,7 @@
 		"sourceName": "Annapurna Post",
 		"nepaliName": "अन्‍नपूर्ण पोस्ट्",
 		"logoLink": "/assets/logos/annapurna-1.png",
-		"weight": 50,
+		"weight": 10,
 		"pages": [
 			{
 				"url": "http://annapurnapost.com/cartoon",
@@ -435,7 +435,7 @@
 		"sourceName": "Baahrakhari",
 		"nepaliName": "बाह्रखरी",
 		"logoLink": "/assets/logos/baahrakhari-1.png",
-		"weight": 50,
+		"weight": 8,
 		"pages": [
 			{
 				"url": "https://baahrakhari.com/news-article/65/Cartoon",
