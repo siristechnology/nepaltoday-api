@@ -166,6 +166,15 @@ module.exports = {
 			const favoriteData = new FavoriteFM({nid, fmId})
 			const response = await favoriteData.save()
 			return { success: !!response.nid }
+		},
+
+		deleteFavorite: async (parent, args, {}) => {
+			const {
+				input: { nid, fmId}
+			} = args
+		
+			const response = await FavoriteFM.deleteOne({nid, fmId})
+			return { success: !! response.ok }
 		}
 	},
 }

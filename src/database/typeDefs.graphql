@@ -188,4 +188,5 @@ input SaveFavorite {
 type Mutation {
 	storeFcmToken(input: StoreFcmInput): Response
 	saveFavorite(input: SaveFavorite): Response
+	deleteFavorite(input: SaveFavorite): Response
 }
