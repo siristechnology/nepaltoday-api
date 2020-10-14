@@ -163,9 +163,18 @@ module.exports = {
 				input: { nid, fmId }
 			} = args
 
-			const favoriteData = new FavoriteFM({nid, fmId})
-			const response = await favoriteData.save()
-			return { success: !!response.nid }
+			const response = await FavoriteFM.update(
+				{nid, fmId},
+				{
+					$set: {
+						nid,
+						fmId
+					}
+				},
+				{upsert: true}
+			)
+
+			return { success: !!response.ok }
 		},
 
 		deleteFavorite: async (parent, args, {}) => {
