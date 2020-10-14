@@ -61,7 +61,7 @@ module.exports = async function () {
 				const districtNewCases = districtTotalCases - parseInt(districtTotalCasesYesterday.Value)
 
 				const districtMetric = {
-					name: district.title,
+					name: district.title_en,
 					nepaliName: district.title_ne,
 					totalCases: districtTotalCases || 0,
 					newCases: districtNewCases || 0,
