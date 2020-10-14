@@ -5,7 +5,7 @@ const { User, Article } = mongooseSchema
 const { categories } = require('../config/category')
 const getWeather = require('../weather')
 const logger = require('../config/logger')
-const { Tweet, FavoriteFM } = require('../db-service/database/mongooseSchema')
+const { Tweet, FavoriteFM, ReadArticle } = require('../db-service/database/mongooseSchema')
 const SourceConfig = require('../config/news-source-config.json')
 const { fmDetails } = require('./../config/fm')
 const { calculateTotalWeights } = require('./calculateTotalWeights')
@@ -184,6 +184,26 @@ module.exports = {
 		
 			const response = await FavoriteFM.deleteOne({nid, fmId})
 			return { success: !! response.ok }
+		},
+
+		saveReadArticle: async (parent, args, {}) => {
+			const {
+				input: { nid, articleId }
+			} = args
+
+			const savedReadArticles = await ReadArticle.findOne({nid})
+			if(savedReadArticles && savedReadArticles.nid){
+				let articleIds = savedReadArticles.articleId.concat(articleId)
+				articleIds = [...new Set(articleIds)]
+				savedReadArticles.articleId = articleIds
+				const response = await savedReadArticles.save()
+				return { success: !!response.nid }
+			}else{
+				const readArticlesObj = new ReadArticle({nid, articleId})
+				const response = await readArticlesObj.save()
+				return { success: !!response.nid}
+			}
 		}
+
 	},
 }

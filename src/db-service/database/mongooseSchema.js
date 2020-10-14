@@ -174,6 +174,14 @@ const FavoriteFM = mongoose.model(
 	}),
 )
 
+const ReadArticle = mongoose.model(
+	'ReadArticles',
+	new Schema({
+		nid: { type: String },
+		articleId: [{ type: String }]
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -186,4 +194,5 @@ module.exports = {
 	FacebookPosts,
 	TrendingTopic,
 	FavoriteFM,
+	ReadArticle
 }
