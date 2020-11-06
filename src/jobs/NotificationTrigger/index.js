@@ -15,24 +15,24 @@ module.exports = async function () {
 			if (latestArticle) {
 				const notifications = []
 				for (const user of userWithCurrentTime) {
-					const shouldSendNotification = !(await notificationExists(user, latestArticle[0]))
-
-					if (shouldSendNotification) {
-						const eligibleTime = verifyNoticiableTime(user.currentTime)
-
-						if (eligibleTime) {
-							const userWithNotification = createUserWithNotification(latestArticle[0], user)
-							const notificationSentStatus = await sendPushNotification(userWithNotification)
-							if (notificationSentStatus.status) {
-								const payload = {
-									article: latestArticle[0]._id,
-									user: user._id,
+					if(!user.status || (user.status && user.status!="inactive")){
+						const shouldSendNotification = !(await notificationExists(user, latestArticle[0]))
+						if (shouldSendNotification) {
+							const eligibleTime = verifyNoticiableTime(user.currentTime)
+							if (eligibleTime) {
+								const userWithNotification = createUserWithNotification(latestArticle[0], user)
+								const notificationSentStatus = await sendPushNotification(userWithNotification)
+								if (notificationSentStatus.status) {
+									const payload = {
+										article: latestArticle[0]._id,
+										user: user._id,
+									}
+									notifications.push(payload)
 								}
-								notifications.push(payload)
 							}
+						} else {
+							logger.info('User has already got the notification.')
 						}
-					} else {
-						logger.info('User has already got the notification.')
 					}
 				}
 				if (notifications.length > 0) {
