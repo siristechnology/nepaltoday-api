@@ -16,7 +16,7 @@ module.exports = {
 		if(nid){
 			const userReadArticles = await ReadArticle.findOne({nid})
 			if(userReadArticles){
-				const myArticles = userReadArticles.article && userReadArticles.article || []
+				const myArticles = userReadArticles.article || []
 				const readArticleLength = userReadArticles.article && userReadArticles.article.length || 0
 				let catWeightArr = []
 				categories.forEach(category=>{
