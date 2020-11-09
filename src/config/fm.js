@@ -612,6 +612,15 @@ const fmDetails = [
     "artwork": "https://cdn.onlineradiobox.com/img/logo/0/31570.v2.png"
   },
   {
+    "id": 183,
+    "title": "Radio Satellite",
+    "province": "Province-3 (Bagmati)",
+    "artist": 105.5,
+    "city": "Nawal",
+    "url": "http://streaming.hamropatro.com:8250/;",
+    "artwork": "https://www.liveonlineradio.net/wp-content/uploads/2015/10/radio-satellite-105.5-100x47.jpg"
+  },
+  {
     "id": 76,
     "title": "Radio Rubaru",
     "province": "Province-3 (Bagmati)",
