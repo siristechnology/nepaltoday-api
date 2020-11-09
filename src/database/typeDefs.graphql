@@ -19,6 +19,7 @@ input ArticleCriteria {
 	lastArticleId: String
 	lastQueryDate: String
 	categories: [ArticleCriteriaCategory]
+	nid: String
 }
 
 input ArticleCriteriaCategory {
@@ -187,7 +188,12 @@ input SaveFavorite {
 
 input SaveReadArticle {
 	nid: String!
-	articleId: [String]
+	articles: [ReadArticleArr]
+}
+
+input ReadArticleArr {
+	articleId: String
+	category: String
 }
 
 type Mutation {

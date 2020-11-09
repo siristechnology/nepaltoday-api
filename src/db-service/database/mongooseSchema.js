@@ -179,7 +179,12 @@ const ReadArticle = mongoose.model(
 	'ReadArticles',
 	new Schema({
 		nid: { type: String },
-		articleId: [{ type: String }]
+		article: [
+			{
+				articleId: String,
+				category: String
+			}
+		]
 	})
 )
 

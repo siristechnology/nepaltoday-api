@@ -1,10 +1,14 @@
 const moment = require('moment')
+const { calculateUserSpecificWeight } = require('./../db-service/UserDbService')
 
-const calculateTotalWeights = (articles) => {
+const calculateTotalWeights = async (articles, nid) => {
+	const userSpecificWeight = await calculateUserSpecificWeight(nid)
 	return articles.map((article) => {
 		article.weights = article.weights || {}
 		article.weights.date = getDateWeight(article.publishedDate)
-		article.totalWeight = article.weights.source + article.weights.category + article.weights.date
+		let userWeight = userSpecificWeight.filter(x=>x.category == article.category)[0]
+		if(!userWeight) userWeight = 0
+		article.totalWeight = article.weights.source + article.weights.category + article.weights.date + userWeight
 		article.totalWeight = isNaN(article.totalWeight) ? 0 : article.totalWeight
 		return article
 	})

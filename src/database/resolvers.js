@@ -17,7 +17,7 @@ module.exports = {
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
 			args.criteria.lastArticleId = args.criteria.lastArticleId || '000000000000000000000000'
 			args.criteria.categories = args.criteria.categories || categories
-
+			args.criteria.nid = args.criteria.nid || ''
 			const promises = args.criteria.categories.map(async (category) => {
 				const _articles = await Article.find({
 					category: category.name,
@@ -29,7 +29,9 @@ module.exports = {
 					.sort({ _id: -1 })
 					.limit(category.count || 20)
 
-				return calculateTotalWeights([..._articles])
+				const totalWeights = await calculateTotalWeights([..._articles], args.criteria.nid)
+
+				return totalWeights
 			})
 
 			const articles = await Promise.all(promises)
@@ -187,19 +189,24 @@ module.exports = {
 		},
 
 		saveReadArticle: async (parent, args, {}) => {
-			const {
-				input: { nid, articleId }
+			let {
+				input: { nid, articles }
 			} = args
-
+			articles = JSON.parse(JSON.stringify(articles))
 			const savedReadArticles = await ReadArticle.findOne({nid})
 			if(savedReadArticles && savedReadArticles.nid){
-				let articleIds = savedReadArticles.articleId.concat(articleId)
-				articleIds = [...new Set(articleIds)]
-				savedReadArticles.articleId = articleIds
+				let allArticles = savedReadArticles.article.concat(articles)
+				allArticles = allArticles.map(article=>{ return {articleId: article.articleId, category: article.category}})
+				allArticles = allArticles.filter((thing, index, self) =>
+					index === self.findIndex((t) => (
+						t.articleId === thing.articleId
+					))
+				)
+				savedReadArticles.article = allArticles
 				const response = await savedReadArticles.save()
 				return { success: !!response.nid }
 			}else{
-				const readArticlesObj = new ReadArticle({nid, articleId})
+				const readArticlesObj = new ReadArticle({nid, article: articles})
 				const response = await readArticlesObj.save()
 				return { success: !!response.nid}
 			}
