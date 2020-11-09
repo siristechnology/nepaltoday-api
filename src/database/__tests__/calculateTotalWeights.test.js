@@ -13,7 +13,7 @@ describe('calculateTotalWeights', () => {
 			},
 		]
 
-		const articlesWithWeight = calculateTotalWeights(articles)
+		const articlesWithWeight = await calculateTotalWeights(articles,'')
 
 		expect(articlesWithWeight[0].totalWeight).toBeGreaterThan(24)
 	})

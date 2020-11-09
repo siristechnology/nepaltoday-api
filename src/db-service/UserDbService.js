@@ -13,17 +13,21 @@ module.exports = {
 	},
 
 	calculateUserSpecificWeight: async (nid) => {
-		const userReadArticles = await ReadArticle.findOne({nid})
-		if(userReadArticles){
-			const myArticles = userReadArticles.article && userReadArticles.article || []
-			const readArticleLength = userReadArticles.article && userReadArticles.article.length || 0
-			let catWeightArr = []
-			categories.forEach(category=>{
-				let catArticlesLength = myArticles.filter(x=>x.category==category.name).length
-				let weight = ( catArticlesLength / readArticleLength ) * 50
-				catWeightArr.push({category: category.name, weight})
-			})
-			return catWeightArr
+		if(nid){
+			const userReadArticles = await ReadArticle.findOne({nid})
+			if(userReadArticles){
+				const myArticles = userReadArticles.article && userReadArticles.article || []
+				const readArticleLength = userReadArticles.article && userReadArticles.article.length || 0
+				let catWeightArr = []
+				categories.forEach(category=>{
+					let catArticlesLength = myArticles.filter(x=>x.category==category.name).length
+					let weight = ( catArticlesLength / readArticleLength ) * 50
+					catWeightArr.push({category: category.name, weight})
+				})
+				return catWeightArr
+			}else{
+				return []
+			}
 		}else{
 			return []
 		}
