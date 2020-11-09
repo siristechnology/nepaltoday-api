@@ -55,6 +55,7 @@ const User = mongoose.model(
 		ipAddress: String,
 		createdDate: { type: Date, default: Date.now },
 		modifiedDate: { type: Date, default: Date.now },
+		status: String
 	}),
 )
 
