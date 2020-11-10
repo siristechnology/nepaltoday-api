@@ -192,7 +192,6 @@ module.exports = {
 			let {
 				input: { nid, articles }
 			} = args
-			articles = JSON.parse(JSON.stringify(articles))
 			const savedReadArticles = await ReadArticle.findOne({nid})
 			if(savedReadArticles && savedReadArticles.nid){
 				let allArticles = savedReadArticles.article.concat(articles)

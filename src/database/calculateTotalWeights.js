@@ -7,8 +7,8 @@ const calculateTotalWeights = async (articles, nid) => {
 		article.weights = article.weights || {}
 		article.weights.date = getDateWeight(article.publishedDate)
 		let userWeight = userSpecificWeight.filter(x=>x.category == article.category)[0]
-		if(!userWeight) userWeight = 0
-		article.totalWeight = article.weights.source + article.weights.category + article.weights.date + userWeight
+		if(!userWeight) userWeight = {weight: 0}
+		article.totalWeight = article.weights.source + article.weights.category + article.weights.date + userWeight.weight
 		article.totalWeight = isNaN(article.totalWeight) ? 0 : article.totalWeight
 		return article
 	})
