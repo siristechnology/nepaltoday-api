@@ -133,6 +133,7 @@ type TrendingArr {
 
 type TrendingMetric {
 	name: String
+	nepaliName: String
 	handle: String
 	count: Int
 	image: String
@@ -159,6 +160,7 @@ type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
 	getArticle(_id: String!): Article
+	getIndividualArticles(name: String): [Article]
 	getLatestCoronaStats: CoronaStats
 	getWeatherInfo: WeatherInfo
 	getDistrictCoronaStats: DistrictCoronaStats

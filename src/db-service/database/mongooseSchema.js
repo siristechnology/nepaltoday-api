@@ -142,6 +142,7 @@ const TrendingTweetCount = mongoose.model(
 				counts: [
 					{
 						name: String,
+						nepaliName: String,
 						handle: String,
 						count: Number,
 						image: String,

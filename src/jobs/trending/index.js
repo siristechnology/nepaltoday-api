@@ -35,6 +35,7 @@ module.exports = async function () {
 				const recentTweetsCount = searchResultsArr.filter((x) => midNightTimeStamp < new Date(x.created_at).getTime()).length
 				let counts = {
 					name: user.name,
+					nepaliName: user.nepaliName,
 					handle: user.handle,
 					image: profileImage,
 					category: user.category,

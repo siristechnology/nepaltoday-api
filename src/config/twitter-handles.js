@@ -1,6 +1,7 @@
 const TrendingTwitterHandles = [
 	{
 		name: 'Baburam Bhattarai',
+		nepaliName: 'बाबुराम भट्टराई',
 		category: 'Politics',
 		handle: '@brb1954',
 		image: 'https://pbs.twimg.com/profile_images/2728978795/b13bbaf361366a8d54a7d54124243593_400x400.jpeg',
@@ -8,6 +9,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'KP Sharma Oli',
+		nepaliName: 'केपी शर्मा ओली',
 		category: 'Politics',
 		handle: '@PM_Nepal',
 		image: 'https://pbs.twimg.com/profile_images/964093929002946560/RrZvsn_9_400x400.jpg',
@@ -15,6 +17,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sher Bahadur Deuba',
+		nepaliName: 'शेर बहादुर देउबा',
 		category: 'Politics',
 		handle: '@DeubaSherbdr',
 		image: 'https://pbs.twimg.com/profile_images/1044510739082313728/34oiYMBc_400x400.jpg',
@@ -22,6 +25,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Gagan Thapa',
+		nepaliName: 'गगन थापा',
 		category: 'Politics',
 		handle: '@thapagk',
 		image: 'https://pbs.twimg.com/profile_images/1294237288390512640/RktZchMv_200x200.jpg',
@@ -29,6 +33,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Rajendra Lingden',
+		nepaliName: 'राजेन्द्र लिदेन',
 		category: 'Politics',
 		handle: '@RajendraLingden',
 		image: 'https://pbs.twimg.com/profile_images/807137128832348161/B8-eE7-z_reasonably_small.jpg',
@@ -36,6 +41,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Kamal Thapa',
+		nepaliName: 'कमल थापा',
 		category: 'Politics',
 		handle: '@KTnepal',
 		searchTerms: ['Kamal Thapa'],
@@ -43,6 +49,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Yogesh Bhattarai',
+		nepaliName: 'योगेश भट्टराई',
 		category: 'Politics',
 		handle: '@yogesbhattarai',
 		searchTerms: ['Yogesh Bhattarai'],
@@ -50,6 +57,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Pradeep Gyawali',
+		nepaliName: 'प्रदीप ज्ञवाली',
 		category: 'Politics',
 		handle: '@PradeepgyawaliK',
 		searchTerms: ['Pradeep Gyawali'],
@@ -57,6 +65,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Basanta Chaudhary',
+		nepaliName: 'बसन्त चौधरी',
 		category: 'Politics',
 		handle: '@basant_cg',
 		searchTerms: ['Basanta Chaudhary'],
@@ -64,6 +73,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Rabindra Mishra',
+		nepaliName: 'रवीन्द्र मिश्रा',
 		category: 'Politics',
 		handle: '@RabindraMishra',
 		searchTerms: ['Rabindra Mishra'],
@@ -71,6 +81,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bhim Rawal',
+		nepaliName: 'भीम रावल',
 		category: 'Politics',
 		handle: '@BhimRawal179',
 		searchTerms: ['Bhim Rawal'],
@@ -78,6 +89,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Narayan Kaji Shrestha',
+		nepaliName: 'नारायण काजी श्रेष्ठ',
 		category: 'Politics',
 		handle: '@nksthaprakash',
 		searchTerms: ['Narayan Kaji Shrestha'],
@@ -85,6 +97,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nilamber Acharya',
+		nepaliName: 'निलाम्बर आचार्य',
 		category: 'Politics',
 		handle: '@nilacharya',
 		searchTerms: ['Nilamber Acharya'],
@@ -92,6 +105,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Prakash Man Singh',
+		nepaliName: 'प्रकाश मान सिंह',
 		category: 'Politics',
 		handle: '@PMSinghNC',
 		searchTerms: ['Prakash Man Singh'],
@@ -99,6 +113,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Madhav Kumar Nepal',
+		nepaliName: 'माधव कुमार नेपाल',
 		category: 'Politics',
 		handle: '@ncp_madhavnepal',
 		searchTerms: ['Madhav Kumar Nepal'],
@@ -106,6 +121,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Comrade Prachanda',
+		nepaliName: 'प्रचण्ड',
 		category: 'Politics',
 		handle: '@cmprachanda',
 		searchTerms: ['Puspa Kamal Dahal', 'Prachanda'],
@@ -113,6 +129,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Ram Sharan Mahat',
+		nepaliName: 'राम शरण महत',
 		category: 'Politics',
 		handle: '@ramsmahat',
 		searchTerms: ['Ram Sharan Mahat'],
@@ -120,6 +137,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bimalendra Nidhi',
+		nepaliName: 'बिमलेन्द्र निधि',
 		category: 'Politics',
 		handle: '@BimalendraNidhi',
 		searchTerms: ['Bimalendra Nidhi'],
@@ -127,6 +145,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Ram Chandra Paudel',
+		nepaliName: 'रामचन्द्र पौडेल',
 		category: 'Politics',
 		handle: '@NcPaudel',
 		searchTerms: ['Ram Chandra Paudel'],
@@ -134,6 +153,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Gokul Prasad Baskota',
+		nepaliName: 'गोकुल प्रसाद बास्कोटा',
 		category: 'Politics',
 		handle: '@GokulPBaskota',
 		searchTerms: ['Gokul Prasad Baskota'],
@@ -141,6 +161,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bhanu Bhakta Dhakal',
+		nepaliName: 'भानु भक्त ढकाल',
 		category: 'Politics',
 		handle: '@dhbhanu',
 		searchTerms: ['Bhanu Bhakta Dhakal'],
@@ -148,6 +169,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bina Magar',
+		nepaliName: 'बीना मगर',
 		category: 'Politics',
 		handle: '@magarbina1',
 		searchTerms: ['Bina Magar'],
@@ -155,6 +177,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Renu Dahal',
+		nepaliName: 'रेणु दाहाल',
 		category: 'Politics',
 		handle: '@RenuDahal1',
 		searchTerms: ['Renu Dahal'],
@@ -162,6 +185,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Minendra Rijal',
+		nepaliName: 'मिनेन्द्र रिजाल',
 		category: 'Politics',
 		handle: '@MinendraRijal',
 		searchTerms: ['Minendra Rijal'],
@@ -169,6 +193,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Binod Chaudhary',
+		nepaliName: 'बिनोद चौधरी',
 		category: 'Politics',
 		handle: '@BinodKChaudhary',
 		searchTerms: ['Binod Chaudhary'],
@@ -176,6 +201,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sashank Koirala',
+		nepaliName: 'सशांक कोइराला',
 		category: 'Politics',
 		handle: '@sashank_koirala',
 		searchTerms: ['Sashank Koirala'],
@@ -183,6 +209,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bhimarjun Acharya',
+		nepaliName: 'भीमर्जुन आचार्य',
 		category: 'Politics',
 		handle: '@BhimarjunPhD',
 		searchTerms: ['Bhimarjun Acharya'],
@@ -190,14 +217,15 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Dr. Shekhar Koirala',
+		nepaliName: 'डा. शेखर कोइराला',
 		category: 'Politics',
 		handle: '@Shekharnc',
 		searchTerms: ['Dr Shekhar Koirala'],
 		image: 'https://pbs.twimg.com/profile_images/1253916222154031105/bDWqPUN7_bigger.jpg'
 	},
-
 	{
 		name: 'Khagendra Sangroula',
+		nepaliName: 'खगेन्द्र संगरोला',
 		category: 'Media',
 		handle: '@belakoboli',
 		searchTerms: ['Khagendra Sangroula'],
@@ -205,6 +233,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Vijay Kumar Panday',
+		nepaliName: 'विजय कुमार पाण्डे',
 		category: 'Media',
 		handle: '@Vijaykumarko',
 		searchTerms: ['Vijay Kumar Panday'],
@@ -212,6 +241,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bhusan Dahal',
+		nepaliName: 'भुसन दाहाल',
 		category: 'Media',
 		handle: '@DahalTbd',
 		searchTerms: ['Bhusan Dahal'],
@@ -219,6 +249,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Dil Bhusan Pathak',
+		nepaliName: 'दिल भुसन पाठक',
 		category: 'Media',
 		handle: '@DilBhusanPathak',
 		searchTerms: ['Dil Bhusan Pathak'],
@@ -226,6 +257,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Yubraj Ghimire',
+		nepaliName: 'युवराज घिमिरे',
 		category: 'Media',
 		handle: '@YubarajGhimire3',
 		searchTerms: ['Yubaraj Ghimire'],
@@ -233,6 +265,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Kishore Nepal',
+		nepaliName: 'किशोर नेपाल',
 		category: 'Media',
 		handle: '@kishorenepal',
 		searchTerms: ['Kishore Nepal'],
@@ -240,6 +273,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Kanak Mani Dixit',
+		nepaliName: 'कनक मणी दीक्षित',
 		category: 'Media',
 		handle: '@KanakManiDixit',
 		searchTerms: ['Kanak Mani Dixit'],
@@ -247,6 +281,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Subhash Ghimire',
+		nepaliName: 'सुभाष घिमिरे',
 		category: 'Media',
 		handle: '@subhash580',
 		searchTerms: ['Subhash Ghimire'],
@@ -254,6 +289,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Suman Kharel',
+		nepaliName: 'सुमन खरेल',
 		category: 'Media',
 		handle: '@kharel8',
 		searchTerms: ['Suman Kharel'],
@@ -261,6 +297,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Buddhisagar',
+		nepaliName: 'बुद्धिसागर',
 		category: 'Media',
 		handle: '@buddhisagar',
 		searchTerms: ['Buddhisagar'],
@@ -268,6 +305,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Govinda Adhikari',
+		nepaliName: 'गोविन्द अधिकारी',
 		category: 'Media',
 		handle: '@agovinda',
 		searchTerms: ['Govinda Adhikari'],
@@ -275,6 +313,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Bidhya Chapagain',
+		nepaliName: 'बिध्या चापागाइ',
 		category: 'Media',
 		handle: '@cbidhya',
 		searchTerms: ['Bidhya Chapagain'],
@@ -282,6 +321,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Suraj Singh Thakuri',
+		nepaliName: 'सूरज सिंह ठकुरी',
 		category: 'Media',
 		handle: '@Tsuraj111',
 		searchTerms: ['Suraj Singh Thakuri'],
@@ -289,6 +329,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Shivani Singh Tharu',
+		nepaliName: 'शिवानी सिंह थारू',
 		category: 'Media',
 		handle: '@shivanitharu',
 		searchTerms: ['Shivani Singh Tharu'],
@@ -296,6 +337,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Narayan Wagle',
+		nepaliName: 'नारायण वाग्ले',
 		category: 'Media',
 		handle: '@narayanwagle',
 		searchTerms: ['Narayan Wagle'],
@@ -303,6 +345,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Jagdish Ghimire',
+		nepaliName: 'जगदीश घिमिरे',
 		category: 'Media',
 		handle: '@JagdishGhimire',
 		searchTerms: ['Jagdish Ghimire'],
@@ -310,6 +353,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Jhamak Ghimire',
+		nepaliName: 'झामाक घिमिरे',
 		category: 'Media',
 		handle: '@jhamakghimire',
 		searchTerms: ['Jhamak Ghimire'],
@@ -317,6 +361,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Krishna Dharabasi',
+		nepaliName: 'कृष्ण धारबासी',
 		category: 'Media',
 		handle: '@KrishnaDharaba2',
 		searchTerms: ['Krishna Dharabasi'],
@@ -324,6 +369,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Narayan Shrestha',
+		nepaliName: 'नारायण श्रेष्ठ',
 		category: 'Media',
 		handle: '@NrnShrestha',
 		searchTerms: ['Narayan Shrestha'],
@@ -331,6 +377,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Kailash Sirohiya',
+		nepaliName: 'कैलाश सिरोहिया',
 		category: 'Media',
 		handle: '@KailashSirohiya',
 		searchTerms: ['Kailash Sirohiya'],
@@ -338,6 +385,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Surya Raj Acharya',
+		nepaliName: 'सूर्यराज आचार्य',
 		category: 'Media',
 		handle: '@SuryaRAcharya',
 		searchTerms: ['Surya Raj Acharya'],
@@ -345,6 +393,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Subin Bhattarai',
+		nepaliName: 'सुबिन भट्टराई',
 		category: 'Media',
 		handle: '@subinbhattarai1',
 		searchTerms: ['Subin Bhattarai'],
@@ -352,6 +401,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Achyut Ghimire',
+		nepaliName: 'अच्युत घिमिरे',
 		category: 'Media',
 		handle: '@achyutbulbul',
 		searchTerms: ['Achyut Ghimire'],
@@ -359,6 +409,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Rishi Dhamala',
+		nepaliName: 'ॠषि धमला',
 		category: 'Media',
 		handle: '@RishiDhamala',
 		searchTerms: ['Rishi Dhamala'],
@@ -366,6 +417,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Kala Subba',
+		nepaliName: 'कला सुब्बा',
 		category: 'Media',
 		handle: '@kalasubba1',
 		searchTerms: ['Kala Subba'],
@@ -373,6 +425,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sameer M Dixit',
+		nepaliName: 'समीर मणि दीक्षित',
 		category: 'Media',
 		handle: '@smadixit',
 		searchTerms: ['Sameer M Dixit, PhD'],
@@ -380,6 +433,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Pramod Kharel',
+		nepaliName: 'प्रमोद खरेल',
 		category: 'Singer',
 		handle: '@kharel777',
 		searchTerms: ['Pramod Kharel'],
@@ -387,6 +441,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Deepak Bajracharya',
+		nepaliName: 'दिपक बज्राचार्य',
 		category: 'Singer',
 		handle: '@dpkbajra',
 		searchTerms: ['Deepak Bajracharya'],
@@ -394,6 +449,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Amrit Gurung',
+		nepaliName: 'अमृत ​​गुरुङ',
 		category: 'Singer',
 		handle: '@amritnepathya',
 		searchTerms: ['Amrit Gurung'],
@@ -401,6 +457,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Astha Tamang-Maskey',
+		nepaliName: 'आस्था तामाङ मास्के',
 		category: 'Singer',
 		handle: '@asthamusic',
 		searchTerms: ['Astha Tamang-Maskey'],
@@ -408,6 +465,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Manoj Kumar KC',
+		nepaliName: 'मनोज कुमार केसी',
 		category: 'Singer',
 		handle: '@manoj1974',
 		searchTerms: ['Manoj Kumar KC'],
@@ -415,6 +473,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Raju Lama',
+		nepaliName: 'राजु लामा',
 		category: 'Singer',
 		handle: '@RajuLama',
 		searchTerms: ['Raju Lama'],
@@ -422,6 +481,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Astha Raut',
+		nepaliName: 'आस्था राउत',
 		category: 'Singer',
 		handle: '@astharaut',
 		searchTerms: ['Astha Raut'],
@@ -429,6 +489,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Ram Krishna Dhakal',
+		nepaliName: 'राम कृष्ण ढकाल',
 		category: 'Singer',
 		handle: '@ramkdhakal',
 		searchTerms: ['Ram Krishna Dhakal'],
@@ -436,6 +497,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nima Rumba',
+		nepaliName: 'निमा रुम्बा',
 		category: 'Singer',
 		handle: '@nimarumba',
 		searchTerms: ['Nima Rumba'],
@@ -443,6 +505,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nabin K Bhattarai',
+		nepaliName: 'नवीन के भट्टराई',
 		category: 'Singer',
 		handle: '@nabinkbhattarai',
 		searchTerms: ['Nabin K Bhattarai'],
@@ -450,6 +513,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Abhaya Subba',
+		nepaliName: 'अभया सुब्बा',
 		category: 'Singer',
 		handle: '@AbhayaSubba',
 		searchTerms: ['Abhaya Subba'],
@@ -457,6 +521,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Samriddhi Rai',
+		nepaliName: 'समृद्धि राई',
 		category: 'Singer',
 		handle: '@samriddhirai13',
 		searchTerms: ['Samriddhi Rai'],
@@ -464,6 +529,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Manisha Koirala',
+		nepaliName: 'मनीषा कोइराला',
 		category: 'Actor',
 		handle: '@mkoirala',
 		searchTerms: ['Manisha Koirala'],
@@ -471,6 +537,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Keki Adhikari',
+		nepaliName: 'केकी अधिकारी',
 		category: 'Actor',
 		handle: '@KekiAdhikari',
 		searchTerms: ['Keki Adhikari'],
@@ -478,6 +545,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Rajesh Hamal',
+		nepaliName: 'राजेश हमाल',
 		category: 'Actor',
 		handle: '@RajeshHamal64',
 		searchTerms: ['Rajesh Hamal'],
@@ -485,6 +553,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Manoj Gajurel',
+		nepaliName: 'मनोज गजुरेल',
 		category: 'Actor',
 		handle: '@gajureal',
 		searchTerms: ['Manoj Gajurel'],
@@ -492,6 +561,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Priyanka Karki',
+		nepaliName: 'प्रियंका कार्की',
 		category: 'Actor',
 		handle: '@PriyankaKarky',
 		searchTerms: ['Priyanka Karki'],
@@ -499,6 +569,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Rekha Thapa',
+		nepaliName: 'रेखा थापा',
 		category: 'Actor',
 		handle: '@rekhafilms',
 		searchTerms: ['Rekha Thapa'],
@@ -506,6 +577,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Dayahang Rai',
+		nepaliName: 'दयाहांग राई',
 		category: 'Actor',
 		handle: '@dayahangrai',
 		searchTerms: ['Dayahang Rai'],
@@ -513,6 +585,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Namrataa Shrestha',
+		nepaliName: 'नम्रता श्रेष्ठ',
 		category: 'Actor',
 		handle: '@NamrataaS',
 		searchTerms: ['Namrataa Shrestha'],
@@ -520,6 +593,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Reeccha Sharma',
+		nepaliName: 'रिचा शर्मा',
 		category: 'Actor',
 		handle: '@reecchasharrma',
 		searchTerms: ['Reeccha Sharma'],
@@ -527,6 +601,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Raj Ballav Koirala',
+		nepaliName: 'राज बल्लाभ कोइराला',
 		category: 'Actor',
 		handle: '@RajBallav',
 		searchTerms: ['Raj Ballav Koirala'],
@@ -534,6 +609,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Shweta Khadka',
+		nepaliName: 'श्वेता खड्का',
 		category: 'Actor',
 		handle: '@Shweta_khadka',
 		searchTerms: ['Shweta Khadka'],
@@ -541,6 +617,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Neeta Dhungana',
+		nepaliName: 'नीता ढुंगाना',
 		category: 'Actor',
 		handle: '@neeta_dhungana_',
 		searchTerms: ['Neeta Dhungana'],
@@ -548,6 +625,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Jharana Thapa',
+		nepaliName: 'झराना थापा',
 		category: 'Actor',
 		handle: '@jharana_thapa',
 		searchTerms: ['Jharana Thapa'],
@@ -555,6 +633,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nisha Adhikari',
+		nepaliName: 'निशा अधिकारी',
 		category: 'Actor',
 		handle: '@nishaadhikari4u',
 		searchTerms: ['Nisha Adhikari'],
@@ -562,6 +641,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Deepak Raj Giri',
+		nepaliName: 'दीपक राज गिरी',
 		category: 'Actor',
 		handle: '@deepakraj2016',
 		searchTerms: ['Deepak Raj Giri'],
@@ -569,6 +649,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Namrata Sapkota',
+		nepaliName: 'नम्रता सापकोटा',
 		category: 'Actor',
 		handle: '@inamratasapkota',
 		searchTerms: ['Namrata Sapkota'],
@@ -576,6 +657,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sandeep Lamichhane',
+		nepaliName: 'संदीप लामिछाने',
 		category: 'Others',
 		handle: '@Sandeep25',
 		searchTerms: ['Sandeep Lamicchane'],
@@ -583,6 +665,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Paras Khadka',
+		nepaliName: 'पारस खड्का',
 		category: 'Others',
 		handle: '@paras77',
 		searchTerms: ['Paras Khadka'],
@@ -590,6 +673,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Gaurika Singh',
+		nepaliName: 'गौरिका सिंह',
 		category: 'Others',
 		handle: '@gaurika_singh',
 		searchTerms: ['Gaurika Singh'],
@@ -597,6 +681,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sipora Gurung',
+		nepaliName: 'सिपोरा गुरुङ',
 		category: 'Others',
 		handle: '@GurungSipora',
 		searchTerms: ['Sipora Gurung'],
@@ -604,6 +689,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Gyanendra Malla',
+		nepaliName: 'ज्ञानेन्द्र मल्ल',
 		category: 'Others',
 		handle: '@gyanu_gm11',
 		searchTerms: ['Gyanendra Malla'],
@@ -611,6 +697,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Karan KC',
+		nepaliName: 'करण केसी',
 		category: 'Others',
 		handle: '@karankc33',
 		searchTerms: ['Karan KC'],
@@ -618,6 +705,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Binod Das',
+		nepaliName: 'बिनोद दास',
 		category: 'Others',
 		handle: '@binodsum',
 		searchTerms: ['Binod Das'],
@@ -625,6 +713,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nirmal Purja',
+		nepaliName: 'निर्मल पूर्जा',
 		category: 'Others',
 		handle: '@nimsdai',
 		searchTerms: ['Nirmal Purja'],
@@ -632,6 +721,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Gyanendra Shah',
+		nepaliName: 'ज्ञानेन्द्र शाह',
 		category: 'Others',
 		handle: '@GBBShah',
 		searchTerms: ['Gyanendra Shah'],
@@ -639,6 +729,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Shrinkhala Khatiwada',
+		nepaliName: 'श्रींखाला खतिवडा',
 		category: 'Others',
 		handle: '@shrinkhalak_',
 		searchTerms: ['Shrinkhala Khatiwada'],
@@ -646,6 +737,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Malvika Subba',
+		nepaliName: 'मालविका सुब्बा',
 		category: 'Others',
 		handle: '@malvikasubba',
 		searchTerms: ['Malvika Subba'],
@@ -653,6 +745,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Himani Shah',
+		nepaliName: 'हिमानी शाह',
 		category: 'Others',
 		handle: '@Himani_Shah_Nep',
 		searchTerms: ['Himani Shah'],
@@ -660,6 +753,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Nikita Acharya',
+		nepaliName: 'निकिता आचार्य',
 		category: 'Others',
 		handle: '@nikitacharyaa',
 		searchTerms: ['Nikita Acharya'],
@@ -667,6 +761,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Anil Shah',
+		nepaliName: 'अनिल शाह',
 		category: 'Others',
 		handle: '@AnilKesharyShah',
 		searchTerms: ['Anil Shah', 'Anil Keshary Shah'],
@@ -674,6 +769,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Dr Govinda KC',
+		nepaliName: 'डा गोविन्द केसी',
 		category: 'Others',
 		handle: '@DrGovindaKC',
 		searchTerms: ['Govinda KC'],
@@ -681,6 +777,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Mahabir Pun',
+		nepaliName: 'महाबीर पुन',
 		category: 'Others',
 		handle: '@MahabirPun',
 		searchTerms: ['Mahabir Pun'],
@@ -688,6 +785,7 @@ const TrendingTwitterHandles = [
 	},
 	{
 		name: 'Sugat Kansakar',
+		nepaliName: 'महाबीर पुन',
 		category: 'Others',
 		handle: '@SugatKansakar',
 		searchTerms: ['Sugat Kansakar'],

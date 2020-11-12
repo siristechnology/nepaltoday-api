@@ -67,6 +67,25 @@ module.exports = {
 			}
 		},
 
+		getIndividualArticles: async (parent, { name }) => {
+			const articles = await Article.find({tags: name})
+			.lean()
+			.sort({ _id: -1 })
+			.limit(20)
+			const articleFlattened = _.flatten(articles)
+			const articleList = articleFlattened.map((article) => {
+				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
+				article.source = {
+					_id: mySource.name,
+					name: mySource.nepaliName,
+					url: mySource.link,
+					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink,
+				}
+				return article
+			})
+			return articleList
+		},
+
 		getTweets: async (parent, args, { Tweet }) => {
 			args.criteria = args.criteria || {}
 			args.criteria.lastQueryDate = args.criteria.lastQueryDate || new Date('2001-01-01')
