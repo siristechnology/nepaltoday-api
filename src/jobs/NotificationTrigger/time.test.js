@@ -2,8 +2,8 @@ const { verifyNoticiableTime } = require('./notificationTime')
 
 describe('time test', () => {
 	it('test the noticiable time', () => {
-		expect(verifyNoticiableTime('6:00')).toBe(true)
-		expect(verifyNoticiableTime('5:58')).toBe(true)
-		expect(verifyNoticiableTime('6:02')).toBe(false)
+		expect(verifyNoticiableTime('9:00')).toBe(true)
+		expect(verifyNoticiableTime('8:58')).toBe(true)
+		expect(verifyNoticiableTime('9:02')).toBe(false)
 	})
 })
