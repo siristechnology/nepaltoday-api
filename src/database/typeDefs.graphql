@@ -156,6 +156,15 @@ type FM {
 	province: String
 }
 
+type NepaliEvent {
+	isHoliday: Boolean 
+	tithi: String 
+	event: String 
+	day: String
+	dayInEn: String 
+	en: String
+}
+
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
@@ -168,6 +177,7 @@ type Query {
 	getTweetByHandle(handle: String): [Tweet]
 	getFmList: [FM]
 	getMyFavoriteFm(nid: String): [FM]
+	getNepaliEvent(date: String): NepaliEvent
 }
 
 type Response {

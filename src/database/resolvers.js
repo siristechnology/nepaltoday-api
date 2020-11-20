@@ -9,6 +9,7 @@ const { Tweet, FavoriteFM, ReadArticle } = require('../db-service/database/mongo
 const SourceConfig = require('../config/news-source-config.json')
 const { fmDetails } = require('./../config/fm')
 const { calculateTotalWeights } = require('./calculateTotalWeights')
+const { NepaliEvents } = require('../config/nepaliCalender')
 
 module.exports = {
 	Query: {
@@ -152,6 +153,16 @@ module.exports = {
 				myFavoriteFm.push(myFm)
 			})
 			return myFavoriteFm
+		},
+
+		getNepaliEvent: (parent, {date}) => {
+			const year = date.slice(0,4)
+			const month = parseInt(date.slice(5,7))
+			const day = parseInt(date.slice(8,))
+			const currentYear = NepaliEvents.find(x=> x.year==year)
+			const currentMonth = currentYear.months.find(x=> x.month==month)
+			const currentDay = currentMonth.days.find(x=> x.dayInEn==day)
+			return currentDay
 		}
 	},
 
