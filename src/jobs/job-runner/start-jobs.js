@@ -9,6 +9,7 @@ const coronaJob = require('../corona')
 const districtCoronaJob = require('../districtCorona/metricsJob')
 const trendingJob = require('../trending')
 const trendingTopic = require('../trendingTopics')
+const newsChecker = require('../newsChecker')
 
 module.exports = async function () {
 	logger.info('starting jobs')
@@ -50,6 +51,11 @@ module.exports = async function () {
 		trendingTopic()
 	})
 
+	agenda.define('check news from sources', async (job) => {
+		logger.info('checking news job started')
+		newsChecker()
+	})
+
 	await agenda.start()
 
 	await agenda.every('30 minutes', 'crawl articles')
@@ -59,4 +65,5 @@ module.exports = async function () {
 	await agenda.every('20 minutes', 'fetch district corona stats')
 	await agenda.every('2 hours', 'fetch trending')
 	await agenda.every('24 hours', 'fetch trending topics')
+	await agenda.every('24 hours', 'check news from sources')
 }

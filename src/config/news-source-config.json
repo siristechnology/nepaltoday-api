@@ -327,6 +327,11 @@
 				"url": "https://baahrakhari.com/news-article/6/Thought",
 				"category": "social",
 				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
+			},
+			{
+				"url": "https://baahrakhari.com/news-article/65/Cartoon",
+				"category": "cartoon",
+				"image-selector": "div.row.page-news-list > div > div > figure > img"
 			}
 		],
 		"article-detail-selectors": {
@@ -427,20 +432,6 @@
 				"url": "http://annapurnapost.com/cartoon",
 				"category": "cartoon",
 				"image-selector": "div.select-cartoon > div > div > figure > a > img"
-			}
-		]
-	},
-	{
-		"name": "Baahrakhari",
-		"sourceName": "Baahrakhari",
-		"nepaliName": "बाह्रखरी",
-		"logoLink": "/assets/logos/baahrakhari-1.png",
-		"weight": 8,
-		"pages": [
-			{
-				"url": "https://baahrakhari.com/news-article/65/Cartoon",
-				"category": "cartoon",
-				"image-selector": "div.row.page-news-list > div > div > figure > img"
 			}
 		]
 	}
