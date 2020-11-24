@@ -12,7 +12,7 @@ type Article {
 	modifiedDate: String
 	topic: String
 	tags: [String]
-	totalWeight: Int
+	totalWeight: Float
 }
 
 input ArticleCriteria {
