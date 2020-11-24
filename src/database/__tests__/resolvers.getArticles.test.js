@@ -2,7 +2,7 @@ const mongooseSchema = require('../../db-service/database/mongooseSchema')
 const { getArticles } = require('../../db-service/newsDbService')
 
 const { dbConnection } = require('../../helper/connectionHelper')
-jest.setTimeout(20000)
+jest.setTimeout(200000)
 
 let con
 
