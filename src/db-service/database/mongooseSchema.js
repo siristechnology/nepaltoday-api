@@ -202,18 +202,18 @@ const ReadArticle = mongoose.model(
 const Like = mongoose.model(
 	'Like',
 	new Schema({
-		nid,
-		articleId,
-		category
+		nid: String,
+		articleId: String,
+		category: String
 	})
 )
 
 const Dislike = mongoose.model(
 	'Dislike',
 	new Schema({
-		nid,
-		articleId,
-		category
+		nid: String,
+		articleId: String,
+		category: String
 	})
 )
 
