@@ -208,9 +208,17 @@ input ReadArticleArr {
 	category: String
 }
 
+input LikeObj {
+	nid: String
+	articleId: String
+	category: String
+}
+
 type Mutation {
 	storeFcmToken(input: StoreFcmInput): Response
 	saveFavorite(input: SaveFavorite): Response
 	deleteFavorite(input: SaveFavorite): Response
 	saveReadArticle(input: SaveReadArticle): Response
+	postLike(input: LikeObj): Response
+	postDislike(input: LikeObj): Response
 }

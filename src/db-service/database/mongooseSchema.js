@@ -28,6 +28,16 @@ const Article = mongoose.model(
 			date: Number,
 			user: Number,
 		},
+		likes: [
+			{
+				nid: String
+			}
+		],
+		dislikes: [
+			{
+				nid: String
+			}
+		]
 	}),
 )
 
@@ -189,6 +199,24 @@ const ReadArticle = mongoose.model(
 	})
 )
 
+const Like = mongoose.model(
+	'Like',
+	new Schema({
+		nid,
+		articleId,
+		category
+	})
+)
+
+const Dislike = mongoose.model(
+	'Dislike',
+	new Schema({
+		nid,
+		articleId,
+		category
+	})
+)
+
 module.exports = {
 	User,
 	Tweet,
@@ -201,5 +229,7 @@ module.exports = {
 	FacebookPosts,
 	TrendingTopic,
 	FavoriteFM,
-	ReadArticle
+	ReadArticle,
+	Like,
+	Dislike
 }

@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const mongooseSchema = require('../db-service/database/mongooseSchema')
 
-const { User, Article } = mongooseSchema
+const { User, Article, Like, Dislike } = mongooseSchema
 const { categories } = require('../config/category')
 const getWeather = require('../weather')
 const logger = require('../config/logger')
@@ -219,7 +219,7 @@ module.exports = {
 		},
 
 		saveReadArticle: async (parent, args, {}) => {
-			let {
+			const {
 				input: { nid, articles }
 			} = args
 			const savedReadArticles = await ReadArticle.findOne({nid})
@@ -239,6 +239,44 @@ module.exports = {
 				const response = await readArticlesObj.save()
 				return { success: !!response.nid}
 			}
+		},
+
+		postLike: async (parent, args, {}) => {
+			const {
+				input: {nid, articleId, category}
+			} = args
+			const myArticle = await Article.findOne({_id: articleId})
+			const likes = myArticle.likes || []
+			likes.push({nid})
+			const dislikes = myArticle.dislikes || []
+			dislikes = dislikes.filter(x=> x.nid!=nid)
+			myArticle.likes = likes
+			myArticle.dislikes = dislikes
+			await myArticle.save()
+
+			await Like.insertMany([{nid, articleId, category}])
+			const response = Dislike.deleteOne({nid, articleId})
+
+			return { success: !! response.ok }
+		},
+
+		postDislike: async (parent, args, {}) => {
+			const {
+				input: {nid, articleId, category}
+			} = args
+			const myArticle = Article.findOne({_id: articleId})
+			const dislikes = myArticle.dislikes || []
+			dislikes.push({nid})
+			const likes = myArticle.likes || []
+			likes = likes.filter(x=> x.nid!=nid)
+			myArticle.likes = likes
+			myArticle.dislikes = dislikes
+			await myArticle.save()
+
+			await Dislike.insertMany([{nid, articleId, category}])
+			const response = Like.deleteOne({nid, articleId})
+
+			return { success: !! response.ok }
 		}
 
 	},
