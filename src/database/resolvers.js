@@ -246,9 +246,9 @@ module.exports = {
 				input: {nid, articleId, category}
 			} = args
 			const myArticle = await Article.findOne({_id: articleId})
-			const likes = myArticle.likes || []
+			let likes = myArticle.likes || []
 			likes.push({nid})
-			const dislikes = myArticle.dislikes || []
+			let dislikes = myArticle.dislikes || []
 			dislikes = dislikes.filter(x=> x.nid!=nid)
 			myArticle.likes = likes
 			myArticle.dislikes = dislikes
@@ -265,9 +265,9 @@ module.exports = {
 				input: {nid, articleId, category}
 			} = args
 			const myArticle = Article.findOne({_id: articleId})
-			const dislikes = myArticle.dislikes || []
+			let dislikes = myArticle.dislikes || []
 			dislikes.push({nid})
-			const likes = myArticle.likes || []
+			let likes = myArticle.likes || []
 			likes = likes.filter(x=> x.nid!=nid)
 			myArticle.likes = likes
 			myArticle.dislikes = dislikes
