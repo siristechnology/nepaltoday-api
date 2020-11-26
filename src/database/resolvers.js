@@ -255,8 +255,21 @@ module.exports = {
 			await myArticle.save()
 
 			await Like.insertMany([{nid, articleId, category}])
-			const response = Dislike.deleteOne({nid, articleId})
+			const response = await Dislike.deleteOne({nid, articleId})
+			return { success: !! response.ok }
+		},
 
+		removeLike: async (parent, args, {}) => {
+			const {
+				input: {nid, articleId}
+			} = args
+			const myArticle = await Article.findOne({_id: articleId})
+			let likes = myArticle.likes || []
+			likes = likes.filter(x=> x.nid!=nid)
+			myArticle.likes = likes
+			await myArticle.save()
+
+			const response = await Like.deleteOne({nid, articleId})
 			return { success: !! response.ok }
 		},
 
@@ -264,7 +277,7 @@ module.exports = {
 			const {
 				input: {nid, articleId, category}
 			} = args
-			const myArticle = Article.findOne({_id: articleId})
+			const myArticle = await Article.findOne({_id: articleId})
 			let dislikes = myArticle.dislikes || []
 			dislikes.push({nid})
 			let likes = myArticle.likes || []
@@ -274,10 +287,23 @@ module.exports = {
 			await myArticle.save()
 
 			await Dislike.insertMany([{nid, articleId, category}])
-			const response = Like.deleteOne({nid, articleId})
-
+			const response = await Like.deleteOne({nid, articleId})
 			return { success: !! response.ok }
-		}
+		},
+
+		removeDislike: async (parent, args, {}) => {
+			const {
+				input: {nid, articleId}
+			} = args
+			const myArticle = await Article.findOne({_id: articleId})
+			let dislikes = myArticle.dislikes || []
+			dislikes = dislikes.filter(x=> x.nid!=nid)
+			myArticle.dislikes = dislikes
+			await myArticle.save()
+
+			const response = await Dislike.deleteOne({nid, articleId})
+			return { success: !! response.ok }
+		},
 
 	},
 }

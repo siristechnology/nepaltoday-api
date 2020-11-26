@@ -13,6 +13,12 @@ type Article {
 	topic: String
 	tags: [String]
 	totalWeight: Float
+	likes: [NidObj]
+	dislikes: [NidObj]
+}
+
+type NidObj {
+	nid: String
 }
 
 input ArticleCriteria {
@@ -208,10 +214,15 @@ input ReadArticleArr {
 	category: String
 }
 
-input LikeObj {
+input PostLikeObj {
 	nid: String
 	articleId: String
 	category: String
+}
+
+input RemoveLikeObj {
+	nid: String
+	articleId: String
 }
 
 type Mutation {
@@ -219,6 +230,8 @@ type Mutation {
 	saveFavorite(input: SaveFavorite): Response
 	deleteFavorite(input: SaveFavorite): Response
 	saveReadArticle(input: SaveReadArticle): Response
-	postLike(input: LikeObj): Response
-	postDislike(input: LikeObj): Response
+	postLike(input: PostLikeObj): Response
+	postDislike(input: PostLikeObj): Response
+	removeLike(input: RemoveLikeObj): Response
+	removeDislike(input: RemoveLikeObj): Response
 }
