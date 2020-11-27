@@ -24,7 +24,7 @@ module.exports = async function(){
 const sendMail = async (sourceName) => {
     try{
         const transporter = nodeMailer.createTransport({
-            service:'gmail.com',
+            service:'gmail',
             auth:{
                 user: process.env.NOTIFY_EMAIL_ID,
                 pass:process.env.NOTIFY_EMAIL_PASSWORD
