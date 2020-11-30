@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 const _ = require('lodash')
 const mongooseSchema = require('../db-service/database/mongooseSchema')
 
@@ -69,10 +70,7 @@ module.exports = {
 		},
 
 		getIndividualArticles: async (parent, { name }) => {
-			const articles = await Article.find({tags: name})
-			.lean()
-			.sort({ _id: -1 })
-			.limit(20)
+			const articles = await Article.find({ tags: name }).lean().sort({ _id: -1 }).limit(20)
 			const articleFlattened = _.flatten(articles)
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
@@ -147,23 +145,23 @@ module.exports = {
 
 		getMyFavoriteFm: async (parent, { nid }) => {
 			const myFavorites = await FavoriteFM.find({ nid })
-			let myFavoriteFm = []
-			myFavorites.forEach(favorite=>{
-				const myFm = fmDetails.filter(x=>x.id==favorite.fmId)[0]
-				myFavoriteFm.push(myFm)
+			const myFavoriteFm = []
+			myFavorites.forEach((favorite) => {
+				const myFm = fmDetails.find((x) => x.id == favorite.fmId)
+				myFm && myFavoriteFm.push(myFm)
 			})
 			return myFavoriteFm
 		},
 
-		getNepaliEvent: (parent, {date}) => {
-			const year = date.slice(0,4)
-			const month = parseInt(date.slice(5,7))
-			const day = parseInt(date.slice(8,))
-			const currentYear = NepaliEvents.find(x=> x.year==year)
-			const currentMonth = currentYear.months.find(x=> x.month==month)
-			const currentDay = currentMonth.days.find(x=> x.dayInEn==day)
+		getNepaliEvent: (parent, { date }) => {
+			const year = date.slice(0, 4)
+			const month = parseInt(date.slice(5, 7))
+			const day = parseInt(date.slice(8))
+			const currentYear = NepaliEvents.find((x) => x.year == year)
+			const currentMonth = currentYear.months.find((x) => x.month == month)
+			const currentDay = currentMonth.days.find((x) => x.dayInEn == day)
 			return currentDay
-		}
+		},
 	},
 
 	Mutation: {
@@ -192,18 +190,18 @@ module.exports = {
 
 		saveFavorite: async (parent, args, {}) => {
 			const {
-				input: { nid, fmId }
+				input: { nid, fmId },
 			} = args
 
 			const response = await FavoriteFM.update(
-				{nid, fmId},
+				{ nid, fmId },
 				{
 					$set: {
 						nid,
-						fmId
-					}
+						fmId,
+					},
 				},
-				{upsert: true}
+				{ upsert: true },
 			)
 
 			return { success: !!response.ok }
@@ -211,99 +209,96 @@ module.exports = {
 
 		deleteFavorite: async (parent, args, {}) => {
 			const {
-				input: { nid, fmId}
+				input: { nid, fmId },
 			} = args
-		
-			const response = await FavoriteFM.deleteOne({nid, fmId})
-			return { success: !! response.ok }
+
+			const response = await FavoriteFM.deleteOne({ nid, fmId })
+			return { success: !!response.ok }
 		},
 
 		saveReadArticle: async (parent, args, {}) => {
 			const {
-				input: { nid, articles }
+				input: { nid, articles },
 			} = args
-			const savedReadArticles = await ReadArticle.findOne({nid})
-			if(savedReadArticles && savedReadArticles.nid){
+			const savedReadArticles = await ReadArticle.findOne({ nid })
+			if (savedReadArticles && savedReadArticles.nid) {
 				let allArticles = savedReadArticles.article.concat(articles)
-				allArticles = allArticles.map(article=>{ return {articleId: article.articleId, category: article.category}})
-				allArticles = allArticles.filter((thing, index, self) =>
-					index === self.findIndex((t) => (
-						t.articleId === thing.articleId
-					))
-				)
+				allArticles = allArticles.map((article) => {
+					return { articleId: article.articleId, category: article.category }
+				})
+				allArticles = allArticles.filter((thing, index, self) => index === self.findIndex((t) => t.articleId === thing.articleId))
 				savedReadArticles.article = allArticles
 				const response = await savedReadArticles.save()
 				return { success: !!response.nid }
-			}else{
-				const readArticlesObj = new ReadArticle({nid, article: articles})
+			} else {
+				const readArticlesObj = new ReadArticle({ nid, article: articles })
 				const response = await readArticlesObj.save()
-				return { success: !!response.nid}
+				return { success: !!response.nid }
 			}
 		},
 
 		postLike: async (parent, args, {}) => {
 			const {
-				input: {nid, articleId, category}
+				input: { nid, articleId, category },
 			} = args
-			const myArticle = await Article.findOne({_id: articleId})
+			const myArticle = await Article.findOne({ _id: articleId })
 			let likes = myArticle.likes || []
-			likes.push({nid})
+			likes.push({ nid })
 			let dislikes = myArticle.dislikes || []
-			dislikes = dislikes.filter(x=> x.nid!=nid)
+			dislikes = dislikes.filter((x) => x.nid != nid)
 			myArticle.likes = likes
 			myArticle.dislikes = dislikes
 			await myArticle.save()
 
-			await Like.insertMany([{nid, articleId, category}])
-			const response = await Dislike.deleteOne({nid, articleId})
-			return { success: !! response.ok }
+			await Like.insertMany([{ nid, articleId, category }])
+			const response = await Dislike.deleteOne({ nid, articleId })
+			return { success: !!response.ok }
 		},
 
 		removeLike: async (parent, args, {}) => {
 			const {
-				input: {nid, articleId}
+				input: { nid, articleId },
 			} = args
-			const myArticle = await Article.findOne({_id: articleId})
+			const myArticle = await Article.findOne({ _id: articleId })
 			let likes = myArticle.likes || []
-			likes = likes.filter(x=> x.nid!=nid)
+			likes = likes.filter((x) => x.nid != nid)
 			myArticle.likes = likes
 			await myArticle.save()
 
-			const response = await Like.deleteOne({nid, articleId})
-			return { success: !! response.ok }
+			const response = await Like.deleteOne({ nid, articleId })
+			return { success: !!response.ok }
 		},
 
 		postDislike: async (parent, args, {}) => {
 			const {
-				input: {nid, articleId, category}
+				input: { nid, articleId, category },
 			} = args
-			const myArticle = await Article.findOne({_id: articleId})
+			const myArticle = await Article.findOne({ _id: articleId })
 			let dislikes = myArticle.dislikes || []
-			dislikes.push({nid})
+			dislikes.push({ nid })
 			let likes = myArticle.likes || []
-			likes = likes.filter(x=> x.nid!=nid)
+			likes = likes.filter((x) => x.nid != nid)
 			myArticle.likes = likes
 			myArticle.dislikes = dislikes
 			await myArticle.save()
 
-			await Dislike.insertMany([{nid, articleId, category}])
-			const response = await Like.deleteOne({nid, articleId})
-			return { success: !! response.ok }
+			await Dislike.insertMany([{ nid, articleId, category }])
+			const response = await Like.deleteOne({ nid, articleId })
+			return { success: !!response.ok }
 		},
 
 		removeDislike: async (parent, args, {}) => {
 			const {
-				input: {nid, articleId}
+				input: { nid, articleId },
 			} = args
-			const myArticle = await Article.findOne({_id: articleId})
+			const myArticle = await Article.findOne({ _id: articleId })
 			let dislikes = myArticle.dislikes || []
-			dislikes = dislikes.filter(x=> x.nid!=nid)
+			dislikes = dislikes.filter((x) => x.nid != nid)
 			myArticle.dislikes = dislikes
 			await myArticle.save()
 
-			const response = await Dislike.deleteOne({nid, articleId})
-			return { success: !! response.ok }
+			const response = await Dislike.deleteOne({ nid, articleId })
+			return { success: !!response.ok }
 		},
-
 	},
 }

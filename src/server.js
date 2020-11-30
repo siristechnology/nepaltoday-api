@@ -12,6 +12,7 @@ const resolvers = require('./database/resolvers')
 const colors = require('colors/safe')
 const Agenda = require('agenda')
 const Agendash = require('agendash')
+const GraphQlErrorLoggingPlugin = require('./config/graphql-error-logging')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -42,6 +43,7 @@ const apolloServer = new ApolloServer({
 		...{ userContext: req.payload, ipAddress: getIpAdressFromRequest(req) },
 		...mongooseSchema,
 	}),
+	plugins: [GraphQlErrorLoggingPlugin],
 })
 apolloServer.applyMiddleware({ app })
 
