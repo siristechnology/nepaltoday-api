@@ -171,6 +171,11 @@ type NepaliEvent {
 	en: String
 }
 
+type MyFm {
+	allFm: [FM]
+	favoriteFm: [FM]
+}
+
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
@@ -183,6 +188,7 @@ type Query {
 	getTweetByHandle(handle: String): [Tweet]
 	getFmList: [FM]
 	getMyFavoriteFm(nid: String): [FM]
+	getMyFm(nid: String): MyFm
 	getNepaliEvent(date: String): NepaliEvent
 }
 

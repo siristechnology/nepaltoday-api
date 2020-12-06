@@ -153,6 +153,19 @@ module.exports = {
 			return myFavoriteFm
 		},
 
+		getMyFm: async (parent, { nid }) => {
+			const myFavorites = await FavoriteFM.find({ nid })
+			const myFavoriteFm = []
+			myFavorites.forEach((favorite) => {
+				const myFm = fmDetails.find((x) => x.id == favorite.fmId)
+				myFm && myFavoriteFm.push(myFm)
+			})
+			return {
+				allFm: fmDetails,
+				favoriteFm: myFavoriteFm
+			}
+		},
+
 		getNepaliEvent: (parent, { date }) => {
 			const year = date.slice(0, 4)
 			const month = parseInt(date.slice(5, 7))

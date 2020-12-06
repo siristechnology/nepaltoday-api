@@ -253,7 +253,7 @@
 			"title": "article > header > h2",
 			"excerpt": ".detail-wrap > p:nth-of-type(2)",
 			"lead-image": "section > div.detail-imgwrap > div.column.img-wrap > figure > img",
-			"content": ["article > section"]
+			"content": ["section.detail-wrap"]
 		}
 	},
 	{
