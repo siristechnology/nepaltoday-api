@@ -246,14 +246,14 @@
 			{
 				"url": "https://halokhabar.com",
 				"category": "agriculture",
-				"link-selector": "#home.tab-pane.active ul.section > li > h3 > a"
+				"link-selector": "section > div > div > ul > li > h3 > a"
 			}
 		],
 		"article-detail-selectors": {
 			"title": "article > header > h2",
 			"excerpt": ".detail-wrap > p:nth-of-type(2)",
-			"lead-image": "article > section > figure > img",
-			"content": ["article > section"]
+			"lead-image": "section > div.detail-imgwrap > div.column.img-wrap > figure > img",
+			"content": ["section.detail-wrap"]
 		}
 	},
 	{
