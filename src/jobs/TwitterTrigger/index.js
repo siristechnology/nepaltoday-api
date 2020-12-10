@@ -1,4 +1,3 @@
-const errorToJSON = require('error-to-json').default
 const TweetDbService = require('../../db-service/TweetDbService')
 const Twitter = require('twitter')
 const { TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = require('../../config/env')
@@ -27,7 +26,7 @@ async function fetchTweetsAndSaveByHandle(user) {
 			logger.info('No tweets from user: ', { handle: user.handle })
 		}
 	} catch (error) {
-		logger.error('Error fetching tweets for user: ', { handle: user.handle, error: errorToJSON(error) })
+		logger.error('Error fetching tweets for user: ', { handle: user.handle, error })
 	}
 }
 

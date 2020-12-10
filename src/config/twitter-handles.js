@@ -168,14 +168,6 @@ const TrendingTwitterHandles = [
 		image: 'https://pbs.twimg.com/profile_images/1036251513843318784/2nI3h4vm_200x200.jpg',
 	},
 	{
-		name: 'Bina Magar',
-		nepaliName: 'बीना मगर',
-		category: 'Politics',
-		handle: '@magarbina1',
-		searchTerms: ['Bina Magar'],
-		image: 'https://pbs.twimg.com/profile_images/1037585103227117568/LH8TK1tg_normal.jpg'
-	},
-	{
 		name: 'Renu Dahal',
 		nepaliName: 'रेणु दाहाल',
 		category: 'Politics',
@@ -747,9 +739,9 @@ const TrendingTwitterHandles = [
 		name: 'Himani Shah',
 		nepaliName: 'हिमानी शाह',
 		category: 'Others',
-		handle: '@Himani_Shah_Nep',
+		handle: '@Himanishah123',
 		searchTerms: ['Himani Shah'],
-		image: 'https://pbs.twimg.com/profile_images/1280879232084656130/22B3onqZ_bigger.jpg'
+		image: 'https://pbs.twimg.com/profile_images/1332859151731494912/O8kL_Ubi_bigger.jpg'
 	},
 	{
 		name: 'Nikita Acharya',
