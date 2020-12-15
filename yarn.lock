@@ -6405,6 +6405,11 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
+nepali-date-converter@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/nepali-date-converter/-/nepali-date-converter-3.3.0.tgz#477df4ebedbdbf72e284a64498b33b50cb795446"
+  integrity sha512-vjonnXlJkiFuqjElJM2tNz1+4MpXSAuPygZSVoIzFbfJZlKSMJ/FaMblygGPiY8BcnOTfgUdaFQIB72HpjVqBQ==
+
 netmask@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"

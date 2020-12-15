@@ -32,6 +32,7 @@
 		"mongodb": "3.6.2",
 		"mongoose": "5.10.6",
 		"morgan": "1.10.0",
+		"nepali-date-converter": "^3.3.0",
 		"news-crawler": "^1.12.3",
 		"nodemailer": "^6.4.16",
 		"offline-geo-from-ip": "^1.0.1",

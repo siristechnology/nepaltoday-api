@@ -4,6 +4,7 @@ const SourceConfig = require('../../config/news-source-config.json')
 const logger = require('../../config/logger')
 const { getTagsFromArticle, assignWeights } = require('./helper')
 const { Article, TrendingTopic } = require('../../db-service/database/mongooseSchema')
+const { convertArticleDateToAD } = require('./dateConverter')
 
 module.exports = async function () {
 	const ipAddress = require('ip').address()
@@ -11,6 +12,16 @@ module.exports = async function () {
 	try {
 		let articles = await NewsCrawler(SourceConfig, { headless: true })
 		articles = articles.filter((a) => a.imageLink !== null)
+
+		const cartoonArticles = articles.filter(x=>x.category=='cartoon')
+		const exceptCartoonArticles = articles.filter(x=>x.category!='cartoon')
+
+		let dateConvertedCartoonArticles = []
+		cartoonArticles.map(article=>{
+			dateConvertedCartoonArticles.push(convertArticleDateToAD(article))
+		})
+
+		articles = exceptCartoonArticles.concat(dateConvertedCartoonArticles)
 
 		const trendingTopics = await TrendingTopic.find()
 		const savedArticles = await Article.find({ createdDate: { $gt: new Date(Date.now() - 24 * 60 * 60 * 1000) } })

@@ -1,4 +1,4 @@
-[
+[	
 	{
 		"name": "ekantipur",
 		"sourceName": "ekantipur",
@@ -327,11 +327,6 @@
 				"url": "https://baahrakhari.com/news-article/6/Thought",
 				"category": "social",
 				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
-			},
-			{
-				"url": "https://baahrakhari.com/news-article/65/Cartoon",
-				"category": "cartoon",
-				"image-selector": "div.row.page-news-list > div > div > figure > img"
 			}
 		],
 		"article-detail-selectors": {
@@ -422,6 +417,27 @@
 		}
 	},
 	{
+		"name": "Baahrakhari",
+		"sourceName": "Baahrakhari",
+		"nepaliName": "बाह्रखरी",
+		"logoLink": "/assets/logos/baahrakhari-1.png",
+		"weight": 8,
+		"pages": [
+			{
+				"url": "https://baahrakhari.com/news-article/65/Cartoon",
+				"category": "cartoon",
+				"link-selector": "article > section > div.row.page-news-list > div > div > h3 > a"
+			}
+		],
+		"article-detail-selectors": {
+			"title": "article > header > h2",
+			"excerpt": "article > header > h2",
+			"lead-image": "article > div > div > section > div.img-wrap > figure > fig > img",
+			"content": ["article > header > h2"],
+			"date-selector": "article > div > div:nth-child(2) > ul > li:nth-child(2)"
+		}
+	},
+	{
 		"name": "Annnapurna Post",
 		"sourceName": "Annapurna Post",
 		"nepaliName": "अन्‍नपूर्ण पोस्ट्",
@@ -431,7 +447,8 @@
 			{
 				"url": "http://annapurnapost.com/cartoon",
 				"category": "cartoon",
-				"image-selector": "div.select-cartoon > div > div > figure > a > img"
+				"image-selector": "div.select-cartoon > div > div > figure > a > img",
+				"date-selectors": "div.select-cartoon > div > div > figure > a > small"
 			}
 		]
 	}
