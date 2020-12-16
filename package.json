@@ -33,7 +33,7 @@
 		"mongoose": "5.10.6",
 		"morgan": "1.10.0",
 		"nepali-date-converter": "^3.3.0",
-		"news-crawler": "https://github.com/siristechnology/news-crawler#master",
+		"news-crawler": "^1.12.3",
 		"nodemailer": "^6.4.16",
 		"offline-geo-from-ip": "^1.0.1",
 		"pm2": "4.4.0",
