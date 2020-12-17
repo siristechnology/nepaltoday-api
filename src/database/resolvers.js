@@ -11,6 +11,7 @@ const SourceConfig = require('../config/news-source-config.json')
 const { fmDetails } = require('./../config/fm')
 const { calculateTotalWeights } = require('./calculateTotalWeights')
 const { NepaliEvents } = require('../config/nepaliCalender')
+const { getTwitterHandles } = require('../db-service/TweetDbService')
 
 module.exports = {
 	Query: {
@@ -70,8 +71,13 @@ module.exports = {
 		},
 
 		getIndividualArticles: async (parent, { name }) => {
-			const articles = await Article.find({ tags: name }).lean().sort({ _id: -1 }).limit(20)
-			const articleFlattened = _.flatten(articles)
+			const articles = await Article.find({ tags: name }).lean().sort({ _id: -1 })
+			const individualHandle = (await getTwitterHandles()).filter(x => x.nepaliName==name)[0]
+			let articleFlattened = _.flatten(articles)
+			if(individualHandle){
+				const individualNewsCategories = individualHandle.newsCategories
+				articleFlattened = articleFlattened.filter(x => individualNewsCategories.includes(x.category)).slice(0,20)
+			}
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
