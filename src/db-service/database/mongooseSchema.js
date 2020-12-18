@@ -8,7 +8,7 @@ const Article = mongoose.model(
 		id: String,
 		title: { type: String, required: true, unique: true },
 		link: { type: String, unique: true, required: true },
-		imageLink: { type: String, required: true },
+		imageLink: { type: String, required: true, unique: true },
 		isHeadline: Boolean,
 		shortDescription: String,
 		category: String,
