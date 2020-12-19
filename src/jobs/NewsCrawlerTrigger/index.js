@@ -13,7 +13,11 @@ module.exports = async function () {
 		let articles = await NewsCrawler(SourceConfig, { headless: true })
 		articles = articles.filter((a) => a.imageLink !== null)
 
-		const cartoonArticles = articles.filter(x=>x.category=='cartoon')
+		let cartoonArticles = articles.filter(x=>x.category=='cartoon')
+		cartoonArticles = cartoonArticles.map(article=>{
+			article.title = article.imageLink
+			return article
+		})
 		const exceptCartoonArticles = articles.filter(x=>x.category!='cartoon')
 
 		let dateConvertedCartoonArticles = []
