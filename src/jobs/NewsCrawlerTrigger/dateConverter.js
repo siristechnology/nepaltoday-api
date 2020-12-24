@@ -1,11 +1,29 @@
 const NepaliDate = require('nepali-date-converter')
 const getNepaliMonthsInNepali = () => {
-    return ['बैशाख', 'जेठ', 'अषाढ', 'श्रावण', 'भदौ', 'आश्विन', 'कार्तिक', 'मंसिर', 'पौष', 'माघ', 'फाल्गुन', 'चैत्र']
+    return [
+		['बैशाख'], 
+		['जेठ'], 
+		['अषाढ'], 
+		['श्रावण'], 
+		['भदौ'], 
+		['आश्विन'], 
+		['कार्तिक'], 
+		['मंसिर'], 
+		['पौष', 'पुष'], 
+		['माघ'], 
+		['फाल्गुन'], 
+		['चैत्र']
+	]
 }
 
 const getNepaliMonthNumber = (month) => {
-    const index = getNepaliMonthsInNepali().indexOf(month)
-    if(index==-1){
+	let index = null
+	getNepaliMonthsInNepali().map((monthArr,i)=>{
+		if(monthArr.includes(month)){
+			index = i
+		}
+	})
+    if(index==null){
         return null
     }else{
         return (index + 1)

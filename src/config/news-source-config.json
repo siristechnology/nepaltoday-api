@@ -226,14 +226,14 @@
 			{
 				"url": "https://swasthyakhabar.com",
 				"category": "health",
-				"link-selector": "article.module-flash-news > header > h2 > a:nth-child(1)"
+				"link-selector": "#content > section > div > div > div > div > div > a"
 			}
 		],
 		"article-detail-selectors": {
-			"title": "article.module.module-detail > h1",
-			"excerpt": "article.module.module-detail > section > p:nth-of-type(2)",
-			"lead-image": "article.module.module-detail > section > div.img-wrap > figure > fig > img",
-			"content": ["article.module.module-detail > section"]
+			"title": "aside > div > section > div > span.news-big-title",
+			"excerpt": "aside > div > div.row.news-detail > div > div.editor-box > p:nth-child(3)",
+			"lead-image": "aside > div > div.row.news-detail > div > div.editor-box > div.featured-images > figure > img",
+			"content": ["aside > div > div.row.news-detail > div > div.editor-box"]
 		}
 	},
 	{
