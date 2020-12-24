@@ -18,7 +18,7 @@ const getNepaliMonthsInNepali = () => {
 
 const getNepaliMonthNumber = (month) => {
 	let index = null
-	getNepaliMonthsInNepali().map((monthArr,i)=>{
+	getNepaliMonthsInNepali().forEach((monthArr,i)=>{
 		if(monthArr.includes(month)){
 			index = i
 		}
