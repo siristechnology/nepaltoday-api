@@ -176,11 +176,17 @@ type MyFm {
 	favoriteFm: [FM]
 }
 
+type TrendingTag {
+	tags: [String]
+	createdAt: String
+}
+
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
 	getArticle(_id: String!): Article
 	getIndividualArticles(name: String): [Article]
+	getArticlesFromTag(tag: String): [Article]
 	getLatestCoronaStats: CoronaStats
 	getWeatherInfo: WeatherInfo
 	getDistrictCoronaStats: DistrictCoronaStats
@@ -190,6 +196,7 @@ type Query {
 	getMyFavoriteFm(nid: String): [FM]
 	getMyFm(nid: String): MyFm
 	getNepaliEvent(date: String): NepaliEvent
+	getTrendingTags: TrendingTag
 }
 
 type Response {

@@ -12,6 +12,7 @@ const { fmDetails } = require('./../config/fm')
 const { calculateTotalWeights } = require('./calculateTotalWeights')
 const { NepaliEvents } = require('../config/nepaliCalender')
 const { getTwitterHandles } = require('../db-service/TweetDbService')
+const trendingTagDbService = require('../db-service/trendingTagDbService')
 
 module.exports = {
 	Query: {
@@ -78,6 +79,22 @@ module.exports = {
 				const individualNewsCategories = individualHandle.newsCategories
 				articleFlattened = articleFlattened.filter(x => individualNewsCategories.includes(x.category)).slice(0,20)
 			}
+			const articleList = articleFlattened.map((article) => {
+				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
+				article.source = {
+					_id: mySource.name,
+					name: mySource.nepaliName,
+					url: mySource.link,
+					logoLink: process.env.SERVER_BASE_URL + mySource.logoLink,
+				}
+				return article
+			})
+			return articleList
+		},
+
+		getArticlesFromTag: async (parent, { tag }) => {
+			const articles = await Article.find({ tags: tag }).lean().sort({ _id: -1 }).limit(20)
+			let articleFlattened = _.flatten(articles)
 			const articleList = articleFlattened.map((article) => {
 				const mySource = SourceConfig.find((x) => x.sourceName === article.sourceName)
 				article.source = {
@@ -181,6 +198,11 @@ module.exports = {
 			const currentDay = currentMonth.days.find((x) => x.dayInEn == day)
 			return currentDay
 		},
+
+		getTrendingTags: async (parent, {}) => {
+			const trendingTags = await trendingTagDbService.getTrendingTags()
+			return trendingTags
+		}
 	},
 
 	Mutation: {

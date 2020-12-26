@@ -178,6 +178,14 @@ const TrendingTopic = mongoose.model(
 	}),
 )
 
+const TrendingTag = mongoose.model(
+	'TrendingTag',
+	new Schema({
+		tags: [{ type: String }],
+		createdAt: { type: Date, default: Date.now(), expires: 86400 }
+	}),
+)
+
 const FavoriteFM = mongoose.model(
 	'FavoriteFM',
 	new Schema({
@@ -231,5 +239,6 @@ module.exports = {
 	FavoriteFM,
 	ReadArticle,
 	Like,
-	Dislike
+	Dislike,
+	TrendingTag
 }
