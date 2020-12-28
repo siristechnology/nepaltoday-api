@@ -11,7 +11,6 @@ describe('corona job', () => {
 	it('should fetch stats', async () => {
 		nock.disableNetConnect()
 		nock('https://pomber.github.io').get('/covid19/timeseries.json').reply(200, statsResponseMock)
-		nock('https://data.nepalcorona.info').get('/api/v1/world').reply(200, worldSummaryResponseMock)
 
 		const stats = await coronaJob()
 		expect(stats.worldSummary.totalCases).toBe(worldSummaryResponseMock.cases)
@@ -20,7 +19,7 @@ describe('corona job', () => {
 
 const worldSummaryResponseMock = {
 	updated: 1599944138669,
-	cases: 28871193,
+	cases: 1504,
 	todayCases: 223222,
 	deaths: 922918,
 	todayDeaths: 3821,
