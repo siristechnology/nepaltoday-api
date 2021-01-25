@@ -201,7 +201,8 @@ const ReadArticle = mongoose.model(
 		article: [
 			{
 				articleId: String,
-				category: String
+				category: String,
+				createdDate: { type: Date, default: Date.now }
 			}
 		]
 	})
