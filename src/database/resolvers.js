@@ -224,7 +224,7 @@ module.exports = {
 			})
 
 			let weekStats = []
-			categories.map(category => {
+			categories.forEach(category => {
 				const myCatArticle = totalWeekArticles.filter(x => x.category == category.name).length
 				weekStats.push({
 					category: category.name,
@@ -243,7 +243,7 @@ module.exports = {
 			})
 
 			let totalMonthArticles = []
-			monthData.map(singleUser=>{
+			monthData.forEach(singleUser=>{
 				const myArticle = singleUser.article || []
 				const monthArticles = myArticle.filter(x => x.createdDate<=currentDate && x.createdDate>=oneMonthBeforeDate)
 				totalMonthArticles = totalMonthArticles.concat(monthArticles)
