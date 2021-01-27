@@ -202,6 +202,66 @@ module.exports = {
 		getTrendingTags: async (parent, {}) => {
 			const trendingTags = await trendingTagDbService.getTrendingTags()
 			return trendingTags
+		},
+
+		getReadCategoryData: async (parent, args, {}) => {
+			//this week
+			const currentDate = new Date()
+			let oneWeekBeforeDate = new Date()
+			oneWeekBeforeDate.setDate(oneWeekBeforeDate.getDate() - 7) // one week before
+			const weekData = await ReadArticle.find({
+				'article.createdDate': {
+					$lte: currentDate,
+					$gte: oneWeekBeforeDate
+				}
+			})
+
+			let totalWeekArticles = []
+			weekData.forEach(singleUser=>{
+				const myArticle = singleUser.article || []
+				const weekArticles = myArticle.filter(x => x.createdDate<=currentDate && x.createdDate>=oneWeekBeforeDate)
+				totalWeekArticles = totalWeekArticles.concat(weekArticles)
+			})
+
+			let weekStats = []
+			categories.forEach(category => {
+				const myCatArticle = totalWeekArticles.filter(x => x.category == category.name).length
+				weekStats.push({
+					category: category.name,
+					data: myCatArticle
+				})
+			})
+
+			//this month
+			let oneMonthBeforeDate = new Date()
+			oneMonthBeforeDate.setMonth(oneMonthBeforeDate.getDate() - 30)
+			const monthData = await ReadArticle.find({
+				'article.createdDate': {
+					$lte: currentDate,
+					$gte: oneMonthBeforeDate
+				}
+			})
+
+			let totalMonthArticles = []
+			monthData.forEach(singleUser=>{
+				const myArticle = singleUser.article || []
+				const monthArticles = myArticle.filter(x => x.createdDate<=currentDate && x.createdDate>=oneMonthBeforeDate)
+				totalMonthArticles = totalMonthArticles.concat(monthArticles)
+			})
+
+			let monthStats = []
+			categories.forEach(category => {
+				const myCatArticle = totalMonthArticles.filter(x => x.category == category.name).length
+				monthStats.push({
+					category: category.name,
+					data: myCatArticle
+				})
+			})
+
+			return {
+				weekStat: weekStats,
+				monthStat: monthStats
+			}
 		}
 	},
 

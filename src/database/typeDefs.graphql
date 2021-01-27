@@ -181,6 +181,16 @@ type TrendingTag {
 	createdAt: String
 }
 
+type CategoryData {
+	category: String
+	data: Int
+}
+
+type ReadCategoryStat {
+	weekStat: [CategoryData]
+	monthStat: [CategoryData]
+}
+
 type Query {
 	getArticles(criteria: ArticleCriteria): [Article]!
 	getTweets(criteria: TweetCriteria): [Tweet]!
@@ -197,6 +207,7 @@ type Query {
 	getMyFm(nid: String): MyFm
 	getNepaliEvent(date: String): NepaliEvent
 	getTrendingTags: TrendingTag
+	getReadCategoryData: ReadCategoryStat
 }
 
 type Response {
@@ -225,6 +236,7 @@ input SaveReadArticle {
 input ReadArticleArr {
 	articleId: String
 	category: String
+	createdDate: String
 }
 
 input PostLikeObj {
