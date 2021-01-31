@@ -9,7 +9,9 @@
     "server": "yarn workspace nepaltoday.api start",
     "build": "yarn workspace nepaltodayadmin build",
     "dev": "concurrently \"yarn client\"  \"yarn server\"",
-    "start": "yarn workspace nepaltoday.api start"
+    "start": "yarn workspace nepaltoday.api start",
+    "test": "yarn workspace nepaltoday.api test",
+    "test:coverage": "yarn workspace nepaltoday.api test:coverage"
   },
   "workspaces": [
     "packages/*"
