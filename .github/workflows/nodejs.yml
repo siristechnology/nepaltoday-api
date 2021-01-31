@@ -18,6 +18,9 @@ jobs:
         env:
           CI: true
 
+      - name: yarn build
+        run: yarn build
+
       - name: yarn test:coverage
         if: github.ref == 'refs/heads/master'
         run: yarn test:coverage

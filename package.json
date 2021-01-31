@@ -13,9 +13,15 @@
     "test": "yarn workspace nepaltoday.api test",
     "test:coverage": "yarn workspace nepaltoday.api test:coverage"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/babel-loader",
+      "**/jest"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/siristechnology/nepaltoday-api.git"
