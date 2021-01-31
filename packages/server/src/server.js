@@ -2,6 +2,7 @@ require('./config/env')
 
 const morgan = require('morgan')
 const express = require('express')
+const path = require('path')
 const timeout = require('connect-timeout')
 const helmet = require('helmet')
 const requireGraphQLFile = require('require-graphql-file')
@@ -29,6 +30,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('combined'))
 app.use('/assets', express.static('assets'))
+app.use(express.static(path.join(__dirname, '../../admin-client/build')))
+
+app.get('/dashboard', function (req, res) {
+	res.sendFile(path.join(__dirname, '../../admin-client/build', 'index.html'))
+})
 
 const agenda = new Agenda({ db: { address: process.env.DATABASE_READONLY_URL } })
 app.use('/dash', Agendash(agenda))

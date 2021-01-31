@@ -7,9 +7,13 @@
   "scripts": {
     "client": "yarn workspace nepaltodayadmin start",
     "server": "yarn workspace nepaltoday.api start",
-    "start": "concurrently \"yarn client\"  \"yarn server\""
+    "build": "yarn workspace nepaltodayadmin build",
+    "dev": "concurrently \"yarn client\"  \"yarn server\"",
+    "start": "yarn workspace nepaltoday.api start"
   },
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/siristechnology/nepaltoday-api.git"
