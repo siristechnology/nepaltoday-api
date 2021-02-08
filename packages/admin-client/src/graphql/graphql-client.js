@@ -5,8 +5,8 @@ import { onError } from 'apollo-link-error'
 import { withClientState } from 'apollo-link-state'
 import { ApolloLink, Observable } from 'apollo-link'
 import fetch from 'node-fetch'
-const NEPALTODAY_SERVER = process.env.NEPALTODAY_SERVER
-// const NEPALTODAY_SERVER = 'https://nepaltoday-api-qa.herokuapp.com/graphql'
+// const NEPALTODAY_SERVER = process.env.NEPALTODAY_SERVER
+const NEPALTODAY_SERVER = 'https://nepaltoday-api-qa.herokuapp.com/graphql'
 const cache = new InMemoryCache()
 
 const requestLink = new ApolloLink(
