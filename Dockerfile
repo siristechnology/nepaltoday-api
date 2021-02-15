@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock .yarnrc ./
 
 RUN yarn install --frozen-lockfile
+RUN yarn global add react-scripts
 
 COPY . .
 
