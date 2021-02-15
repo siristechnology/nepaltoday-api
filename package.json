@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": "true",
   "scripts": {
-    "client": "yarn workspace nepaltodayadmin start",
+    "client": "yarn workspace nepaltoday.admin start",
     "server": "yarn workspace nepaltoday.api start",
-    "build": "yarn workspace nepaltodayadmin build",
+    "build": "yarn workspace nepaltoday.admin build",
     "dev": "concurrently \"yarn client\"  \"yarn server\"",
     "start": "yarn workspace nepaltoday.api start",
     "test": "yarn workspace nepaltoday.api test",
