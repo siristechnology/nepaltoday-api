@@ -451,5 +451,45 @@
 				"date-selectors": "div.select-cartoon > div > div > figure > a > small"
 			}
 		]
+	},
+	{
+		"name": "Bizmandu",
+		"sourceName": "Bizmandu",
+		"nepaliName": "Bizmandu",
+		"logoLink": "/assets/logos/bizmandu.jpg",
+		"weight": 10,
+		"pages": [
+			{
+				"url": "https://bizmandu.com/content/category/corporate.html",
+				"category": "business",
+				"link-selector": "div.uk-block.biz-archive-panel > ul > li > a"
+			}
+		],
+		"article-detail-selectors": {
+			"title": "div > h1",
+			"excerpt": "div.biz-news-content > p:nth-child(3)",
+			"content": ["div.biz-news-content"],
+			"lead-image": "div.biz-news-content > p:nth-child(2) > img"
+		}
+	},
+	{
+		"name": "ICT Samachar",
+		"sourceName": "ICT Samachar",
+		"nepaliName": "ICT Samachar",
+		"logoLink": "/assets/logos/ictsamachar.png",
+		"weight": 10,
+		"pages": [
+			{
+				"url": "https://ictsamachar.com/",
+				"category": "technology",
+				"link-selector": "div.container > article > header > h2 > a"
+			}
+		],
+		"article-detail-selectors": {
+			"title": "article.module-detail-page.margin-top > header > h1",
+			"excerpt": "article.module-detail-page.margin-top > header > h6",
+			"content": ["article.module-detail-page.margin-top > section"],
+			"lead-image": "article.module-detail-page.margin-top > section > figure > img"
+		}
 	}
 ]

@@ -1,6 +1,6 @@
 const { Article } = require("../../db-service/database/mongooseSchema")
 const { getAllSources } = require("../../db-service/newsDbService")
-const nodeMailer = require('nodemailer')
+const Mailgun = require('mailgun-js');
 const logger = require("../../config/logger")
 
 module.exports = async function(){
@@ -23,22 +23,19 @@ module.exports = async function(){
 
 const sendMail = async (sourceName) => {
     try{
-        const transporter = nodeMailer.createTransport({
-            service:'gmail',
-            auth:{
-                user: process.env.NOTIFY_EMAIL_ID,
-                pass:process.env.NOTIFY_EMAIL_PASSWORD
-            }
-        })
+        const mailgunApiKey = process.env.MAILGUN_API_KEY
+        const domain = process.env.MAILGUN_DOMAIN
+        const from = 'shiva.siristechnology@gmail.com'
 
-        const mailOptions = {
-            from: process.env.NOTIFY_EMAIL_ID,
+        const mailgun = new Mailgun({apiKey: mailgunApiKey, domain: domain});
+
+        const data = {
+            from,
             to: process.env.RECEIVER_MAILS,
-            subject: 'Articles not being fetched from library through '+sourceName,
-            text: 'Articles not being fetched from library through '+sourceName
+            subject:  'Articles not being fetched from library through '+sourceName,
+            text:  'Articles not being fetched from library through '+sourceName
         }
-
-        await transporter.sendMail(mailOptions)
+        await mailgun.messages().send(data)
 
     }catch(error){
         logger.info("Error while sending mail ",error)
