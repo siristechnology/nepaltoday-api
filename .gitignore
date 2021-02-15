@@ -1,4 +1,12 @@
 node_modules
 
+# yarn files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
 # IDE
 .vscode/
