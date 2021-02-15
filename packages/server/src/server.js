@@ -30,10 +30,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan('combined'))
 app.use('/assets', express.static('assets'))
-app.use(express.static(path.join(__dirname, '../../admin-client/build')))
+app.use(express.static(path.join(__dirname, '../../admin/build')))
 
 app.get('/dashboard', function (req, res) {
-	res.sendFile(path.join(__dirname, '../../admin-client/build', 'index.html'))
+	res.sendFile(path.join(__dirname, '../../admin/build', 'index.html'))
 })
 
 const agenda = new Agenda({ db: { address: process.env.DATABASE_READONLY_URL } })
