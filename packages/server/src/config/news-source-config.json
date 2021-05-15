@@ -497,7 +497,7 @@
 		],
 		"article-detail-selectors": {
 			"title": "div > h1",
-			"excerpt": "div.biz-news-content > p:nth-child(3)",
+			"excerpt": "div.biz-news-content > p:nth-of-type(n+3)",
 			"content": [
 				"div.biz-news-content"
 			],
