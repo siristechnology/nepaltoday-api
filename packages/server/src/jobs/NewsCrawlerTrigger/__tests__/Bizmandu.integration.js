@@ -9,8 +9,6 @@ describe('news-crawler', () => {
 
 		const articles = await NewsCrawler(source, 2)
 
-		console.log('printing articles', articles)
-
 		expect(articles.length).toBeGreaterThan(0)
 	})
 })
