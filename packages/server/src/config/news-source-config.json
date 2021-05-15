@@ -519,9 +519,9 @@
 		],
 		"article-detail-selectors": {
 			"title": "article.module-detail-page.margin-top > header > h1",
-			"excerpt": "article.module-detail-page.margin-top > header > h6",
+			"excerpt": "article.module-detail-page.margin-top > section > p:nth-of-type(1) > span",
 			"content": [
-				"article.module-detail-page.margin-top > section"
+				"article.module-detail-page.margin-top > section > p"
 			],
 			"lead-image": "article.module-detail-page.margin-top > section > figure > img"
 		}
