@@ -94,7 +94,7 @@
 		],
 		"article-detail-selectors": {
 			"title": "section.news-detail-section div.title-names span.news-big-title",
-			"excerpt": "#content > div.container > div > aside.left-side > div.row > div > div.editor-box > p:nth-child(2)",
+			"excerpt": "#content div.editor-box > p:nth-of-type(1)",
 			"lead-image": "section.news-detail-section div.featured-images figure img",
 			"content": [
 				"aside.left-side div.detail-box div.editor-box"

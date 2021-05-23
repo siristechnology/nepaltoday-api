@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 require('../../../config/env')
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
-const districtCoronaJob = require('../index')
+const districtCoronaJob = require('../metricsJob')
 
 jest.setTimeout(120000)
 
