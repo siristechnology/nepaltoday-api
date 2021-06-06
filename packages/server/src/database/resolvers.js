@@ -1,4 +1,5 @@
 /* eslint-disable eqeqeq */
+const _ = require('lodash')
 const { User, Article, Like, Dislike, Tweet, FavoriteFM, ReadArticle } = require('../db-service/database/mongooseSchema')
 const { categories } = require('../config/category')
 const getWeather = require('../weather')
