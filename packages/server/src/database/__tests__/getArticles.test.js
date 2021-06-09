@@ -12,7 +12,6 @@ describe('Resolvers Query getArticles', () => {
 	it('should return articles', async () => {
 		const articles = await getArticles({}, {})
 
-		console.log('printing articles', articles)
 		expect(articles.length).toBe(0)
 	})
 })

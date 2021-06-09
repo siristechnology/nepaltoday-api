@@ -1,6 +1,6 @@
 const { graphql } = require('graphql')
 const requireGraphQLFile = require('require-graphql-file')
-const typeDefs = requireGraphQLFile('./typeDefs.graphql')
+const typeDefs = requireGraphQLFile('../typeDefs.graphql')
 
 const { makeExecutableSchema, addMockFunctionsToSchema } = require('apollo-server-express')
 const mocks = require('./mocks')

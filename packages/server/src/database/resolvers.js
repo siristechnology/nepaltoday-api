@@ -44,12 +44,14 @@ module.exports = {
 				},
 			])
 
-			articlesByCategory.unshift({ _id: '', latest: [] })
-			const articleFlattened = articlesByCategory.reduce((accumulator, currentValue) => {
-				const count = selectedCategories.find((c) => c.name == currentValue._id).count || 20
-				currentValue.latest = currentValue.latest.slice(0, count)
-				return { latest: accumulator.latest.concat(currentValue.latest) }
-			})
+			const articleFlattened = articlesByCategory.reduce(
+				(accumulator, currentValue) => {
+					const count = selectedCategories.find((c) => c.name == currentValue._id).count || 20
+					currentValue.latest = currentValue.latest.slice(0, count)
+					return { latest: accumulator.latest.concat(currentValue.latest) }
+				},
+				{ _id: '', latest: [] },
+			)
 
 			const articlesWithWeight = await calculateTotalWeights(articleFlattened.latest, args.criteria.nid)
 
