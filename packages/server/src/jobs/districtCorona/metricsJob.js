@@ -17,7 +17,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 module.exports = async function () {
 	try {
-		const { today, yesterday } = await axiosInstance.get('https://portal.edcd.gov.np/covid19/dataservice/data-dev.php').then(({ data }) => data)
+		const { today } = await axiosInstance.get('https://portal.edcd.gov.np/covid19/dataservice/data-dev.php').then(({ data }) => data)
 
 		const totalCasesDetail = await axiosInstance
 			.get(`https://portal.edcd.gov.np/covid19/dataservice/data-dev.php?sDate=2020-01-01&eDate=${today}&disease=COVID-19`)
@@ -25,7 +25,7 @@ module.exports = async function () {
 		const totalCases = totalCasesDetail.reduce((a, c) => a + parseInt(c.Value), 0)
 
 		const newCasesDetail = await axiosInstance
-			.get(`https://portal.edcd.gov.np/covid19/dataservice/data-dev.php?sDate==${today}&eDate=${today}&disease=COVID-19`)
+			.get(`https://portal.edcd.gov.np/covid19/dataservice/data-dev.php?sDate=${today}&eDate=${today}&disease=COVID-19`)
 			.then(({ data }) => data)
 		const totalNewCases = newCasesDetail.reduce((a, c) => a + parseInt(c.Value), 0)
 
@@ -37,7 +37,7 @@ module.exports = async function () {
 		const newDeathSummary = await axiosInstance
 			.get(`https://portal.edcd.gov.np/covid19/dataservice/data-dev.php?type=outcome&sDate=${today}&eDate=${today}&disease=COVID-19`)
 			.then(({ data }) => data)
-		const newDeaths = newDeathSummary > 0 ? parseInt(newDeathSummary[0]['Number of deaths']) : 0
+		const newDeaths = newDeathSummary.length > 0 ? parseInt(newDeathSummary[0]['Number of deaths']) : 0
 
 		const coronaTimeLine = {
 			totalCases,
