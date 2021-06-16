@@ -13,11 +13,8 @@ describe('metrcisJob', () => {
 
 		const districtStats = await DistrictCoronaStats.findOne({}, {}, { sort: { createdDate: -1 } }).lean()
 
-		console.log('printing districtStats', districtStats)
-
-		// const tagGroups = await Tag.find().lean()
-		// expect(tagGroups.find((tg) => tg.tagId == 'tag1').currentMonthCount).toBe(4)
-		// expect(tagGroups.find((tg) => tg.tagId == 'tag2').currentMonthCount).toBe(3)
-		// expect(tagGroups.some((tg) => tg.tagId == '')).toBe(false)
+		expect(districtStats.timeLine.totalCases).toBeGreaterThan(0)
+		expect(districtStats.timeLine.newCases).toBeGreaterThan(0)
+		expect(districtStats.timeLine.newDeaths).toBeGreaterThan(0)
 	})
 })
