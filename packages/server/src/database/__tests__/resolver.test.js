@@ -1,4 +1,4 @@
-const { graphqlTestCall } = require('../graphqlTestCall')
+const { graphqlTestCall } = require('./graphqlTestCall')
 const { dbConnection } = require('../../helper/connectionHelper')
 
 const query = `

@@ -297,15 +297,6 @@ const TrendingTwitterHandles = [
 		newsCategories: ['politics', 'news', 'social'],
 	},
 	{
-		name: 'Subhash Ghimire',
-		nepaliName: 'सुभाष घिमिरे',
-		category: 'Media',
-		handle: '@subhash580',
-		searchTerms: ['Subhash Ghimire'],
-		image: 'https://pbs.twimg.com/profile_images/1293055891877453827/B4c-rO4e_200x200.jpg',
-		newsCategories: ['politics', 'news', 'social'],
-	},
-	{
 		name: 'Suman Kharel',
 		nepaliName: 'सुमन खरेल',
 		category: 'Media',

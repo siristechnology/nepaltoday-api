@@ -15,7 +15,7 @@ module.exports = async function () {
 			if (latestArticle) {
 				const notifications = []
 				for (const user of userWithCurrentTime) {
-					if(!user.status || (user.status && user.status!="inactive")){
+					if (!user.status || (user.status && user.status != 'inactive')) {
 						const shouldSendNotification = !(await notificationExists(user, latestArticle[0]))
 						if (shouldSendNotification) {
 							const eligibleTime = verifyNoticiableTime(user.currentTime)
@@ -43,8 +43,11 @@ module.exports = async function () {
 				}
 			}
 
+			let aDayAgo = new Date()
+			aDayAgo.setDate(aDayAgo.getDate() - 1)
+
 			const latestSummary = await DistrictCoronaDbService.getDistrictCoronaStats()
-			if (latestSummary) {
+			if (latestSummary && latestSummary.createdDate > aDayAgo) {
 				for (const user of userWithCurrentTime) {
 					const coronaNotificationEligibleTime = verifyCoronaNotificationTime(user.currentTime)
 
