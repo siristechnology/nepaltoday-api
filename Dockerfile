@@ -20,9 +20,6 @@ RUN yarn install --frozen-lockfile --production=true
 
 COPY . .
 
-RUN npm rebuild node-sass
-RUN yarn build
-
 EXPOSE 8080
 
 CMD [ "yarn", "start" ]
