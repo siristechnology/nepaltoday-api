@@ -1,17 +1,20 @@
 name: Node CI
 
-on: [push]
+on:
+    push:
+    workflow_dispatch:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js 14.11.0
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v3.0.0
+            
+            - name: Use Node.js 16.13.1
+              uses: actions/setup-node@v3.4.1
               with:
-                  node-version: 14.11.0
+                  node-version: 16.13.1
 
             - name: yarn install
               run: yarn install --frozen-lockfile
@@ -29,7 +32,7 @@ jobs:
 
             - name: Upload Coverage to codecov
               if: github.ref == 'refs/heads/master'
-              uses: codecov/codecov-action@v1.0.3
+              uses: codecov/codecov-action@v3.1.0
               with:
                   token: ${{secrets.CODECOV_TOKEN}}
                   file: ./packages/server/coverage/clover.xml
