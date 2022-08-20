@@ -37,17 +37,6 @@ app.use('/dash', Agendash(agenda))
 const typeDefSchema = requireGraphQLFile('./database/typeDefs.graphql')
 const typeDefs = gql(typeDefSchema)
 
-const apolloServer = new ApolloServer({
-	typeDefs: typeDefs,
-	resolvers: resolvers,
-	context: ({ req, res }) => ({
-		...{ userContext: req.payload, ipAddress: getIpAdressFromRequest(req) },
-		...mongooseSchema,
-	}),
-	plugins: [GraphQlErrorLoggingPlugin],
-})
-apolloServer.applyMiddleware({ app })
-
 const getIpAdressFromRequest = (req) => {
 	let ipAddr = req.headers['x-forwarded-for']
 	if (ipAddr) {
@@ -59,15 +48,29 @@ const getIpAdressFromRequest = (req) => {
 	return ipAddr
 }
 
-app.use((err, req, res, next) => {
-	res.status(err.status || 500)
-
-	res.send({
-		error: {
-			message: err.message,
-			stacktrace: isDevelopment ? err.stack : {},
-		},
-	})
+const apolloServer = new ApolloServer({
+	typeDefs: typeDefs,
+	resolvers: resolvers,
+	context: ({ req, res }) => ({
+		...{ userContext: req.payload, ipAddress: getIpAdressFromRequest(req) },
+		...mongooseSchema,
+	}),
+	plugins: [GraphQlErrorLoggingPlugin],
 })
 
-app.listen(process.env.PORT, () => console.log(colors.rainbow(`Server running on http://localhost:${process.env.PORT}`)))
+apolloServer.start().then((res) => {
+	apolloServer.applyMiddleware({ app })
+
+	app.use((err, req, res, next) => {
+		res.status(err.status || 500)
+
+		res.send({
+			error: {
+				message: err.message,
+				stacktrace: isDevelopment ? err.stack : {},
+			},
+		})
+	})
+
+	app.listen(process.env.PORT, () => console.log(colors.rainbow(`Server running on http://localhost:${process.env.PORT}`)))
+})
