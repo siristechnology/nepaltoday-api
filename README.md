@@ -9,7 +9,7 @@ It is set to auto-deploy to https://dashboard.heroku.com/apps/nepaltoday-api-qa
 
 ### GraphQL
 
-![graphql](/packages/server/assets/images/graphql-interface.png)
+![graphql](/assets/images/graphql-interface.jpg)
 
 ## Steps to run
 
@@ -41,4 +41,4 @@ It is set to auto-deploy to https://dashboard.heroku.com/apps/nepaltoday-api-qa
 
 ## Some helpful commands
 
-1. Run `kill-port 4000` to kill process in port 4000. kill-port is a npm module
+1. Run `kill-port 8080` to kill process in port 8080. kill-port is a npm module
