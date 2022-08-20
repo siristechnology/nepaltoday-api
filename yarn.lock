@@ -1192,21 +1192,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bearer/node-agent@3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@bearer/node-agent/-/node-agent-3.3.3.tgz#cb170caa3230ded3e2d818339d1335c3220454e5"
-  integrity sha512-K5HGCU4+yR7f3+x+5Ve777JTGSP7q/5s+e6CVf72jahYpfE/VfnCUEVl8krMQ1dbnBDweslyU8+TqErGCqZBjA==
-  dependencies:
-    "@bearer/shape-hash" "^0.0.7"
-    debug "^4.1.1"
-    semver "^6.3.0"
-    uuid "^8.3.1"
-
-"@bearer/shape-hash@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@bearer/shape-hash/-/shape-hash-0.0.7.tgz#fc1b661282814fed2916a3f305fd96cdda703d25"
-  integrity sha512-UjUNyhnnUBTFLv2LZqYkDP+/Jub0JZ2hCIRHdu9tN94fzvwxAT3XsItbkgtXB7l6Gyo86fstovTsPOAwTezfkg==
-
 "@cliqz/adblocker-content@^1.18.7", "@cliqz/adblocker-content@^1.23.9":
   version "1.23.9"
   resolved "https://registry.yarnpkg.com/@cliqz/adblocker-content/-/adblocker-content-1.23.9.tgz#a693d1f497804130147e789cdc7d92e1b5933789"
