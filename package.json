@@ -15,7 +15,7 @@
 		"agenda": "3.1.0",
 		"agendash": "^1.0.0",
 		"apollo-server-express": "2.25.0",
-		"axios": "0.21.1",
+		"axios": "0.21.2",
 		"colors": "^1.4.0",
 		"connect-timeout": "^1.9.0",
 		"dotenv": "8.2.0",
