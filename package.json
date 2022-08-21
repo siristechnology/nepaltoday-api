@@ -11,6 +11,7 @@
 		"lint": "eslint src/**/**/*.js"
 	},
 	"dependencies": {
+		"@bmatei/apollo-prometheus-exporter": "^2.1.1",
 		"agenda": "4.3.0",
 		"agendash": "^3.1.0",
 		"apollo-server-express": "3.10.1",
@@ -34,6 +35,7 @@
 		"news-crawler": "https://github.com/siristechnology/news-crawler#3182a10",
 		"offline-geo-from-ip": "^1.0.1",
 		"pm2": "5.2.0",
+		"prom-client": "^14.0.1",
 		"require-graphql-file": "1.0.1",
 		"twitter": "1.7.1",
 		"winston": "3.8.1"

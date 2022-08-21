@@ -2,7 +2,6 @@ require('./config/env')
 
 const morgan = require('morgan')
 const express = require('express')
-const path = require('path')
 const timeout = require('connect-timeout')
 const helmet = require('helmet')
 const requireGraphQLFile = require('require-graphql-file')
@@ -14,6 +13,7 @@ const colors = require('colors/safe')
 const Agenda = require('agenda')
 const Agendash = require('agendash')
 const GraphQlErrorLoggingPlugin = require('./config/graphql-error-logging')
+const { createPrometheusExporterPlugin } = require('@bmatei/apollo-prometheus-exporter')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -34,6 +34,17 @@ app.use('/assets', express.static('assets'))
 const agenda = new Agenda({ db: { address: process.env.DATABASE_READONLY_URL } })
 app.use('/dash', Agendash(agenda))
 
+app.use((err, req, res, next) => {
+	res.status(err.status || 500)
+
+	res.send({
+		error: {
+			message: err.message,
+			stacktrace: isDevelopment ? err.stack : {},
+		},
+	})
+})
+
 const typeDefSchema = requireGraphQLFile('./database/typeDefs.graphql')
 const typeDefs = gql(typeDefSchema)
 
@@ -48,6 +59,8 @@ const getIpAdressFromRequest = (req) => {
 	return ipAddr
 }
 
+const prometheusExporterPlugin = createPrometheusExporterPlugin({ app })
+
 const apolloServer = new ApolloServer({
 	typeDefs: typeDefs,
 	resolvers: resolvers,
@@ -55,22 +68,11 @@ const apolloServer = new ApolloServer({
 		...{ userContext: req.payload, ipAddress: getIpAdressFromRequest(req) },
 		...mongooseSchema,
 	}),
-	plugins: [GraphQlErrorLoggingPlugin],
+	plugins: [prometheusExporterPlugin, GraphQlErrorLoggingPlugin],
 })
 
 apolloServer.start().then((res) => {
 	apolloServer.applyMiddleware({ app })
-
-	app.use((err, req, res, next) => {
-		res.status(err.status || 500)
-
-		res.send({
-			error: {
-				message: err.message,
-				stacktrace: isDevelopment ? err.stack : {},
-			},
-		})
-	})
 
 	app.listen(process.env.PORT, () => console.log(colors.rainbow(`Server running on http://localhost:${process.env.PORT}`)))
 })
