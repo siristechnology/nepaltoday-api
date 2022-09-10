@@ -28,7 +28,13 @@ app.use((req, res, next) => {
 app.use(helmet())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(morgan('combined'))
+app.use(
+	morgan('combined', {
+		skip: function (req, res) {
+			return res.statusCode < 400
+		},
+	}),
+)
 app.use('/assets', express.static('assets'))
 
 const agenda = new Agenda({ db: { address: process.env.DATABASE_READONLY_URL } })
