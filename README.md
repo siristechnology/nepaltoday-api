@@ -21,6 +21,10 @@ It is set to auto-deploy to https://dashboard.heroku.com/apps/nepaltoday-api-qa
 -   `jest --runInBand -t 'some test description'` -- it will run tests with `some test description` in `it` description
 -   `yarn lint` --to show linting errors. Add [`--fix`] to auto fix errors.
 
+## Load testing
+
+-   Using artillery : `artillery run ./artillery-load-test.yml`
+
 ## Key points
 
 1. Uses mongoose as ORM for mongodb
