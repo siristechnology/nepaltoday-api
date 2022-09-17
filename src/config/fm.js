@@ -7,7 +7,7 @@ const fmDetails = [
 		city: 'Siraha',
 		url: 'http://rstream.abgroupnepal.com:8000/radiosargam',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/3/31523.v3.png',
-		isPopular: true,
+		popularity: 7,
 	},
 	{
 		id: 24,
@@ -17,7 +17,7 @@ const fmDetails = [
 		city: 'Jhapa',
 		url: 'http://live.itechnepal.com:8420/stream',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/1/30211.v1.png',
-		isPopular: true,
+		popularity: 7,
 	},
 	{
 		id: 37,
@@ -27,7 +27,7 @@ const fmDetails = [
 		city: 'Bhojpur',
 		url: 'http://live.itechnepal.com:9078/stream?type=.mp3',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/3/31213.v1.png',
-		isPopular: true,
+		popularity: 6,
 	},
 	{
 		id: 53,
@@ -235,7 +235,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://broadcast.radiokantipur.com:7248/stream/;',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/9/30009.png',
-		isPopular: true,
+		popularity: 10,
 	},
 	{
 		id: 4,
@@ -245,7 +245,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://stream.zeno.fm/h527zwd11uquv',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/1/30021.v4.png',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 6,
@@ -255,7 +255,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://radionepal.gov.np:40100/stream',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/7/30017.v2.png',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 7,
@@ -265,7 +265,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://streaming.hamropatro.com:8631/;stream.mp3',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/8/30138.v10.png',
-		isPopular: true,
+		popularity: 8,
 	},
 	{
 		id: 8,
@@ -284,7 +284,7 @@ const fmDetails = [
 		city: 'Bharatpur',
 		url: 'http://kalika-stream.softnep.com:7740/;',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/2/30012.v1.png',
-		isPopular: true,
+		popularity: 6,
 	},
 	{
 		id: 10,
@@ -294,7 +294,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://usa15.fastcast4u.com/proxy/hitsfm912?mp=/1',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/9/30129.v4.png',
-		isPopular: true,
+		popularity: 10,
 	},
 	{
 		id: 11,
@@ -304,7 +304,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://stream.zeno.fm/fvrx47wpg0quv',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/4/30024.v7.png',
-		isPopular: true,
+		popularity: 7,
 	},
 	{
 		id: 15,
@@ -314,7 +314,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://tv-ingest.hamropatro.com/radio-live/classic/icecast.audio',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/5/30975.v3.png',
-		isPopular: true,
+		popularity: 7,
 	},
 	{
 		id: 16,
@@ -324,7 +324,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://radiosagarmatha.org.np/wp-content/uploads/2018/01/Bhairab-Sir.mp3',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/6/30106.v5.png',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 17,
@@ -343,7 +343,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://streaming.softnep.net:8091/;',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/7/30437.v1.png',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 19,
@@ -362,7 +362,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'https://stream.zenolive.com/s8nwmkn7bq5tv',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/6/30126.v5.png',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 25,
@@ -435,7 +435,7 @@ const fmDetails = [
 		city: 'Lalitpur',
 		url: 'http://live.itechnepal.com:8541/stream',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/5/30035.v3.png',
-		isPopular: true,
+		popularity: 8,
 	},
 	{
 		id: 48,
@@ -463,7 +463,7 @@ const fmDetails = [
 		city: 'Dolkha',
 		url: 'http://live.itechnepal.com:9551/stream?type=.mp3',
 		artwork: 'https://cdn.onlineradiobox.com/img/logo/2/30252.v1.png',
-		isPopular: true,
+		popularity: 8,
 	},
 	{
 		id: 63,
@@ -716,7 +716,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://49.236.212.220:88/broadwave.mp3',
 		artwork: 'https://www.liveonlineradio.net/wp-content/uploads/2016/11/Bhaktapur-FM-100x47.jpg',
-		isPopular: true,
+		popularity: 7,
 	},
 	{
 		id: 181,
@@ -735,7 +735,7 @@ const fmDetails = [
 		city: 'Kathmandu',
 		url: 'http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-nepla_backup',
 		artwork: 'https://www.liveonlineradio.net/wp-content/uploads/2011/06/bbc-nepali-1-100x47.jpg',
-		isPopular: true,
+		popularity: 9,
 	},
 	{
 		id: 22,

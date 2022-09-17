@@ -160,7 +160,7 @@ type FM {
 	artist: String
 	artwork: String
 	province: String
-	isPopular: Boolean
+	popularity: Int
 	isDisabled: Boolean
 }
 
