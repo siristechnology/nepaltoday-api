@@ -160,14 +160,16 @@ type FM {
 	artist: String
 	artwork: String
 	province: String
+	isPopular: Boolean
+	isDisabled: Boolean
 }
 
 type NepaliEvent {
-	isHoliday: Boolean 
-	tithi: String 
-	event: String 
+	isHoliday: Boolean
+	tithi: String
+	event: String
 	day: String
-	dayInEn: String 
+	dayInEn: String
 	en: String
 }
 
